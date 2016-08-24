@@ -1,0 +1,4 @@
+com\si\seminar\realestatewebsite\configuration\spring\AppConfiguration.class
+com\si\seminar\realestatewebsite\configuration\spring\WebInitializer.class
+com\si\seminar\realestatewebsite\web\controller\HomeController.class
+com\si\seminar\realestatewebsite\web\controller\TestViewModel.class
