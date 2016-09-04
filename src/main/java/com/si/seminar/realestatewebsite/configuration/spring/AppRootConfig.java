@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.io.Resource;
 
 /**
@@ -28,6 +29,15 @@ public class AppRootConfig  implements ApplicationContextAware {
         propertyPlaceholderConfigurer.setLocations(resource);
 
         return propertyPlaceholderConfigurer;
+    }
+
+    @Bean
+    public ResourceBundleMessageSource resourceBundleMessageSource() {
+
+        ResourceBundleMessageSource resourceBundleMessageSource = new ResourceBundleMessageSource();
+        resourceBundleMessageSource.setBasename("messages/messages");
+        resourceBundleMessageSource.setDefaultEncoding("UTF-8");
+        return resourceBundleMessageSource;
     }
 
     @Override

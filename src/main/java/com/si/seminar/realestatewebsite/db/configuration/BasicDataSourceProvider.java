@@ -86,9 +86,9 @@ public class BasicDataSourceProvider {
     private boolean poolPreparedStatements;
 
 
-   /* *//**
+    /*
      * @return the data source.
-     *//*
+     */
     @Bean(destroyMethod = "close")
     public BasicDataSource dataSource() {
 
@@ -118,18 +118,5 @@ public class BasicDataSourceProvider {
         dataSource.setNumTestsPerEvictionRun(numTestsPerEvictionRun);
         dataSource.setPoolPreparedStatements(poolPreparedStatements);
         return dataSource;
-    }
-*/
-    @Bean
-    public DataSource dataSource() {
-
-        // no need shutdown, EmbeddedDatabaseFactoryBean will take care of this
-        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        EmbeddedDatabase db = builder
-                .setType(EmbeddedDatabaseType.H2) //.H2 or .DERBY
-                .addScript("db/sql/create-db.sql")
-                .addScript("db/sql/insert-data.sql")
-                .build();
-        return db;
     }
 }
