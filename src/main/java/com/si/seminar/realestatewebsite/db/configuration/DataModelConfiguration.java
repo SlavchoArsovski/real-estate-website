@@ -1,26 +1,30 @@
 package com.si.seminar.realestatewebsite.db.configuration;
 
+import com.si.seminar.realestatewebsite.db.repository.RepositoryComponents;
+import org.apache.log4j.Logger;
+import org.apache.log4j.Priority;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 /**
- * Spring configuration for the transakt integration data model.
+ * Spring configuration for the data model.
  */
 @Configuration
-//@ComponentScan(
-//    basePackageClasses = {
-//        TransaktIntegrationDAOComponents.class,
-//        TransaktIntegrationRepositoryComponents.class
-//    })
 @Import({
         JpaPropertiesProvider.class,
         BasicDataSourceProvider.class,
         EntityManagerFactoryProvider.class,
         JpaTransactionManagerProvider.class
 })
+@ComponentScan(
+    basePackageClasses = {
+        RepositoryComponents.class
+    })
+@EnableJpaRepositories(basePackageClasses = { RepositoryComponents.class })
+@EnableTransactionManagement
 public class DataModelConfiguration {
-
 }

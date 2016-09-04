@@ -3,7 +3,7 @@ package com.si.seminar.realestatewebsite.db.datamodel;
 import javax.persistence.*;
 
 /**
- * Created by sarsovsk on 29.08.2016.
+ * Real Estate.
  */
 @Entity
 @Table(name = "REAL_ESTATE")
@@ -12,17 +12,17 @@ public class RealEstate {
 
     @Id
     @Column(name = "REAL_ESTATE_ID", nullable = false, unique = true)
-    private Long realEstateId;
+    private Long id;
 
     @Column(name = "DESCRIPTION")
     private String description;
 
     public Long getRealEstateId() {
-        return realEstateId;
+        return id;
     }
 
-    public void setRealEstateId(Long realEstateId) {
-        this.realEstateId = realEstateId;
+    public void setRealEstateId(Long id) {
+        this.id = id;
     }
 
     public String getDescription() {

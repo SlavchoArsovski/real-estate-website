@@ -17,4 +17,6 @@ public interface RealEstateRepository extends CrudRepository<RealEstate, Long> {
    */
   List<RealEstate> findAll();
 
+  RealEstate findById(Long id);
+
 }

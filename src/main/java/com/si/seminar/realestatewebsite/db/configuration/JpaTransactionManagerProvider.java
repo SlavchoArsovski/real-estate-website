@@ -26,7 +26,7 @@ public class JpaTransactionManagerProvider {
    * @return the transaction manager
    */
   @Bean
-  public JpaTransactionManager transaktIntegrationTransactionManager() {
+  public JpaTransactionManager transactionManager() {
     JpaTransactionManager transactionManager = new JpaTransactionManager(entityManagerFactory);
     transactionManager.setDataSource(dataSource);
     return transactionManager;

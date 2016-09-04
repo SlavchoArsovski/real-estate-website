@@ -34,7 +34,7 @@ public class EntityManagerFactoryProvider {
   private DataSource dataSource;
 
   @Autowired
-  @Qualifier("JpaProperties")
+  @Qualifier("јpaProperties")
   private Properties jpaProperties;
 
   @Value("${jpa.persistenceProvider:org.hibernate.jpa.HibernatePersistenceProvider}")

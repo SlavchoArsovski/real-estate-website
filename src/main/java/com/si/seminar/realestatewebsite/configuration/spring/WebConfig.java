@@ -1,9 +1,13 @@
 package com.si.seminar.realestatewebsite.configuration.spring;
 
+import com.si.seminar.realestatewebsite.db.configuration.DataModelConfiguration;
 import com.si.seminar.realestatewebsite.web.controller.WebComponents;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.*;
+import org.springframework.core.io.Resource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -15,7 +19,7 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackageClasses = WebComponents.class)
+@ComponentScan(basePackageClasses = { WebComponents.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     public static final String VIEWS_PATH = "/WEB-INF/views/";
