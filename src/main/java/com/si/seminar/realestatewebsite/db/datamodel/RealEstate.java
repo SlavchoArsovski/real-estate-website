@@ -10,22 +10,19 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "REAL_ESTATE")
 @Access(AccessType.FIELD)
+@DiscriminatorColumn(name="REAL_ESTATE_TYPE", discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class RealEstate {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "REAL_ESTATE_ID_SEQUENCE_GENERATOR")
-    @SequenceGenerator(
-            name = "REAL_ESTATE_ID_SEQUENCE_GENERATOR",
-            sequenceName = "REAL_ESTATE_ID_SEQUENCE",
-            allocationSize = 1,
-            initialValue = 10000)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "REAL_ESTATE_ID", nullable = false, unique = true)
     private Long id;
 
     @Column(name = "DESCRIPTION")
     private String description;
 
-    @Column(name = "REAL_ESTATE_TYPE", nullable = false)
+    @Column(name = "REAL_ESTATE_TYPE", nullable = false, insertable=false, updatable=false)
     @Enumerated(EnumType.STRING)
     private RealEstateType realEstateType;
 
@@ -43,6 +40,9 @@ public class RealEstate {
 
     @Column(name = "PRICE")
     private BigDecimal price;
+
+    @Column(name = "IMAGE_PATH")
+    private String imagePath;
 
     public Long getId() {
         return id;
@@ -106,5 +106,13 @@ public class RealEstate {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }
