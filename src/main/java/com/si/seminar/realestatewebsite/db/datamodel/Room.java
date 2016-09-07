@@ -6,20 +6,20 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Created by sarsovsk on 06.09.2016.
+ * Room DB model.
  */
 @Entity
 @DiscriminatorValue("ROOM")
 public class Room extends RealEstate {
 
     @Column(name = "NUMBER_OF_BEDS")
-    private int numberOfBeds;
+    private Integer numberOfBeds;
 
-    public int getNumberOfBeds() {
+    public Integer getNumberOfBeds() {
         return numberOfBeds;
     }
 
-    public void setNumberOfBeds(int numberOfBeds) {
+    public void setNumberOfBeds(Integer numberOfBeds) {
         this.numberOfBeds = numberOfBeds;
     }
 }

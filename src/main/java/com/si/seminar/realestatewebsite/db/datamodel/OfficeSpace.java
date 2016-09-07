@@ -6,53 +6,53 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Created by sarsovsk on 06.09.2016.
+ * Office Space DB Model.
  */
 @Entity
 @DiscriminatorValue("OFFICE_SPACE")
 public class OfficeSpace extends RealEstate {
 
     @Column(name = "YEAR_OF_CONSTRUCTION")
-    private int yearOfConstruction;
+    private Integer yearOfConstruction;
 
     @Column(name = "CENTRAL_HEATING_INCLUDED")
-    private boolean centralHeatingIncluded;
+    private Boolean centralHeatingIncluded;
 
     @Column(name = "AIR_CONDITIONED")
-    private boolean airConditioned;
+    private Boolean airConditioned;
 
     @Column(name = "NUMBER_OF_OFFICES")
-    private int numberOfOffices;
+    private Integer numberOfOffices;
 
-    public int getYearOfConstruction() {
+    public Integer getYearOfConstruction() {
         return yearOfConstruction;
     }
 
-    public void setYearOfConstruction(int yearOfConstruction) {
+    public void setYearOfConstruction(Integer yearOfConstruction) {
         this.yearOfConstruction = yearOfConstruction;
     }
 
-    public boolean isCentralHeatingIncluded() {
+    public Boolean isCentralHeatingIncluded() {
         return centralHeatingIncluded;
     }
 
-    public void setCentralHeatingIncluded(boolean centralHeatingIncluded) {
+    public void setCentralHeatingIncluded(Boolean centralHeatingIncluded) {
         this.centralHeatingIncluded = centralHeatingIncluded;
     }
 
-    public boolean isAirConditioned() {
+    public Boolean isAirConditioned() {
         return airConditioned;
     }
 
-    public void setAirConditioned(boolean airConditioned) {
+    public void setAirConditioned(Boolean airConditioned) {
         this.airConditioned = airConditioned;
     }
 
-    public int getNumberOfOffices() {
+    public Integer getNumberOfOffices() {
         return numberOfOffices;
     }
 
-    public void setNumberOfOffices(int numberOfOffices) {
+    public void setNumberOfOffices(Integer numberOfOffices) {
         this.numberOfOffices = numberOfOffices;
     }
 }

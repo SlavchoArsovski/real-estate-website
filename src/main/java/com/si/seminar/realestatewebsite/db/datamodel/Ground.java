@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Created by sarsovsk on 06.09.2016.
+ * Ground DB model.
  */
 @Entity
 @DiscriminatorValue("GROUND")

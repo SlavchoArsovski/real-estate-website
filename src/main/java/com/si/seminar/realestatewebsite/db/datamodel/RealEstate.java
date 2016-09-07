@@ -1,11 +1,10 @@
 package com.si.seminar.realestatewebsite.db.datamodel;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
 import java.math.BigDecimal;
 
 /**
- * Real Estate.
+ * Real Estate DB model.
  */
 @Entity
 @Table(name = "REAL_ESTATE")
@@ -15,8 +14,13 @@ import java.math.BigDecimal;
 public class RealEstate {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "REAL_ESTATE_ID", nullable = false, unique = true)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "REAL_ESTATE_ID_SEQUENCE_GENERATOR")
+    @SequenceGenerator(
+            name = "REAL_ESTATE_ID_SEQUENCE_GENERATOR",
+            sequenceName = "REAL_ESTATE_ID_SEQUENCE",
+            allocationSize = 1,
+            initialValue = 10000)
+    @Column(name = "ID", nullable = false, unique = true)
     private Long id;
 
     @Column(name = "DESCRIPTION")

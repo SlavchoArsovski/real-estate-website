@@ -6,86 +6,86 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Created by sarsovsk on 06.09.2016.
+ * Apartment DB model.
  */
 @Entity
 @DiscriminatorValue("APARTMENT")
 public class Apartment extends RealEstate {
 
     @Column(name = "YEAR_OF_CONSTRUCTION")
-    private int yearOfConstruction;
+    private Integer yearOfConstruction;
 
     @Column(name = "CENTRAL_HEATING_INCLUDED")
-    private boolean centralHeatingIncluded;
+    private Boolean centralHeatingIncluded;
 
     @Column(name = "AIR_CONDITIONED")
-    private boolean airConditioned;
+    private Boolean airConditioned;
 
     @Column(name = "FLOOR_NUMBER")
-    private int floorNumber;
+    private Integer floorNumber;
 
     @Column(name = "NUMBER_OF_ROOMS")
-    private int numberOfRooms;
+    private Integer numberOfRooms;
 
     @Column(name = "PARKING_INCLUDED")
-    private boolean parkingIncluded;
+    private Boolean parkingIncluded;
 
     @Column(name = "ELEVATOR_INCLUDED")
-    private boolean elevatorIncluded;
+    private Boolean elevatorIncluded;
 
-    public int getYearOfConstruction() {
+    public Integer getYearOfConstruction() {
         return yearOfConstruction;
     }
 
-    public void setYearOfConstruction(int yearOfConstruction) {
+    public void setYearOfConstruction(Integer yearOfConstruction) {
         this.yearOfConstruction = yearOfConstruction;
     }
 
-    public boolean isCentralHeatingIncluded() {
+    public Boolean isCentralHeatingIncluded() {
         return centralHeatingIncluded;
     }
 
-    public void setCentralHeatingIncluded(boolean centralHeatingIncluded) {
+    public void setCentralHeatingIncluded(Boolean centralHeatingIncluded) {
         this.centralHeatingIncluded = centralHeatingIncluded;
     }
 
-    public boolean isAirConditioned() {
+    public Boolean isAirConditioned() {
         return airConditioned;
     }
 
-    public void setAirConditioned(boolean airConditioned) {
+    public void setAirConditioned(Boolean airConditioned) {
         this.airConditioned = airConditioned;
     }
 
-    public int getFloorNumber() {
+    public Integer getFloorNumber() {
         return floorNumber;
     }
 
-    public void setFloorNumber(int floorNumber) {
+    public void setFloorNumber(Integer floorNumber) {
         this.floorNumber = floorNumber;
     }
 
-    public int getNumberOfRooms() {
+    public Integer getNumberOfRooms() {
         return numberOfRooms;
     }
 
-    public void setNumberOfRooms(int numberOfRooms) {
+    public void setNumberOfRooms(Integer numberOfRooms) {
         this.numberOfRooms = numberOfRooms;
     }
 
-    public boolean isParkingIncluded() {
+    public Boolean isParkingIncluded() {
         return parkingIncluded;
     }
 
-    public void setParkingIncluded(boolean parkingIncluded) {
+    public void setParkingIncluded(Boolean parkingIncluded) {
         this.parkingIncluded = parkingIncluded;
     }
 
-    public boolean isElevatorIncluded() {
+    public Boolean isElevatorIncluded() {
         return elevatorIncluded;
     }
 
-    public void setElevatorIncluded(boolean elevatorIncluded) {
+    public void setElevatorIncluded(Boolean elevatorIncluded) {
         this.elevatorIncluded = elevatorIncluded;
     }
 }

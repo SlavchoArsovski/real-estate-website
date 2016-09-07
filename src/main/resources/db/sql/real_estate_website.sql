@@ -1,3 +1,5 @@
+CREATE sequence REAL_ESTATE_ID_SEQUENCE start with 10000;
+
 CREATE TABLE REAL_ESTATE (
 
   ID number(19,0) not null,
@@ -5,35 +7,37 @@ CREATE TABLE REAL_ESTATE (
   -- all real estate properties
 	DESCRIPTION varchar2(40),
   REAL_ESTATE_TYPE varchar2(40) not null,
-  SQUARE_METERS number(5,0),
+  SQUARE_METERS_FROM number(5,0),
+  SQUARE_METERS_TO number(5,0),
   CITY varchar2(40) not null,
   REGION varchar2(40) not null,
   ADDRESS varchar2(100) not null,
-  PRICE number(19,0),
+  PRICE_FROM number(19,0),
+  PRICE_TO number(19,0),
   IMAGE_PATH varchar2(100),
 
   -- house, apartment and office space common properties
-  YEAR_OF_CONSTRUCTION number(4, 0),
-  CENTRAL_HEATING_INCLUDED number(1, 0),
-  AIR_CONDITIONED number(1, 0),
+  YEAR_OF_CONSTRUCTION number(4,0),
+  CENTRAL_HEATING_INCLUDED number(1,0),
+  AIR_CONDITIONED number(1,0),
 
   -- house properties
-  NUMBER_OF_FLOORS number(3,0),
-  YARD_INCLUDED number(1, 0),
-  GARAGE_INCLUDED number(1, 0),
-  POOL_INCLUDED number(1, 0),
+  NUMBER_OF_FLOORS number(1,0),
+  YARD_INCLUDED number(1,0),
+  GARAGE_INCLUDED number(1,0),
+  POOL_INCLUDED number(1,0),
 
   -- apartment properties
   FLOOR_NUMBER number(3,0),
-  NUMBER_OF_ROOMS number(1, 0),
-  PARKING_INCLUDED number(1, 0),
-  ELEVATOR_INCLUDED number(1, 0),
+  NUMBER_OF_ROOMS number(3,0),
+  PARKING_INCLUDED number(1,0),
+  ELEVATOR_INCLUDED number(1,0),
 
   -- room properties
-  NUMBER_OF_BEDS number(2, 0),
+  NUMBER_OF_BEDS number(3,0),
 
   -- office space properties
-  NUMBER_OF_OFFICES number(10, 0)
+  NUMBER_OF_OFFICES number(3,0)
 );
 
 alter TABLE REAL_ESTATE add (

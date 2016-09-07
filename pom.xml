@@ -15,6 +15,8 @@
         <jackson.version>1.9.13</jackson.version>
         <dbh2.version>1.4.187</dbh2.version>
         <log4j.version>1.2.17</log4j.version>
+        <hibernate-jpamodelgen.version>4.3.11.Final</hibernate-jpamodelgen.version>
+        <genSource.dir>target/generated-sources/metamodel</genSource.dir>
     </properties>
 
     <dependencies>
@@ -168,6 +170,37 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.bsc.maven</groupId>
+                <artifactId>maven-processor-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>process</id>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <processors>
+                                <processor>
+                                    org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor
+                                </processor>
+                            </processors>
+                            <outputDirectory>${project.basedir}/${genSource.dir}</outputDirectory>
+                            <options></options>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <artifactId>hibernate-jpamodelgen</artifactId>
+                        <groupId>org.hibernate</groupId>
+                            <version>${hibernate-jpamodelgen.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
         </plugins>
