@@ -7,7 +7,7 @@ import org.springframework.data.repository.NoRepositoryBean;
 import java.util.List;
 
 /**
- * Registration repository.
+ * Real Estate repository.
  */
 @NoRepositoryBean
 public interface RealEstateRepository<T extends RealEstate>

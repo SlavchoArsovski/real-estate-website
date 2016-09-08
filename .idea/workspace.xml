@@ -2,26 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dd96e0c-3f3d-455d-9bd9-66c87d016351" name="Default" comment="added deployment plugin">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/AgriculturalFieldRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/AgriculturalFieldRepositoryImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GarageRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GarageRepositoryImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GroundRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GroundRepositoryImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/OfficeSpaceRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/OfficeSpaceRepositoryImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepositoryImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/BasicDataSourceProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/BasicDataSourceProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/DataModelConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/DataModelConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/EntityManagerFactoryProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/EntityManagerFactoryProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/JpaPropertiesProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/JpaPropertiesProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/JpaTransactionManagerProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/configuration/JpaTransactionManagerProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/AgriculturalField.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/AgriculturalField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Apartment.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Apartment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Garage.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Garage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Ground.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Ground.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/House.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/House.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/OfficeSpace.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/OfficeSpace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstateType.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstateType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/SearchModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/SearchModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/HouseRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/HouseRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateCustomRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateCustomRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RepositoryComponents.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RepositoryComponents.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/controller/HomeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db/sql/real_estate_website.sql" afterPath="$PROJECT_DIR$/src/main/resources/db/sql/real_estate_website.sql" />
     </list>
     <ignored path="real-estate-website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,21 +48,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HouseRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/HouseRepository.java">
+      <file leaf-file-name="AgriculturalFieldRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/AgriculturalFieldRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RealEstate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstate.java">
+      <file leaf-file-name="OfficeSpaceRepositoryImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/OfficeSpaceRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroundRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GroundRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApartmentRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/ApartmentRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,84 +124,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RealEstateCustomRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateCustomRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RealEstateRepositoryImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepositoryImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RepositoryComponents.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RepositoryComponents.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RealEstateRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApartmentRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/ApartmentRepository.java">
+      <file leaf-file-name="GarageRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GarageRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApartmentRepositoryImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/ApartmentRepositoryImpl.java">
+      <file leaf-file-name="GroundRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GroundRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/SearchModel.java">
+      <file leaf-file-name="OfficeSpaceRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/OfficeSpaceRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3247">
-              <caret line="227" column="28" selection-start-line="227" selection-start-column="28" selection-end-line="227" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6881#6882#0" expanded="true" />
-                <element signature="e#6938#6939#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -190,16 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/app.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/controller/WebComponents.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/real_estate.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/ehcache-orm-default.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/si/seminar/realestatewebsite/db/repository/RealEsatateRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/db/insert-data.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/db/create-db.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/configuration/spring/WebInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/db/sql/create-db.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/log4.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/db/sql/insert-data.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/fe-messages.properties" />
@@ -218,11 +194,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/ApartmentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/HouseRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/SearchModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/ApartmentRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstateType.java" />
@@ -238,9 +212,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Ground.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/House.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/OfficeSpace.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RepositoryComponents.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/HouseRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateCustomRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RepositoryComponents.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/SearchModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GarageRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GarageRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/AgriculturalFieldRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/AgriculturalFieldRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GroundRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GroundRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/OfficeSpaceRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/OfficeSpaceRepositoryImpl.java" />
       </list>
     </option>
   </component>
@@ -532,6 +518,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestatewebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -552,10 +568,12 @@
     <property name="SearchEverywhereHistoryKey" value="RestCo&#9;PSI&#9;JAVA://org.springframework.web.bind.annotation.RestController" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.si.seminar.realestatewebsite.db.repository" />
-      <recent name="com.si.seminar.realestatewebsite.services" />
-      <recent name="com.si.seminar.realestatewebsite.db.datamodel" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\data\real-estate-website\src\main\resources\messages" />
+      <recent name="C:\data\real-estate-website\src\main\resources" />
+      <recent name="C:\data\real-estate-website\src\main\resources\db\sql" />
+      <recent name="C:\data\real-estate-website\src\main\webapp\images" />
+      <recent name="C:\data\real-estate-website\src\main\webapp" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.si.seminar.realestatewebsite.db.datamodel" />
@@ -572,12 +590,10 @@
       <recent name="com.si.seminar.realestatewebsite.db.repository" />
       <recent name="com.si.seminar.realestatewebsite.db.datamodel" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\data\real-estate-website\src\main\resources\messages" />
-      <recent name="C:\data\real-estate-website\src\main\resources" />
-      <recent name="C:\data\real-estate-website\src\main\resources\db\sql" />
-      <recent name="C:\data\real-estate-website\src\main\webapp\images" />
-      <recent name="C:\data\real-estate-website\src\main\webapp" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.si.seminar.realestatewebsite.db.repository" />
+      <recent name="com.si.seminar.realestatewebsite.services" />
+      <recent name="com.si.seminar.realestatewebsite.db.datamodel" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.real-estate-website clean install">
@@ -1189,7 +1205,7 @@
       <workItem from="1473269811108" duration="17913000" />
       <workItem from="1473341090855" duration="10511000" />
       <workItem from="1473351651586" duration="137000" />
-      <workItem from="1473351811184" duration="884000" />
+      <workItem from="1473351811184" duration="2917000" />
     </task>
     <task id="LOCAL-00001" summary="added deployment plugin">
       <created>1472073404233</created>
@@ -1247,11 +1263,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473351220655</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="cleanup">
+      <created>1473365524801</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1473365524801</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104696000" />
+    <option name="totallyTimeSpent" value="106729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1338,7 +1361,8 @@
     <MESSAGE value="datamodel" />
     <MESSAGE value="added meta model plugin" />
     <MESSAGE value="added deployment plugin" />
-    <option name="LAST_COMMIT_MESSAGE" value="added deployment plugin" />
+    <MESSAGE value="cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1351,58 +1375,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/services/RealEstateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/metamodel/com/si/seminar/realestatewebsite/db/datamodel/OfficeSpace_.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final-sources.jar!/javax/persistence/criteria/Root.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateCustomRepositoryImpl.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final-sources.jar!/javax/persistence/EntityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="552" column="29" selection-start-line="552" selection-start-column="29" selection-end-line="552" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/metamodel/com/si/seminar/realestatewebsite/db/datamodel/AgriculturalField_.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ehcache-orm-default.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="89" selection-start-line="20" selection-start-column="89" selection-end-line="20" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/java/jdk/64/1.8.0_45/src.zip!/java/lang/Boolean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="130" column="19" selection-start-line="130" selection-start-column="19" selection-end-line="130" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final-sources.jar!/javax/persistence/criteria/CriteriaBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -1496,22 +1468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstateType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/sql/real_estate_website.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1566,10 +1522,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/AgriculturalField.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Garage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RepositoryComponents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/HouseRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/OfficeSpace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1580,16 +1582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Garage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1614,34 +1606,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/OfficeSpace.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstateType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/Room.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/SearchModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GarageRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3247">
-          <caret line="227" column="28" selection-start-line="227" selection-start-column="28" selection-end-line="227" selection-end-column="28" />
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/AgriculturalField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6881#6882#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1650,6 +1644,86 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateCustomRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-377">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/AgriculturalFieldRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/SearchModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GroundRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/OfficeSpaceRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/AgriculturalFieldRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1664,10 +1738,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/HouseRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GarageRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GroundRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1682,40 +1764,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateCustomRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/OfficeSpaceRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RepositoryComponents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+        <state relative-caret-position="221">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -6,7 +6,7 @@ import com.si.seminar.realestatewebsite.db.datamodel.SearchModel;
 import java.util.List;
 
 /**
- * House Custom Repossitory.
+ * House Custom Repository.
  */
 public interface RealEstateCustomRepository<T extends RealEstate> {
 
