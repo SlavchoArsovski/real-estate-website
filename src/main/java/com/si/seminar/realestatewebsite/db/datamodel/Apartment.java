@@ -3,7 +3,6 @@ package com.si.seminar.realestatewebsite.db.datamodel;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  * Apartment DB model.

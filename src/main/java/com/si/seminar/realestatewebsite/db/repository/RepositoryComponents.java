@@ -1,7 +1,7 @@
 package com.si.seminar.realestatewebsite.db.repository;
 
 /**
- * Created by sarsovsk on 03.09.2016.
+ * Marker interface used for component scanning.
  */
 public interface RepositoryComponents {
 }

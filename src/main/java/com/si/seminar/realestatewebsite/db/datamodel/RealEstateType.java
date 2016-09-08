@@ -6,7 +6,7 @@ package com.si.seminar.realestatewebsite.db.datamodel;
 public enum RealEstateType {
 
     APARTMENT,
-    HOUSE_VILLA,
+    HOUSE,
     ROOM,
     GARAGE,
     OFFICE_SPACE,

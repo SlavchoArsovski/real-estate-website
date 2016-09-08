@@ -10,25 +10,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
-import static org.hibernate.cfg.AvailableSettings.CACHE_REGION_FACTORY;
-import static org.hibernate.cfg.AvailableSettings.DEFAULT_BATCH_FETCH_SIZE;
-import static org.hibernate.cfg.AvailableSettings.DEFAULT_SCHEMA;
-import static org.hibernate.cfg.AvailableSettings.DIALECT;
-import static org.hibernate.cfg.AvailableSettings.FORMAT_SQL;
-import static org.hibernate.cfg.AvailableSettings.GENERATE_STATISTICS;
-import static org.hibernate.cfg.AvailableSettings.HBM2DDL_AUTO;
-import static org.hibernate.cfg.AvailableSettings.HBM2DDL_IMPORT_FILES;
-import static org.hibernate.cfg.AvailableSettings.LOG_SESSION_METRICS;
-import static org.hibernate.cfg.AvailableSettings.SHOW_SQL;
-import static org.hibernate.cfg.AvailableSettings.USE_QUERY_CACHE;
-import static org.hibernate.cfg.AvailableSettings.USE_SECOND_LEVEL_CACHE;
-import static org.hibernate.cfg.AvailableSettings.USE_SQL_COMMENTS;
-import static org.hibernate.jpa.AvailableSettings.NAMING_STRATEGY;
-import static java.lang.String.valueOf;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+
+import static java.lang.String.valueOf;
+import static org.hibernate.cfg.AvailableSettings.*;
+import static org.hibernate.jpa.AvailableSettings.NAMING_STRATEGY;
 
 /**
  * Provides JPA properties to be used with the {@link javax.persistence.EntityManager}.

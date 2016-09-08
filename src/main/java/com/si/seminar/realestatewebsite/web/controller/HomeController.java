@@ -40,7 +40,7 @@ public class HomeController implements ApplicationContextAware {
     public List<House> getAllHouses() {
 
         SearchModel searchModel = new SearchModel
-                .Builder(RealEstateType.HOUSE_VILLA)
+                .Builder(RealEstateType.HOUSE)
                 .city("Skopje")
                 .region("Kozle")
                 .priceFrom(BigDecimal.valueOf(100000L))

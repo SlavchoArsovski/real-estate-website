@@ -14,7 +14,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
- * Created by sarsovsk on 08.09.2016.
+ * Implementation of {@link RealEstateCustomRepository}.
  */
 public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements RealEstateCustomRepository {
 
@@ -22,11 +22,6 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
     private EntityManager entityManager;
 
     protected abstract Class<T> getType();
-
-    protected abstract List<Predicate> addCustomPredicates(
-            CriteriaBuilder criteriaBuilder,
-            Root<T> realEstateRoot,
-            SearchModel searchModel);
 
     @Override
     public List<T> getAllRealEstatesFromSearchModel(SearchModel searchModel, int pageIndex, int pageSize) {
@@ -94,6 +89,14 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
                         .getResultList();
 
         return resultList;
+    }
+
+    protected List<Predicate> addCustomPredicates(
+            CriteriaBuilder criteriaBuilder,
+            Root<T> realEstateRoot,
+            SearchModel searchModel) {
+
+        return Lists.newArrayList();
     }
 
 }

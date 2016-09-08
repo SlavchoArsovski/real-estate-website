@@ -1,17 +1,14 @@
 package com.si.seminar.realestatewebsite.db.datamodel;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  * House DB model.
  */
 @Entity
-@DiscriminatorValue("HOUSE_VILLA")
+@DiscriminatorValue("HOUSE")
 public class House extends RealEstate {
 
     @Column(name = "YEAR_OF_CONSTRUCTION")

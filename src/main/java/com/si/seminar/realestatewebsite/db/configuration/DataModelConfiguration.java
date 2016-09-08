@@ -1,8 +1,6 @@
 package com.si.seminar.realestatewebsite.db.configuration;
 
 import com.si.seminar.realestatewebsite.db.repository.RepositoryComponents;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Priority;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
