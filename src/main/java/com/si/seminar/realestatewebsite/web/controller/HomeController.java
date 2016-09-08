@@ -1,11 +1,10 @@
 package com.si.seminar.realestatewebsite.web.controller;
 
-import com.si.seminar.realestatewebsite.db.datamodel.*;
-import com.si.seminar.realestatewebsite.db.repository.HouseRepository;
-import org.springframework.beans.BeansException;
+import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
+import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
+import com.si.seminar.realestatewebsite.db.datamodel.SearchModel;
+import com.si.seminar.realestatewebsite.services.RealEstateService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,14 +18,12 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/home")
-public class HomeController implements ApplicationContextAware {
-
-    private ApplicationContext applicationContext;
+public class HomeController {
 
     public static final String HOME_VIEW_NAME = "home";
 
     @Autowired
-    private HouseRepository houseRepository;
+    private RealEstateService realEstateService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String home() {
@@ -37,7 +34,7 @@ public class HomeController implements ApplicationContextAware {
     @RequestMapping(value = "/getAllHouses", method = RequestMethod.GET)
     @ResponseBody
 
-    public List<House> getAllHouses() {
+    public List<RealEstate> getAllHouses() {
 
         SearchModel searchModel = new SearchModel
                 .Builder(RealEstateType.HOUSE)
@@ -54,21 +51,9 @@ public class HomeController implements ApplicationContextAware {
                 .centralHeatingIncluded(Boolean.FALSE)
                 .build();
 
-        List<House> all = houseRepository.getAllRealEstatesFromSearchModel(searchModel, 1, 10);
+        List<RealEstate> realEstates = realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
 
-        return all;
+        return realEstates;
     }
 
-    @RequestMapping(value = "/getAllApartments", method = RequestMethod.GET)
-    @ResponseBody
-    public List<Apartment> getAllApartments() {
-
-
-        return null;
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
-    }
 }

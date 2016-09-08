@@ -10,5 +10,13 @@ import java.util.List;
  */
 public interface RealEstateService {
 
+    /**
+     * Get Real Estates From Search Parameters.
+     *
+     * @param searchModel the search model.
+     * @param pageNumber the page number.
+     *
+     * @return List of {@link RealEstate} that matched the given criteria.
+     */
     List<RealEstate> getRealEstatesFromSearchParams(SearchModel searchModel, int pageNumber);
 }
