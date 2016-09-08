@@ -1,6 +1,7 @@
 package com.si.seminar.realestatewebsite.db.datamodel;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 /**
  * Contains search result params.
@@ -26,6 +27,7 @@ public class SearchModel {
     private final Boolean poolIncluded;
     private final Boolean parkingIncluded;
     private final Boolean elevatorIncluded;
+    private final Integer numberOfRooms;
 
     public static class Builder {
 
@@ -48,6 +50,7 @@ public class SearchModel {
         private Boolean poolIncluded;
         private Boolean parkingIncluded;
         private Boolean elevatorIncluded;
+        private Integer numberOfRooms;
 
         public Builder(RealEstateType realEstateType) {
             this.realEstateType = realEstateType;
@@ -128,6 +131,11 @@ public class SearchModel {
             return this;
         }
 
+        public Builder numberOfRooms(Integer numberOfRooms) {
+            this.numberOfRooms = numberOfRooms;
+            return this;
+        }
+
         public SearchModel build() {
             return new SearchModel(this);
         }
@@ -150,69 +158,74 @@ public class SearchModel {
         this.poolIncluded = builder.poolIncluded;
         this.parkingIncluded = builder.parkingIncluded;
         this.elevatorIncluded = builder.elevatorIncluded;
+        this.numberOfRooms = builder.numberOfRooms;
     }
 
     public RealEstateType getRealEstateType() {
         return realEstateType;
     }
 
-    public Integer getSquareMetersFrom() {
-        return squareMetersFrom;
+    public Optional<Integer> getSquareMetersFrom() {
+        return Optional.ofNullable(squareMetersFrom);
     }
 
-    public Integer getSquareMetersTo() {
-        return squareMetersTo;
+    public Optional<Integer> getSquareMetersTo() {
+        return Optional.ofNullable(squareMetersTo);
     }
 
-    public String getCity() {
-        return city;
+    public Optional<String> getCity() {
+        return Optional.ofNullable(city);
     }
 
-    public String getRegion() {
-        return region;
+    public Optional<String> getRegion() {
+        return Optional.ofNullable(region);
     }
 
-    public String getAddress() {
-        return address;
+    public Optional<String> getAddress() {
+        return Optional.ofNullable(address);
     }
 
-    public BigDecimal getPriceFrom() {
-        return priceFrom;
+    public Optional<BigDecimal> getPriceFrom() {
+        return Optional.ofNullable(priceFrom);
     }
 
-    public BigDecimal getPriceTo() {
-        return priceTo;
+    public Optional<BigDecimal> getPriceTo() {
+        return Optional.ofNullable(priceTo);
     }
 
-    public Integer getYearOfConstruction() {
-        return yearOfConstruction;
+    public Optional<Integer> getYearOfConstruction() {
+        return Optional.ofNullable(yearOfConstruction);
     }
 
-    public Boolean getCentralHeatingIncluded() {
-        return centralHeatingIncluded;
+    public Optional<Boolean> getCentralHeatingIncluded() {
+        return Optional.ofNullable(centralHeatingIncluded);
     }
 
-    public Boolean getAirConditioned() {
-        return airConditioned;
+    public Optional<Boolean> getAirConditioned() {
+        return Optional.ofNullable(airConditioned);
     }
 
-    public Boolean getYardIncluded() {
-        return yardIncluded;
+    public Optional<Boolean> getYardIncluded() {
+        return Optional.ofNullable(yardIncluded);
     }
 
-    public Boolean getGarageIncluded() {
-        return garageIncluded;
+    public Optional<Boolean> getGarageIncluded() {
+        return Optional.ofNullable(garageIncluded);
     }
 
-    public Boolean getPoolIncluded() {
-        return poolIncluded;
+    public Optional<Boolean> getPoolIncluded() {
+        return Optional.ofNullable(poolIncluded);
     }
 
-    public Boolean getParkingIncluded() {
-        return parkingIncluded;
+    public Optional<Boolean> getParkingIncluded() {
+        return Optional.ofNullable(parkingIncluded);
     }
 
-    public Boolean getElevatorIncluded() {
-        return elevatorIncluded;
+    public Optional<Boolean> getElevatorIncluded() {
+        return Optional.ofNullable(elevatorIncluded);
+    }
+
+    public Optional<Integer> getNumberOfRooms() {
+        return Optional.ofNullable(numberOfRooms);
     }
 }

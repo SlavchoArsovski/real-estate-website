@@ -31,7 +31,7 @@ public abstract class RealEstate {
     private RealEstateType realEstateType;
 
     @Column(name = "SQUARE_METERS")
-    private BigDecimal squareMeters;
+    private Integer squareMeters;
 
     @Column(name = "CITY")
     private String city;
@@ -72,11 +72,11 @@ public abstract class RealEstate {
         this.realEstateType = realEstateType;
     }
 
-    public BigDecimal getSquareMeters() {
+    public Integer getSquareMeters() {
         return squareMeters;
     }
 
-    public void setSquareMeters(BigDecimal squareMeters) {
+    public void setSquareMeters(Integer squareMeters) {
         this.squareMeters = squareMeters;
     }
 

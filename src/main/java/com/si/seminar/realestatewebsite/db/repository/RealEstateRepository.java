@@ -1,5 +1,6 @@
 package com.si.seminar.realestatewebsite.db.repository;
 
+import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 
@@ -9,7 +10,8 @@ import java.util.List;
  * Registration repository.
  */
 @NoRepositoryBean
-public interface RealEstateRepository<T>  extends CrudRepository<T, Long> {
+public interface RealEstateRepository<T extends RealEstate>
+        extends CrudRepository<T, Long>, RealEstateCustomRepository<T> {
 
   /**
    * Returns entities.

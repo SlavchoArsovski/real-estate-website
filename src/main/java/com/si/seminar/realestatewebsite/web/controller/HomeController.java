@@ -1,9 +1,7 @@
 package com.si.seminar.realestatewebsite.web.controller;
 
 import com.si.seminar.realestatewebsite.db.datamodel.*;
-import com.si.seminar.realestatewebsite.db.repository.ApartmentRepository;
 import com.si.seminar.realestatewebsite.db.repository.HouseRepository;
-import com.si.seminar.realestatewebsite.db.repository.RealEstateRepository;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -29,9 +28,6 @@ public class HomeController implements ApplicationContextAware {
     @Autowired
     private HouseRepository houseRepository;
 
-    @Autowired
-    private ApartmentRepository apartmentRepository;
-
     @RequestMapping(method = RequestMethod.GET)
     public String home() {
 
@@ -45,15 +41,20 @@ public class HomeController implements ApplicationContextAware {
 
         SearchModel searchModel = new SearchModel
                 .Builder(RealEstateType.HOUSE_VILLA)
+                .city("Skopje")
+                .region("Kozle")
+                .priceFrom(BigDecimal.valueOf(100000L))
+                .priceTo(BigDecimal.valueOf(1000001L))
+                .squareMetersFrom(200)
+                .squareMetersTo(300)
                 .garageIncluded(Boolean.TRUE)
                 .yardIncluded(Boolean.TRUE)
                 .airConditioned(Boolean.TRUE)
-                .poolIncluded(Boolean.FALSE)
                 .yearOfConstruction(2002)
                 .centralHeatingIncluded(Boolean.FALSE)
                 .build();
 
-        List<House> all = houseRepository.getAllHousesFromSearchModel(searchModel, 0, 0);
+        List<House> all = houseRepository.getAllRealEstatesFromSearchModel(searchModel, 1, 10);
 
         return all;
     }
@@ -62,9 +63,8 @@ public class HomeController implements ApplicationContextAware {
     @ResponseBody
     public List<Apartment> getAllApartments() {
 
-        List<Apartment> all = apartmentRepository.findAll();
 
-        return all;
+        return null;
     }
 
     @Override

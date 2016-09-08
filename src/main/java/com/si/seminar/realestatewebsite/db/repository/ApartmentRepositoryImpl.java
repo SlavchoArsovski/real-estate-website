@@ -1,8 +1,8 @@
 package com.si.seminar.realestatewebsite.db.repository;
 
 import com.google.common.collect.Lists;
-import com.si.seminar.realestatewebsite.db.datamodel.House;
-import com.si.seminar.realestatewebsite.db.datamodel.House_;
+import com.si.seminar.realestatewebsite.db.datamodel.Apartment;
+import com.si.seminar.realestatewebsite.db.datamodel.Apartment_;
 import com.si.seminar.realestatewebsite.db.datamodel.SearchModel;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -13,17 +13,17 @@ import java.util.List;
 /**
  * Implementation of {@link RealEstateRepositoryImpl}.
  */
-public class HouseRepositoryImpl extends RealEstateRepositoryImpl<House> {
+public class ApartmentRepositoryImpl extends RealEstateRepositoryImpl<Apartment> {
 
     @Override
     protected Class getType() {
-        return House.class;
+        return Apartment.class;
     }
 
     @Override
     protected List<Predicate> addCustomPredicates(
             CriteriaBuilder criteriaBuilder,
-            Root<House> realEstateRoot,
+            Root<Apartment> realEstateRoot,
             SearchModel searchModel) {
 
         List<Predicate> predicates = Lists.newArrayList();
@@ -31,44 +31,43 @@ public class HouseRepositoryImpl extends RealEstateRepositoryImpl<House> {
         if (searchModel.getYearOfConstruction().isPresent()) {
             predicates.add(
                     criteriaBuilder.equal(
-                            realEstateRoot.get(House_.yearOfConstruction),
+                            realEstateRoot.get(Apartment_.yearOfConstruction),
                             searchModel.getYearOfConstruction().get()));
         }
 
         if (searchModel.getCentralHeatingIncluded().isPresent()) {
             predicates.add(
                     criteriaBuilder.equal(
-                            realEstateRoot.get(House_.centralHeatingIncluded),
+                            realEstateRoot.get(Apartment_.centralHeatingIncluded),
                             searchModel.getCentralHeatingIncluded().get()));
         }
 
         if (searchModel.getAirConditioned().isPresent()) {
             predicates.add(
                     criteriaBuilder.equal(
-                            realEstateRoot.get(House_.airConditioned),
+                            realEstateRoot.get(Apartment_.airConditioned),
                             searchModel.getAirConditioned().get()));
         }
 
-
-        if (searchModel.getGarageIncluded().isPresent()) {
+        if (searchModel.getParkingIncluded().isPresent()) {
             predicates.add(
                     criteriaBuilder.equal(
-                            realEstateRoot.get(House_.garageIncluded),
-                            searchModel.getGarageIncluded().get()));
+                            realEstateRoot.get(Apartment_.parkingIncluded),
+                            searchModel.getParkingIncluded().get()));
         }
 
-        if (searchModel.getPoolIncluded().isPresent()) {
+        if (searchModel.getElevatorIncluded().isPresent()) {
             predicates.add(
                     criteriaBuilder.equal(
-                            realEstateRoot.get(House_.poolIncluded),
-                            searchModel.getPoolIncluded().get()));
+                            realEstateRoot.get(Apartment_.elevatorIncluded),
+                            searchModel.getElevatorIncluded().get()));
         }
 
-        if (searchModel.getYardIncluded().isPresent()) {
+        if (searchModel.getNumberOfRooms().isPresent()) {
             predicates.add(
                     criteriaBuilder.equal(
-                            realEstateRoot.get(House_.yardIncluded),
-                            searchModel.getYardIncluded().get()));
+                            realEstateRoot.get(Apartment_.numberOfRooms),
+                            searchModel.getNumberOfRooms().get()));
         }
 
         return predicates;
