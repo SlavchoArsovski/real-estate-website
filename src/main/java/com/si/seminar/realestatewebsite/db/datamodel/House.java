@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * House DB model.
  */
 @Entity
-@DiscriminatorValue("HOUSE")
+@DiscriminatorValue("HOUSE_VILLA")
 public class House extends RealEstate {
 
     @Column(name = "YEAR_OF_CONSTRUCTION")

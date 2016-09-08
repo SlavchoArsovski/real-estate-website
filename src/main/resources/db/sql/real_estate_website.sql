@@ -7,13 +7,11 @@ CREATE TABLE REAL_ESTATE (
   -- all real estate properties
 	DESCRIPTION varchar2(40),
   REAL_ESTATE_TYPE varchar2(40) not null,
-  SQUARE_METERS_FROM number(5,0),
-  SQUARE_METERS_TO number(5,0),
+  SQUARE_METERS number(5,0),
   CITY varchar2(40) not null,
   REGION varchar2(40) not null,
   ADDRESS varchar2(100) not null,
-  PRICE_FROM number(19,0),
-  PRICE_TO number(19,0),
+  PRICE number(19,0),
   IMAGE_PATH varchar2(100),
 
   -- house, apartment and office space common properties

@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Access(AccessType.FIELD)
 @DiscriminatorColumn(name="REAL_ESTATE_TYPE", discriminatorType = DiscriminatorType.STRING)
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-public class RealEstate {
+public abstract class RealEstate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "REAL_ESTATE_ID_SEQUENCE_GENERATOR")

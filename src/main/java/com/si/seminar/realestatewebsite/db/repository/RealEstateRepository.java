@@ -1,22 +1,27 @@
 package com.si.seminar.realestatewebsite.db.repository;
 
-import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.NoRepositoryBean;
 
 import java.util.List;
 
 /**
  * Registration repository.
  */
-public interface RealEstateRepository extends CrudRepository<RealEstate, Long> {
+@NoRepositoryBean
+public interface RealEstateRepository<T>  extends CrudRepository<T, Long> {
 
   /**
-   * Returns all registrations.
+   * Returns entities.
    * 
    * @return list of all entities.
    */
-  List<RealEstate> findAll();
+  List<T> findAll();
 
-  RealEstate findById(Long id);
-
+  /**
+   * Find entity by Id.
+   * @param id
+   * @return found entity.
+   */
+  T findById(Long id);
 }
