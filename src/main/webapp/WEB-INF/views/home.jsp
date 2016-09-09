@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -11,12 +12,12 @@
 <html>
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <link href="${mainCss}" rel="stylesheet"/>
     <script src="${jqueryJs}"></script>
 
-    <title>Homes for sale, Real Estate and Property Listing</title>
+    <title><spring:message code="realestatewebsite.fe.messages.home.title" text="default text" /></title>
 
 </head>
 <body>
@@ -86,6 +87,16 @@
 </div>
 
 <div class="main-container">
+
+    <c:forEach items="${viewBean.realEstates}" var="realEstate">
+        <div class="real-estate-container">
+            <div>${realEstate.realEstateType}</div>
+            <div>Град: ${realEstate.city}</div>
+            <div>Регион: ${realEstate.region}</div>
+            <div>Површина: ${realEstate.squareMeters}</div>
+            <div>Цена: ${realEstate.price}</div>
+        </div>
+    </c:forEach>
 
 
 </div>

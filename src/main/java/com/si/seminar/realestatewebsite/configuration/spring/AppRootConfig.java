@@ -34,15 +34,6 @@ public class AppRootConfig  implements ApplicationContextAware {
         return propertyPlaceholderConfigurer;
     }
 
-    @Bean
-    public ResourceBundleMessageSource resourceBundleMessageSource() {
-
-        ResourceBundleMessageSource resourceBundleMessageSource = new ResourceBundleMessageSource();
-        resourceBundleMessageSource.setBasename("messages/messages");
-        resourceBundleMessageSource.setDefaultEncoding("UTF-8");
-        return resourceBundleMessageSource;
-    }
-
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
