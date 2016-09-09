@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Locale;
+
 /**
  * Controller for home page.
  */
@@ -22,11 +24,11 @@ public class HomeController {
     private RealEstateViewService viewService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView home() {
+    public ModelAndView home(Locale locale) {
 
         ModelAndView modelAndView = new ModelAndView(HOME_VIEW_NAME);
 
-        HomeViewModel initialViewModel = viewService.getInitialViewModel();
+        HomeViewModel initialViewModel = viewService.getInitialViewModel(locale);
         modelAndView.addObject(VIEW_BEAN, initialViewModel);
 
         return modelAndView;

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 /**
@@ -23,7 +24,10 @@ public class RealEstateViewService {
     @Autowired
     private RealEstateService realEstateService;
 
-    public HomeViewModel getInitialViewModel() {
+    @Autowired
+    private RealEstateMapper realEstateMapper;
+
+    public HomeViewModel getInitialViewModel(Locale locale) {
 
         SearchModel searchModel = new SearchModel
                 .Builder(RealEstateType.HOUSE)
@@ -35,12 +39,16 @@ public class RealEstateViewService {
         List<RealEstateViewModel> viewModels =
                 realEstatesFromSearchParams
                         .stream()
-                        .map(RealEstateMapper::mapRealEstateToRealEstateViewModel)
+                        .map(realEstate -> {
+                            return realEstateMapper.mapRealEstateToRealEstateViewModel(realEstate);
+                        })
                         .collect(Collectors.toList());
 
 
         HomeViewModel homeViewModel = new HomeViewModel();
         homeViewModel.setRealEstates(viewModels);
+        homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes(locale));
+        homeViewModel.setSelectedRealEstateType("ALL");
 
         return homeViewModel;
     }
