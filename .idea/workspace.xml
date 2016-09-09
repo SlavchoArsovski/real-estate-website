@@ -1617,7 +1617,7 @@
       <workItem from="1473341090855" duration="10511000" />
       <workItem from="1473351651586" duration="137000" />
       <workItem from="1473351811184" duration="6156000" />
-      <workItem from="1473372269745" duration="7479000" />
+      <workItem from="1473372269745" duration="7593000" />
     </task>
     <task id="LOCAL-00001" summary="added deployment plugin">
       <created>1472073404233</created>
@@ -1696,11 +1696,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473371471971</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="support for locale, added view services">
+      <created>1473380664302</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1473380664302</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117447000" />
+    <option name="totallyTimeSpent" value="117561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1790,7 +1797,8 @@
     <MESSAGE value="cleanup" />
     <MESSAGE value="complete repositories" />
     <MESSAGE value="added real estate service for fetching search data" />
-    <option name="LAST_COMMIT_MESSAGE" value="added real estate service for fetching search data" />
+    <MESSAGE value="support for locale, added view services" />
+    <option name="LAST_COMMIT_MESSAGE" value="support for locale, added view services" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
