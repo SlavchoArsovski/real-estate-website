@@ -96,42 +96,19 @@
                     Price To: <input type="text" />
                 </div>
 
-                <select onchange="showSubItems(this.value)" name="location" class="large">
-                    <option value="">Сите</option>
+                <select>
+                    <c:forEach items="${viewBean.citiesDropdown}" var="city">
 
-                    <option value="1">Скопје</option>
-                    <option value="2">Берово</option>
-                    <option value="3">Битола</option>
-                    <option value="4">Дебар</option>
-                    <option value="5">Делчево</option>
-                    <option value="6">Демир Хисар</option>
-                    <option value="33">Дојран</option>
-                    <option value="7">Гевгелија</option>
-                    <option value="8">Гостивар</option>
-                    <option value="9">Кавадарци</option>
-                    <option value="10">Кичево</option>
-                    <option value="11">Кочани</option>
-                    <option value="12">Кратово</option>
-                    <option value="13">Крива Паланка</option>
-                    <option value="14">Крушево</option>
-                    <option value="15">Куманово</option>
-                    <option value="32">Маврово</option>
-                    <option value="16">Македонски Брод</option>
-                    <option value="17">Неготино</option>
-                    <option value="18">Охрид</option>
-                    <option value="31">Пехчево</option>
-                    <option value="19">Прилеп</option>
-                    <option value="20">Пробиштип</option>
-                    <option value="21">Радовиш</option>
-                    <option value="22">Ресен</option>
-                    <option value="23">Штип</option>
-                    <option value="24">Струга</option>
-                    <option value="25">Струмица</option>
-                    <option value="26">Свети Николе</option>
-                    <option value="27">Тетово</option>
-                    <option value="28">Валандово</option>
-                    <option value="29">Велес</option>
-                    <option value="30">Виница</option>
+                        <c:choose>
+                            <c:when test="${city.key.equals(viewBean.selectedCity)}">
+                                <option value="${city.key}" selected="selected">${city.value}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="${city.key}">${city.value}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+
                 </select>
 
             </div>

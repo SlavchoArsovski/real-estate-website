@@ -49,6 +49,8 @@ public class RealEstateViewService {
         homeViewModel.setRealEstates(viewModels);
         homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes(locale));
         homeViewModel.setSelectedRealEstateType("ALL");
+        homeViewModel.setCitiesDropdown(realEstateMapper.mapCities(locale));
+        homeViewModel.setSelectedCity("ALL");
 
         return homeViewModel;
     }

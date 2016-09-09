@@ -10,6 +10,8 @@ public class HomeViewModel {
 
     private Map<String, String> realEstateTypesDropdown;
     private String selectedRealEstateType;
+    private Map<String, String> citiesDropdown;
+    private String selectedCity;
 
     private List<RealEstateViewModel> realEstates;
 
@@ -35,5 +37,21 @@ public class HomeViewModel {
 
     public void setRealEstates(List<RealEstateViewModel> realEstates) {
         this.realEstates = realEstates;
+    }
+
+    public Map<String, String> getCitiesDropdown() {
+        return citiesDropdown;
+    }
+
+    public void setCitiesDropdown(Map<String, String> citiesDropdown) {
+        this.citiesDropdown = citiesDropdown;
+    }
+
+    public String getSelectedCity() {
+        return selectedCity;
+    }
+
+    public void setSelectedCity(String selectedCity) {
+        this.selectedCity = selectedCity;
     }
 }

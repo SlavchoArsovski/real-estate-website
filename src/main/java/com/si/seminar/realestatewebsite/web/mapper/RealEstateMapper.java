@@ -3,6 +3,7 @@ package com.si.seminar.realestatewebsite.web.mapper;
 import com.google.common.collect.Maps;
 import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
 import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
+import com.si.seminar.realestatewebsite.web.viewmodel.City;
 import com.si.seminar.realestatewebsite.web.viewmodel.RealEstateViewModel;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -20,6 +21,7 @@ import java.util.stream.Stream;
 public class RealEstateMapper implements ApplicationContextAware {
 
     public static final String REAL_ESTATA_TYPE_MESSAGE_KEY_PREFIX = "realestatewebsite.fe.messages.general.realEstateType";
+    public static final String CITIES_MESSAGE_KEY_PREFIX = "realestatewebsite.fe.messages.general.cities";
 
     private ApplicationContext appContext;
 
@@ -40,11 +42,11 @@ public class RealEstateMapper implements ApplicationContextAware {
 
         Map<String, String> realEstateTypesDropdown = Maps.newTreeMap();
 
-        String allRealEstateTypesKey =
+        String noRealEstateTypeSelectedKey =
                 String.format("%s.%s", REAL_ESTATA_TYPE_MESSAGE_KEY_PREFIX, "ALL");
-        String allRealEstateTypesMessage = getResourceMessage(allRealEstateTypesKey, locale);
+        String noRealEstateTypeSelectedMessage = getResourceMessage(noRealEstateTypeSelectedKey, locale);
 
-        realEstateTypesDropdown.put("ALL", allRealEstateTypesMessage);
+        realEstateTypesDropdown.put("ALL", noRealEstateTypeSelectedMessage);
 
         Stream.of(RealEstateType.values())
                 .forEach(realEstateType -> {
@@ -56,6 +58,29 @@ public class RealEstateMapper implements ApplicationContextAware {
                 });
 
         return realEstateTypesDropdown;
+    }
+
+    public Map<String, String> mapCities(Locale locale) {
+
+        Map<String, String> citiesDropdown = Maps.newTreeMap();
+
+        String noCityKey =
+                String.format("%s.%s", CITIES_MESSAGE_KEY_PREFIX, "ALL");
+        String noCityMessage = getResourceMessage(noCityKey, locale);
+
+        citiesDropdown.put("ALL", noCityMessage);
+
+        Stream.of(City.values())
+                .forEach(city -> {
+
+                    String messageKey =
+                            String.format("%s.%s", CITIES_MESSAGE_KEY_PREFIX, city.name());
+                    String message = getResourceMessage(messageKey, locale);
+
+                    citiesDropdown.put(city.name(), message);
+                });
+
+        return citiesDropdown;
     }
 
     private String getResourceMessage(String key, Locale locale) {
