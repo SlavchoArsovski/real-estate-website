@@ -308,3 +308,41 @@ input[type="radio"], input[type="checkbox"] {
         width: 750px;
     }
 }
+
+.real-estate-list {
+    font-size: 16px;
+    color: #333f48;
+    font-family: Museo-Sans-300,Helvetica Neue,Helvetica,Arial,Sans-serif;
+    margin: 0 auto;
+    width: 700px;
+}
+
+.real-estate-list-item {
+    cursor: pointer;
+    padding: 10px 5px;
+    display: table;
+    width: 700px;
+    height: 150px;
+    border-bottom: solid 1px #cecece;
+    border-left: solid 1px #cecece;
+    border-right: solid 1px #cecece;
+}
+
+.real-estate-list-item-image {
+    display: table-cell;
+    width: 250px;
+    background-image: url('../images/nophoto.png');
+    background-repeat: no-repeat;
+    background-size: 250px 140px;
+}
+
+.real-estate-list-item-details {
+    display: table-cell;
+    width: 450px;
+    vertical-align: middle;
+    padding: 10px 15px;
+}
+
+.real-estate-list-item-details > div {
+    line-height: 19px;
+}

@@ -17,7 +17,7 @@
     <link href="${mainCss}" rel="stylesheet"/>
     <script src="${jqueryJs}"></script>
 
-    <title><spring:message code="realestatewebsite.fe.messages.home.title" /></title>
+    <title><spring:message code="realestatewebsite.fe.messages.home.title"/></title>
 
 </head>
 <body>
@@ -44,11 +44,15 @@
                 <div id="menu-wrapper" class="menu-wrapper">
                     <div class="menu-item">
                         <input type="radio" name="property-status" id="for_sale" value="for_sale" checked="">
-                        <label for="for_sale">Buy</label>
+                        <label for="for_sale">
+                            <spring:message code="realestatewebsite.fe.messages.home.menu.item.buy"/>
+                        </label>
                     </div>
                     <div class="menu-item">
                         <input type="radio" name="property-status" id="for_rent" value="for_rent">
-                        <label for="for_rent">Rent</label>
+                        <label for="for_rent">
+                            <spring:message code="realestatewebsite.fe.messages.home.menu.item.rent"/>
+                        </label>
                     </div>
                     <div class="menu-item">
                         <input type="radio" name="property-status" id="recently_sold" value="recently_sold">
@@ -90,29 +94,46 @@
 
 <div class="main-container">
 
-    <c:forEach items="${viewBean.realEstates}" var="realEstate">
-        <div class="real-estate-container">
-            <div class="real-estate-list">
-                <div>
-                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.realEstateType" />:
-                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.realEstateType.${realEstate.realEstateType}" />
-                </div>
-                <div>
-                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.city" />: ${realEstate.city}
-                </div>
-                <div>
-                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.region" />: ${realEstate.region}
-                </div>
-                <div>
-                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.area" />: ${realEstate.squareMeters}
-                </div>
-                <div>
-                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.price" />: ${realEstate.price}
-                </div>
-            </div>
-        </div>
-    </c:forEach>
+    <div class="real-estate-container">
 
+        <div class="real-estate-list">
+            <c:forEach items="${viewBean.realEstates}" var="realEstate">
+
+                <div class="real-estate-list-item">
+
+                    <div class="real-estate-list-item-image"> </div>
+
+                    <div class="real-estate-list-item-details">
+                        <div>${realEstate.address}</div>
+
+                        <div>
+                            <spring:message
+                                    code="realestatewebsite.fe.messages.general.realEstateType.${realEstate.realEstateType}"/>
+                            <spring:message
+                                    code="realestatewebsite.fe.messages.home.realestatelist.realEstateType.atPlace"/>
+                                ${realEstate.city}, ${realEstate.region}
+                        </div>
+
+                        <div>
+                            <spring:message
+                                    code="realestatewebsite.fe.messages.home.realestatelist.area"/>: ${realEstate.squareMeters}
+                        </div>
+
+                        <div>
+                            <spring:message
+                                    code="realestatewebsite.fe.messages.home.realestatelist.price"/>: ${realEstate.price}
+                        </div>
+
+                        <div>
+                            <spring:message code="realestatewebsite.fe.messages.home.realestatelist.phone"/>: 070
+                            882-031
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
+
+        </div>
+    </div>
 
 </div>
 
