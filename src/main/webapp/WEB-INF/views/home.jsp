@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -17,10 +17,12 @@
     <link href="${mainCss}" rel="stylesheet"/>
     <script src="${jqueryJs}"></script>
 
-    <title><spring:message code="realestatewebsite.fe.messages.home.title" text="default text" /></title>
+    <title><spring:message code="realestatewebsite.fe.messages.home.title" /></title>
 
 </head>
 <body>
+
+<a href="home?language=en">EN</a> | <a href="home?language=mk">MK</a>
 
 <div class="home-header" id="homepage-header">
     <div id="hero-img-wrapper" class="hero-img-wrapper">
@@ -90,11 +92,24 @@
 
     <c:forEach items="${viewBean.realEstates}" var="realEstate">
         <div class="real-estate-container">
-            <div>${realEstate.realEstateType}</div>
-            <div>Град: ${realEstate.city}</div>
-            <div>Регион: ${realEstate.region}</div>
-            <div>Површина: ${realEstate.squareMeters}</div>
-            <div>Цена: ${realEstate.price}</div>
+            <div class="real-estate-list">
+                <div>
+                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.realEstateType" />:
+                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.realEstateType.${realEstate.realEstateType}" />
+                </div>
+                <div>
+                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.city" />: ${realEstate.city}
+                </div>
+                <div>
+                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.region" />: ${realEstate.region}
+                </div>
+                <div>
+                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.area" />: ${realEstate.squareMeters}
+                </div>
+                <div>
+                    <spring:message code="realestatewebsite.fe.messages.home.realestatelist.price" />: ${realEstate.price}
+                </div>
+            </div>
         </div>
     </c:forEach>
 
