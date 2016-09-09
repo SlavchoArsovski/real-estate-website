@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8dd96e0c-3f3d-455d-9bd9-66c87d016351" name="Default" comment="home page design">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/sarsovsk.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/City.java" />
+    <list default="true" id="8dd96e0c-3f3d-455d-9bd9-66c87d016351" name="Default" comment="home page setup">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/mapper/RealEstateMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/mapper/RealEstateMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/i18/messages.properties" afterPath="$PROJECT_DIR$/src/main/webapp/i18/messages.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/i18/messages_mk.properties" afterPath="$PROJECT_DIR$/src/main/webapp/i18/messages_mk.properties" />
     </list>
     <ignored path="real-estate-website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="messages.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/i18/messages.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="512">
@@ -135,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -227,7 +219,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/configuration/spring/WebInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/i18/messages_en_US.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/configuration/spring/WebConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java" />
@@ -238,6 +229,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/i18/messages_en.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/i18/messages.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
       </list>
     </option>
   </component>
@@ -1496,7 +1488,7 @@
       <workItem from="1473341090855" duration="10511000" />
       <workItem from="1473351651586" duration="137000" />
       <workItem from="1473351811184" duration="6156000" />
-      <workItem from="1473372269745" duration="27745000" />
+      <workItem from="1473372269745" duration="27836000" />
     </task>
     <task id="LOCAL-00001" summary="added deployment plugin">
       <created>1472073404233</created>
@@ -1610,11 +1602,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473424215732</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="home page setup">
+      <created>1473458889093</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1473458889093</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137713000" />
+    <option name="totallyTimeSpent" value="137804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1709,7 +1708,8 @@
     <MESSAGE value="internatilization" />
     <MESSAGE value="home page design" />
     <MESSAGE value="home page initial design" />
-    <option name="LAST_COMMIT_MESSAGE" value="home page initial design" />
+    <MESSAGE value="home page setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="home page setup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2126,14 +2126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/i18/messages_mk.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -2173,6 +2165,14 @@
       </provider>
       <provider editor-type-id="ResourceBundle">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
