@@ -60,7 +60,7 @@ public class RealEstateViewService {
 
     public HomeViewModel getViewModelAfterPropertyChange(
             HomePropertyChangeModel homePropertyChangeModel,
-            AdvertisementType advertismentType,
+            AdvertisementType advertisementType,
             Locale locale) {
 
         String selectedCity =
@@ -70,7 +70,7 @@ public class RealEstateViewService {
 
         SearchModel searchModel = new SearchModel
                 .Builder(RealEstateType.valueOf(homePropertyChangeModel.getSelectedRealEstateType()))
-                .advertismentType(advertismentType)
+                .advertismentType(advertisementType)
                 .priceFrom(homePropertyChangeModel.getPriceFrom())
                 .priceTo(homePropertyChangeModel.getPriceTo())
                 .squareMetersTo(homePropertyChangeModel.getSquareMetersTo())

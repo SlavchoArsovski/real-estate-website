@@ -77,53 +77,58 @@
                     </div>
                 </div>
 
-                <div>
-                    <select id="realEstateTypeDropdown">
-                        <c:forEach items="${viewBean.realEstateTypesDropdown}" var="realEstateType">
+                <div class="search-properties">
+                    <div>
+                        <select id="realEstateTypeDropdown">
+                            <c:forEach items="${viewBean.realEstateTypesDropdown}" var="realEstateType">
 
-                            <c:choose>
-                                <c:when test="${realEstateType.key.equals(viewBean.selectedRealEstateType)}">
-                                    <option value="${realEstateType.key}" selected="selected">${realEstateType.value}</option>
-                                </c:when>
-                                <c:otherwise>
-                                    <option value="${realEstateType.key}">${realEstateType.value}</option>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach>
-                    </select>
+                                <c:choose>
+                                    <c:when test="${realEstateType.key.equals(viewBean.selectedRealEstateType)}">
+                                        <option value="${realEstateType.key}"
+                                                selected="selected">${realEstateType.value}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${realEstateType.key}">${realEstateType.value}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </select>
+                    </div>
+
+                    <div>
+                        Price from: <input id="price_from" type="text" value="${viewBean.priceFrom}"/>
+                    </div>
+
+                    <div>
+                        Price to: <input id="price_to" type="text" value="${viewBean.priceTo}"/>
+                    </div>
+
+                    <div>
+                        <select id="cityDropdown">
+                            <c:forEach items="${viewBean.citiesDropdown}" var="city">
+
+                                <c:choose>
+                                    <c:when test="${city.key.equals(viewBean.selectedCity)}">
+                                        <option value="${city.key}" selected="selected">${city.value}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${city.key}">${city.value}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+
+                        </select>
+                    </div>
+
+                    <div>
+                        Square Meters from: <input id="square-meters_from" type="text"
+                                                   value="${viewBean.squareMetersFrom}"/>
+                    </div>
+
+                    <div>
+                        Square Meters to: <input id="square-meters_to" type="text" value="${viewBean.squareMetersTo}"/>
+                    </div>
                 </div>
-
-                <div>
-                    Square meters from: <input id="price_from" type="text" value="${viewBean.priceFrom}"/>
-                </div>
-
-                <div>
-                    Square meters To: <input id="price_to" type="text" value="${viewBean.priceTo}"/>
-                </div>
-
-                <select id="cityDropdown">
-                    <c:forEach items="${viewBean.citiesDropdown}" var="city">
-
-                        <c:choose>
-                            <c:when test="${city.key.equals(viewBean.selectedCity)}">
-                                <option value="${city.key}" selected="selected">${city.value}</option>
-                            </c:when>
-                            <c:otherwise>
-                                <option value="${city.key}">${city.value}</option>
-                            </c:otherwise>
-                        </c:choose>
-                    </c:forEach>
-
-                </select>
-
-                <div>
-                    Price from: <input id="square-meters_from" type="text" value="${viewBean.squareMetersFrom}"/>
-                </div>
-
-                <div>
-                    Price To: <input id="square-meters_to" type="text" value="${viewBean.squareMetersTo}"/>
-                </div>
-
             </div>
         </div>
     </div>
@@ -139,7 +144,7 @@
 
                 <div class="real-estate-list-item">
 
-                    <div class="real-estate-list-item-image"> </div>
+                    <div class="real-estate-list-item-image"></div>
 
                     <div class="real-estate-list-item-details">
                         <div>${realEstate.address}</div>

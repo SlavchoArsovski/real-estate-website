@@ -346,3 +346,14 @@ input[type="radio"], input[type="checkbox"] {
 .real-estate-list-item-details > div {
     line-height: 19px;
 }
+
+.search-properties {
+    margin-top: 15px;
+}
+
+.search-properties > div {
+    float: left;
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 350px;
+}

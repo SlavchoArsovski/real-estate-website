@@ -61,13 +61,13 @@ public class HomeController {
     public HomeViewModel home(
             @ModelAttribute HomePropertyChangeModel homePropertyChangeModel,
             @RequestParam(name = "changedProperty") String changedProperty,
-            @RequestParam(name = "advertisementType", defaultValue = "SALE") AdvertisementType advertismentType,
+            @RequestParam(name = "advertisementType", defaultValue = "SALE") AdvertisementType advertisementType,
             Locale locale) {
 
         HomeViewModel viewModel =
                 viewService.getViewModelAfterPropertyChange(
                         homePropertyChangeModel,
-                        advertismentType,
+                        advertisementType,
                         locale);
 
         return viewModel;
