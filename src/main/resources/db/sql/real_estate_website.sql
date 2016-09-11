@@ -13,6 +13,7 @@ CREATE TABLE REAL_ESTATE (
   ADDRESS varchar2(100) not null,
   PRICE number(19,0),
   IMAGE_PATH varchar2(100),
+  ADVERTISEMENT_TYPE varchar2(10),
 
   -- house, apartment and office space common properties
   YEAR_OF_CONSTRUCTION number(4,0),
@@ -42,6 +43,7 @@ alter TABLE REAL_ESTATE add (
   constraint PK_REAL_ESTATE primary key (ID),
   constraint REAL_ESTATE_TYPE_CHECK
     check ( REAL_ESTATE_TYPE in ('APARTMENT', 'HOUSE', 'ROOM', 'GARAGE', 'OFFICE_SPACE', 'AGRICULTURAL_FIELD', 'GROUND')),
+  constraint ADVERTISEMENT_TYPE_CHECK check ( ADVERTISEMENT_TYPE in ('SALE', 'RENT')),
   constraint CENTRAL_HEATING_CHECK check ( CENTRAL_HEATING_INCLUDED in (0, 1)),
   constraint AIR_CONDITIONED_CHECK check ( AIR_CONDITIONED in (0, 1)),
   constraint YARD_INCLUDED_CHECK check ( YARD_INCLUDED in (0, 1)),

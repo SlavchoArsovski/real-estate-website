@@ -5,7 +5,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <spring:url value="/css/main.css" var="mainCss"/>
+<spring:url value="/css/jquery-ui.min.css" var="jqueryUiCss"/>
 <spring:url value="/js/jquery-3.1.0.min.js" var="jqueryJs"/>
+<spring:url value="/js/jquery-ui.min.js" var="jqueryUiJs"/>
+<spring:url value="/js//home/homeView.js" var="homeView"/>
+<spring:url value="/js/home/homeModel.js" var="homeModel"/>
+<spring:url value="/js/home/homeController.js" var="homeController"/>
+
 
 <spring:url value="/images" var="imageFolderPrefix"/>
 
@@ -15,7 +21,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <link href="${mainCss}" rel="stylesheet"/>
+    <link href="${jqueryUiCss}" rel="jqueryUiCss"/>
     <script src="${jqueryJs}"></script>
+    <script src="${jqueryUiJs}"></script>
+    <script src="${homeView}"></script>
+    <script src="${homeModel}"></script>
+    <script src="${homeController}"></script>
 
     <title><spring:message code="realestatewebsite.fe.messages.home.title"/></title>
 
@@ -42,13 +53,15 @@
             </header>
             <div class="home-search-wrapper">
                 <div id="menu-wrapper" class="menu-wrapper">
-                    <div class="menu-item">
+                    <div class="menu-item"
+                         onclick="window.location.href=window.location.pathname + '?advertisementType=SALE'">
                         <input type="radio" name="property-status" id="for_sale" value="for_sale" checked="">
                         <label for="for_sale">
                             <spring:message code="realestatewebsite.fe.messages.home.menu.item.buy"/>
                         </label>
                     </div>
-                    <div class="menu-item">
+                    <div class="menu-item"
+                         onclick="window.location.href=window.location.pathname + '?advertisementType=RENT'">
                         <input type="radio" name="property-status" id="for_rent" value="for_rent">
                         <label for="for_rent">
                             <spring:message code="realestatewebsite.fe.messages.home.menu.item.rent"/>
@@ -65,15 +78,7 @@
                 </div>
 
                 <div>
-                    <select>
-                        <option>All</option>
-                        <option>Sale</option>
-                        <option>Rent</option>
-                    </select>
-                </div>
-
-                <div>
-                    <select>
+                    <select id="realEstateTypeDropdown">
                         <c:forEach items="${viewBean.realEstateTypesDropdown}" var="realEstateType">
 
                             <c:choose>
@@ -89,14 +94,14 @@
                 </div>
 
                 <div>
-                    Price from: <input type="text" />
+                    Square meters from: <input id="price_from" type="text" value="${viewBean.priceFrom}"/>
                 </div>
 
                 <div>
-                    Price To: <input type="text" />
+                    Square meters To: <input id="price_to" type="text" value="${viewBean.priceTo}"/>
                 </div>
 
-                <select>
+                <select id="cityDropdown">
                     <c:forEach items="${viewBean.citiesDropdown}" var="city">
 
                         <c:choose>
@@ -110,6 +115,14 @@
                     </c:forEach>
 
                 </select>
+
+                <div>
+                    Price from: <input id="square-meters_from" type="text" value="${viewBean.squareMetersFrom}"/>
+                </div>
+
+                <div>
+                    Price To: <input id="square-meters_to" type="text" value="${viewBean.squareMetersTo}"/>
+                </div>
 
             </div>
         </div>

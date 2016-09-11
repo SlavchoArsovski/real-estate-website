@@ -42,12 +42,6 @@ public class RealEstateMapper implements ApplicationContextAware {
 
         Map<String, String> realEstateTypesDropdown = Maps.newTreeMap();
 
-        String noRealEstateTypeSelectedKey =
-                String.format("%s.%s", REAL_ESTATA_TYPE_MESSAGE_KEY_PREFIX, "ALL");
-        String noRealEstateTypeSelectedMessage = getResourceMessage(noRealEstateTypeSelectedKey, locale);
-
-        realEstateTypesDropdown.put("ALL", noRealEstateTypeSelectedMessage);
-
         Stream.of(RealEstateType.values())
                 .forEach(realEstateType -> {
                     String messageKey =

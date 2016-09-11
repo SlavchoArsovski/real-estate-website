@@ -33,6 +33,13 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
 
         List<Predicate> predicates = Lists.newArrayList();
 
+        if (searchModel.getAdvertisementType().isPresent()) {
+            predicates.add(
+                    criteriaBuilder.equal(
+                            realEstateRoot.get(RealEstate_.advertisementType),
+                            searchModel.getAdvertisementType().get()));
+        }
+
         if (searchModel.getCity().isPresent()) {
             predicates.add(
                     criteriaBuilder.equal(

@@ -48,6 +48,10 @@ public abstract class RealEstate {
     @Column(name = "IMAGE_PATH")
     private String imagePath;
 
+    @Column(name = "ADVERTISEMENT_TYPE")
+    @Enumerated(EnumType.STRING)
+    private AdvertisementType advertisementType;
+
     public Long getId() {
         return id;
     }
@@ -118,5 +122,13 @@ public abstract class RealEstate {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public AdvertisementType getAdvertisementType() {
+        return advertisementType;
+    }
+
+    public void setAdvertisementType(AdvertisementType advertisementType) {
+        this.advertisementType = advertisementType;
     }
 }

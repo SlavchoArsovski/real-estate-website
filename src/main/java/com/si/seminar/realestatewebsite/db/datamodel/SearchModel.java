@@ -29,6 +29,7 @@ public class SearchModel {
     private final Boolean elevatorIncluded;
     private final Integer numberOfRooms;
     private final Integer numberOfBeds;
+    private final AdvertisementType advertisementType;
 
     public static class Builder {
 
@@ -53,6 +54,7 @@ public class SearchModel {
         private Boolean elevatorIncluded;
         private Integer numberOfRooms;
         private Integer numberOfBeds;
+        private AdvertisementType advertisementType;
 
         public Builder(RealEstateType realEstateType) {
             this.realEstateType = realEstateType;
@@ -143,6 +145,11 @@ public class SearchModel {
             return this;
         }
 
+        public Builder advertismentType(AdvertisementType advertismentType) {
+            this.advertisementType = advertismentType;
+            return this;
+        }
+
         public SearchModel build() {
             return new SearchModel(this);
         }
@@ -167,6 +174,7 @@ public class SearchModel {
         this.elevatorIncluded = builder.elevatorIncluded;
         this.numberOfRooms = builder.numberOfRooms;
         this.numberOfBeds = builder.numberOfBeds;
+        this.advertisementType = builder.advertisementType;
     }
 
     public RealEstateType getRealEstateType() {
@@ -239,5 +247,9 @@ public class SearchModel {
 
     public Optional<Integer> getNumberOfBeds() {
         return Optional.ofNullable(numberOfBeds);
+    }
+
+    public Optional<AdvertisementType> getAdvertisementType() {
+        return Optional.ofNullable(advertisementType);
     }
 }
