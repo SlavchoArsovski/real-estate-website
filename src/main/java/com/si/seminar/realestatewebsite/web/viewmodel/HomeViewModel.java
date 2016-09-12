@@ -36,6 +36,7 @@ public class HomeViewModel extends ViewModelWithMessage {
     private String selectedParkingIncluded;
     private Map<String, String> poolIncludedDropdown;
     private String selectedPoolIncluded;
+    private List<String> validProperties = Lists.newArrayList();
     private List<RealEstateViewModel> realEstates = Lists.newArrayList();
 
     public Map<String, String> getRealEstateTypesDropdown() {
@@ -236,6 +237,14 @@ public class HomeViewModel extends ViewModelWithMessage {
 
     public void setSelectedPoolIncluded(String selectedPoolIncluded) {
         this.selectedPoolIncluded = selectedPoolIncluded;
+    }
+
+    public List<String> getValidProperties() {
+        return validProperties;
+    }
+
+    public void setValidProperties(List<String> validProperties) {
+        this.validProperties = validProperties;
     }
 
     public List<RealEstateViewModel> getRealEstates() {

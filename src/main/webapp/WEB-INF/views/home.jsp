@@ -135,24 +135,44 @@
                                value="${viewBean.squareMetersTo}"/>
                     </div>
 
-                    <div>
+                    <c:set var="yearOfConstructionSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('YEAR_OF_CONSTRUCTION')}">
+                        <c:set var="yearOfConstructionSearchClass" value="property-disabled"/>
+                    </c:if>
+
+                    <div id="yearOfConstructionSearch" class="${yearOfConstructionSearchClass}">
                         <label class="propertyText">Year of Construction</label>
                         <input id="yearOfConstruction" class="propertyValue" type="text"
                                value="${viewBean.yearOfConstruction}"/>
                     </div>
 
-                    <div>
+                    <c:set var="numberOfRoomsSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('NUMBER_OF_ROOMS')}">
+                        <c:set var="numberOfRoomsSearchClass" value="property-disabled"/>
+                    </c:if>
+
+                    <div id="numberOfRoomsSearch" class="${numberOfRoomsSearchClass}">
                         <label class="propertyText">Number of rooms</label>
-                        <input id="numberOfRooms" class="propertyValue" type="text" value="${viewBean.numberOfRooms}"/>
+                        <input id="numberOfRooms" class="propertyValue" type="text"
+                               value="${viewBean.numberOfRooms}"/>
                     </div>
 
-                    <div>
+                    <c:set var="numberOfBedsSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('NUMBER_OF_BEDS')}">
+                        <c:set var="numberOfBedsSearchClass" value="property-disabled"/>
+                    </c:if>
+
+                    <div id="numberOfBedsSearch" class="${numberOfBedsSearchClass}">
                         <label class="propertyText">Number of beds</label>
                         <input id="numberOfBeds" class="propertyValue" type="text" value="${viewBean.numberOfBeds}"/>
                     </div>
 
+                    <c:set var="centralHeatingSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('CENTRAL_HEATING_INCLUDED')}">
+                        <c:set var="centralHeatingSearchClass" value="property-disabled"/>
+                    </c:if>
 
-                    <div>
+                    <div id="centralHeatingSearch" class="${centralHeatingSearchClass}">
                         <label class="propertyText">Central Heating</label>
                         <select id="centralHeatingDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.centralHeatingDropdown}" var="centralHeating">
@@ -170,7 +190,12 @@
                         </select>
                     </div>
 
-                    <div>
+                    <c:set var="airConditionSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('AIR_CONDITIONED')}">
+                        <c:set var="airConditionSearchClass" value="property-disabled"/>
+                    </c:if>
+
+                    <div id="airConditionSearch" class="${airConditionSearchClass}">
                         <label class="propertyText">Air Conditioned</label>
                         <select id="airConditionedDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.airConditionedDropdown}" var="airConditioned">
@@ -188,7 +213,12 @@
                         </select>
                     </div>
 
-                    <div>
+                    <c:set var="yardSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('YARD_INCLUDED')}">
+                        <c:set var="yardSearchClass" value="property-disabled"/>
+                    </c:if>
+
+                    <div id="yardSearchClass" class="${yardSearchClass}">
                         <label class="propertyText">Yard</label>
                         <select id="yardIncludedDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.yardIncludedDropdown}" var="yardIncluded">
@@ -206,7 +236,12 @@
                         </select>
                     </div>
 
-                    <div>
+                    <c:set var="garageSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('GARAGE_INCLUDED')}">
+                        <c:set var="garageSearchClass" value="property-disabled"/>
+                    </c:if>
+
+                    <div id="garageSearch" class="${garageSearchClass}">
                         <label class="propertyText">Garage</label>
                         <select id="garageIncludedDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.garageIncludedDropdown}" var="garageIncluded">
@@ -224,7 +259,12 @@
                         </select>
                     </div>
 
-                    <div>
+                    <c:set var="elevatorSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('ELEVATOR_INCLUDED')}">
+                        <c:set var="elevatorSearchClass" value="property-disabled"/>
+                    </c:if>
+
+                    <div id="elevatorSearch" class="${elevatorSearchClass}">
                         <label class="propertyText">Elevator</label>
                         <select id="elevatorIncludedDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.elevatorIncludedDropdown}" var="elevatorIncluded">
@@ -242,7 +282,12 @@
                         </select>
                     </div>
 
-                    <div>
+                    <c:set var="poolSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('POOL_INCLUDED')}">
+                        <c:set var="poolSearchClass" value="property-disabled"/>
+                    </c:if>
+
+                    <div id="poolSearch" class="${poolSearchClass}">
                         <label class="propertyText">Pool</label>
                         <select id="poolIncludedDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.poolIncludedDropdown}" var="poolIncluded">
@@ -260,7 +305,12 @@
                         </select>
                     </div>
 
-                    <div>
+                    <c:set var="parkingSearchClass" value=""/>
+                    <c:if test="${!viewBean.validProperties.contains('PARKING_INCLUDED')}">
+                        <c:set var="parkingSearchClass" value="property-disabled"/>
+                    </c:if>
+
+                    <div id="parkingSearch" class="${parkingSearchClass}">
                         <label class="propertyText">Parking</label>
                         <select id="parkingIncludedDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.parkingIncludedDropdown}" var="parkingIncluded">

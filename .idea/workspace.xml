@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dd96e0c-3f3d-455d-9bd9-66c87d016351" name="Default" comment="home page setup">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/real_estate_website_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/real_estate_website_war_exploded.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/services/SearchParam.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/SearchParam.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/real-estate-website.iml" afterPath="$PROJECT_DIR$/real-estate-website.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/mapper/RealEstateMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/mapper/RealEstateMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomePropertyChangeModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomePropertyChangeModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/i18/messages.properties" afterPath="$PROJECT_DIR$/src/main/webapp/i18/messages.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/i18/messages_mk.properties" afterPath="$PROJECT_DIR$/src/main/webapp/i18/messages_mk.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/home/homeController.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/home/homeController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/home/homeModel.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/home/homeModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/home/homeView.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/home/homeView.js" />
     </list>
@@ -52,102 +45,9 @@
       <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="151" column="26" selection-start-line="151" selection-start-column="26" selection-end-line="151" selection-end-column="26" />
+            <state relative-caret-position="170">
+              <caret line="150" column="86" selection-start-line="150" selection-start-column="69" selection-end-line="150" selection-end-column="86" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="350" column="14" selection-start-line="350" selection-start-column="14" selection-end-line="350" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeViewModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="23" column="41" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="41" />
-              <folding>
-                <element signature="e#1516#1517#0" expanded="true" />
-                <element signature="e#1562#1563#0" expanded="true" />
-                <element signature="e#1772#1773#0" expanded="true" />
-                <element signature="e#1817#1818#0" expanded="true" />
-                <element signature="e#2015#2016#0" expanded="true" />
-                <element signature="e#2052#2053#0" expanded="true" />
-                <element signature="e#2125#2126#0" expanded="true" />
-                <element signature="e#2177#2178#0" expanded="true" />
-                <element signature="e#2216#2217#0" expanded="true" />
-                <element signature="e#2251#2252#0" expanded="true" />
-                <element signature="e#2307#2308#0" expanded="true" />
-                <element signature="e#2355#2356#0" expanded="true" />
-                <element signature="e#2395#2396#0" expanded="true" />
-                <element signature="e#2427#2428#0" expanded="true" />
-                <element signature="e#2481#2482#0" expanded="true" />
-                <element signature="e#2523#2524#0" expanded="true" />
-                <element signature="e#2561#2562#0" expanded="true" />
-                <element signature="e#2591#2592#0" expanded="true" />
-                <element signature="e#2641#2642#0" expanded="true" />
-                <element signature="e#2679#2680#0" expanded="true" />
-                <element signature="e#2723#2724#0" expanded="true" />
-                <element signature="e#2762#2763#0" expanded="true" />
-                <element signature="e#2827#2828#0" expanded="true" />
-                <element signature="e#2883#2884#0" expanded="true" />
-                <element signature="e#2925#2926#0" expanded="true" />
-                <element signature="e#2962#2963#0" expanded="true" />
-                <element signature="e#3023#3024#0" expanded="true" />
-                <element signature="e#3075#3076#0" expanded="true" />
-                <element signature="e#3121#3122#0" expanded="true" />
-                <element signature="e#3162#3163#0" expanded="true" />
-                <element signature="e#3231#3232#0" expanded="true" />
-                <element signature="e#3291#3292#0" expanded="true" />
-                <element signature="e#3353#3354#0" expanded="true" />
-                <element signature="e#3398#3399#0" expanded="true" />
-                <element signature="e#3604#3605#0" expanded="true" />
-                <element signature="e#3649#3650#0" expanded="true" />
-                <element signature="e#3855#3856#0" expanded="true" />
-                <element signature="e#3900#3901#0" expanded="true" />
-                <element signature="e#4106#4107#0" expanded="true" />
-                <element signature="e#4151#4152#0" expanded="true" />
-                <element signature="e#4355#4356#0" expanded="true" />
-                <element signature="e#4398#4399#0" expanded="true" />
-                <element signature="e#4594#4595#0" expanded="true" />
-                <element signature="e#4637#4638#0" expanded="true" />
-                <element signature="e#4835#4836#0" expanded="true" />
-                <element signature="e#4880#4881#0" expanded="true" />
-                <element signature="e#5086#5087#0" expanded="true" />
-                <element signature="e#5131#5132#0" expanded="true" />
-                <element signature="e#5339#5340#0" expanded="true" />
-                <element signature="e#5386#5387#0" expanded="true" />
-                <element signature="e#5602#5603#0" expanded="true" />
-                <element signature="e#5649#5650#0" expanded="true" />
-                <element signature="e#5842#5843#0" expanded="true" />
-                <element signature="e#5878#5879#0" expanded="true" />
-                <element signature="e#5937#5938#0" expanded="true" />
-                <element signature="e#5987#5988#0" expanded="true" />
-                <element signature="e#6027#6028#0" expanded="true" />
-                <element signature="e#6062#6063#0" expanded="true" />
-                <element signature="e#6119#6120#0" expanded="true" />
-                <element signature="e#6167#6168#0" expanded="true" />
-                <element signature="e#6230#6231#0" expanded="true" />
-                <element signature="e#6276#6277#0" expanded="true" />
-                <element signature="e#6487#6488#0" expanded="true" />
-                <element signature="e#6533#6534#0" expanded="true" />
-                <element signature="e#6741#6742#0" expanded="true" />
-                <element signature="e#6784#6785#0" expanded="true" />
-                <element signature="e#6980#6981#0" expanded="true" />
-                <element signature="e#7023#7024#0" expanded="true" />
-                <element signature="e#7216#7217#0" expanded="true" />
-                <element signature="e#7250#7251#0" expanded="true" />
-                <element signature="e#7323#7324#0" expanded="true" />
-                <element signature="e#7369#7370#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -155,28 +55,8 @@
       <file leaf-file-name="homeModel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home/homeModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1751">
-              <caret line="103" column="49" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RealEstateViewModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/RealEstateViewModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomePropertyChangeModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomePropertyChangeModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+            <state relative-caret-position="17">
+              <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -185,31 +65,29 @@
       <file leaf-file-name="homeController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home/homeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="73" column="41" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="41" />
+            <state relative-caret-position="1105">
+              <caret line="65" column="37" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homeView.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homeView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home/homeView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="63">
+              <caret line="238" column="47" selection-start-line="238" selection-start-column="47" selection-end-line="238" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RealEstateViewService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="75" column="71" selection-start-line="75" selection-start-column="71" selection-end-line="75" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="336" column="0" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -217,8 +95,52 @@
       <file leaf-file-name="RealEstateMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/mapper/RealEstateMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="51" column="65" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+            <state relative-caret-position="462">
+              <caret line="174" column="29" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RealEstateViewService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="80" column="59" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RealEstateService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/services/RealEstateService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Stream.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/java/jdk/64/1.8.0_45/src.zip!/java/util/stream/Stream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="183" column="18" selection-start-line="183" selection-start-column="18" selection-end-line="183" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchParam.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/SearchParam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -253,7 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/HouseRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/GarageRepository.java" />
@@ -293,17 +214,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/configuration/spring/ExposedMessageSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomePropertyChangeModel.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/i18/messages_mk.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/i18/messages_en.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/i18/messages.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/mapper/RealEstateMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/home/homeModel.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/home/homeController.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/home/homeView.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/SearchParam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/mapper/RealEstateMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/home/homeModel.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/home/homeView.js" />
       </list>
     </option>
   </component>
@@ -378,6 +300,160 @@
               <option name="myItemId" value="real-estate-website" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.apache.commons:commons-lang3:3.4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons-lang3-3.4.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.apache.commons:commons-lang3:3.4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commons-lang3-3.4.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stream" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -400,6 +476,18 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -533,36 +621,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="i18" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resource Bundle 'messages'" />
-              <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="real-estate-website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="real-estate-website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -582,6 +640,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -776,6 +864,100 @@
               <option name="myItemId" value="realestatewebsite" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestatewebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestatewebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="real-estate-website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realestatewebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -792,15 +974,16 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/webapp" />
-    <property name="SearchEverywhereHistoryKey" value="RoomRep&#9;PSI&#9;JAVA://com.si.seminar.realestatewebsite.db.repository.RoomRepository&#10;HomeViewMode&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java&#10;RealEstate.java&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstate.java&#10;City&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/City.java&#10;RealEstate&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/RealEstateViewModel.java&#10;RealEstateT&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstateType.java&#10;RestCo&#9;PSI&#9;JAVA://org.springframework.web.bind.annotation.RestController" />
+    <property name="SearchEverywhereHistoryKey" value="Sear&#9;PSI&#9;JAVA://com.si.seminar.realestatewebsite.services.SearchParam&#10;*.sql&#9;FILE&#9;file://C:/data/real-estate-website/src/main/resources/db/sql/real_estate_website.sql&#10;ApartmentRe&#9;PSI&#9;JAVA://com.si.seminar.realestatewebsite.db.repository.ApartmentRepository&#10;RoomRep&#9;PSI&#9;JAVA://com.si.seminar.realestatewebsite.db.repository.RoomRepository&#10;HomeViewMode&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java&#10;RealEstate.java&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstate.java&#10;City&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/City.java&#10;RealEstate&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/RealEstateViewModel.java&#10;RealEstateT&#9;FILE&#9;file://C:/data/real-estate-website/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/RealEstateType.java&#10;RestCo&#9;PSI&#9;JAVA://org.springframework.web.bind.annotation.RestController" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.si.seminar.realestatewebsite.web.viewmodel" />
-      <recent name="com.si.seminar.realestatewebsite.db.repository" />
-      <recent name="com.si.seminar.realestatewebsite.services" />
-      <recent name="com.si.seminar.realestatewebsite.db.datamodel" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\data\real-estate-website\src\main\webapp\js\home" />
+      <recent name="C:\data\real-estate-website\src\main\webapp\css" />
+      <recent name="C:\data\real-estate-website\src\main\webapp\js" />
+      <recent name="C:\data\real-estate-website\src\main\webapp\i18" />
+      <recent name="C:\data\real-estate-website\src\main\webapp" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.si.seminar.realestatewebsite.web.service" />
@@ -818,12 +1001,11 @@
       <recent name="com.si.seminar.realestatewebsite.db.repository" />
       <recent name="com.si.seminar.realestatewebsite.db.datamodel" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\data\real-estate-website\src\main\webapp\js\home" />
-      <recent name="C:\data\real-estate-website\src\main\webapp\css" />
-      <recent name="C:\data\real-estate-website\src\main\webapp\js" />
-      <recent name="C:\data\real-estate-website\src\main\webapp\i18" />
-      <recent name="C:\data\real-estate-website\src\main\webapp" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.si.seminar.realestatewebsite.web.viewmodel" />
+      <recent name="com.si.seminar.realestatewebsite.db.repository" />
+      <recent name="com.si.seminar.realestatewebsite.services" />
+      <recent name="com.si.seminar.realestatewebsite.db.datamodel" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.tomcat 8 real estate website">
@@ -1441,7 +1623,7 @@
       <workItem from="1473604498610" duration="24385000" />
       <workItem from="1473661077153" duration="2840000" />
       <workItem from="1473665109752" duration="601000" />
-      <workItem from="1473692602581" duration="15310000" />
+      <workItem from="1473692602581" duration="24140000" />
     </task>
     <task id="LOCAL-00001" summary="added deployment plugin">
       <created>1472073404233</created>
@@ -1618,11 +1800,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473696821009</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="improved search properties">
+      <created>1473710019460</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1473710019460</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191641000" />
+    <option name="totallyTimeSpent" value="200471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1723,12 +1912,13 @@
     <MESSAGE value="home page setup" />
     <MESSAGE value="added more search properties" />
     <MESSAGE value="home page properties added" />
-    <option name="LAST_COMMIT_MESSAGE" value="home page properties added" />
+    <MESSAGE value="improved search properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved search properties" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="30" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1737,36 +1927,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/java/jdk/64/1.8.0_45/src.zip!/java/util/stream/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="183" column="18" selection-start-line="183" selection-start-column="18" selection-end-line="183" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ehcache-orm-default.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/AdvertisementType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/datamodel/House.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="542">
@@ -1799,13 +1959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1843,13 +1996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/services/RealEstateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1953,16 +2099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db/sql/real_estate_website.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="17" column="56" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="56" />
-          <folding>
-            <marker date="1473462027293" expanded="true" signature="1005:1831" ph="alter TABLE REAL_ESTATE... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RoomRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1995,32 +2131,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4-sources.jar!/org/apache/commons/lang3/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="276" column="26" selection-start-line="276" selection-start-column="26" selection-end-line="276" selection-end-column="26" />
-          <folding>
-            <element signature="e#10132#10133#0" expanded="true" />
-            <element signature="e#10169#10170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/18.0/guava-18.0-sources.jar!/com/google/common/collect/Maps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="241" column="32" selection-start-line="241" selection-start-column="32" selection-end-line="241" selection-end-column="32" />
           <folding>
-            <element signature="e#8054#8055#0" expanded="true" />
-            <element signature="e#8096#8097#0" expanded="true" />
+            <element signature="e#8054#8055#0" expanded="false" />
+            <element signature="e#8096#8097#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2058,133 +2175,42 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="75" column="71" selection-start-line="75" selection-start-column="71" selection-end-line="75" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/mapper/RealEstateMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="51" column="65" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+        <state relative-caret-position="210">
+          <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4-sources.jar!/org/apache/commons/lang3/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="41" />
-          <folding>
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1562#1563#0" expanded="true" />
-            <element signature="e#1772#1773#0" expanded="true" />
-            <element signature="e#1817#1818#0" expanded="true" />
-            <element signature="e#2015#2016#0" expanded="true" />
-            <element signature="e#2052#2053#0" expanded="true" />
-            <element signature="e#2125#2126#0" expanded="true" />
-            <element signature="e#2177#2178#0" expanded="true" />
-            <element signature="e#2216#2217#0" expanded="true" />
-            <element signature="e#2251#2252#0" expanded="true" />
-            <element signature="e#2307#2308#0" expanded="true" />
-            <element signature="e#2355#2356#0" expanded="true" />
-            <element signature="e#2395#2396#0" expanded="true" />
-            <element signature="e#2427#2428#0" expanded="true" />
-            <element signature="e#2481#2482#0" expanded="true" />
-            <element signature="e#2523#2524#0" expanded="true" />
-            <element signature="e#2561#2562#0" expanded="true" />
-            <element signature="e#2591#2592#0" expanded="true" />
-            <element signature="e#2641#2642#0" expanded="true" />
-            <element signature="e#2679#2680#0" expanded="true" />
-            <element signature="e#2723#2724#0" expanded="true" />
-            <element signature="e#2762#2763#0" expanded="true" />
-            <element signature="e#2827#2828#0" expanded="true" />
-            <element signature="e#2883#2884#0" expanded="true" />
-            <element signature="e#2925#2926#0" expanded="true" />
-            <element signature="e#2962#2963#0" expanded="true" />
-            <element signature="e#3023#3024#0" expanded="true" />
-            <element signature="e#3075#3076#0" expanded="true" />
-            <element signature="e#3121#3122#0" expanded="true" />
-            <element signature="e#3162#3163#0" expanded="true" />
-            <element signature="e#3231#3232#0" expanded="true" />
-            <element signature="e#3291#3292#0" expanded="true" />
-            <element signature="e#3353#3354#0" expanded="true" />
-            <element signature="e#3398#3399#0" expanded="true" />
-            <element signature="e#3604#3605#0" expanded="true" />
-            <element signature="e#3649#3650#0" expanded="true" />
-            <element signature="e#3855#3856#0" expanded="true" />
-            <element signature="e#3900#3901#0" expanded="true" />
-            <element signature="e#4106#4107#0" expanded="true" />
-            <element signature="e#4151#4152#0" expanded="true" />
-            <element signature="e#4355#4356#0" expanded="true" />
-            <element signature="e#4398#4399#0" expanded="true" />
-            <element signature="e#4594#4595#0" expanded="true" />
-            <element signature="e#4637#4638#0" expanded="true" />
-            <element signature="e#4835#4836#0" expanded="true" />
-            <element signature="e#4880#4881#0" expanded="true" />
-            <element signature="e#5086#5087#0" expanded="true" />
-            <element signature="e#5131#5132#0" expanded="true" />
-            <element signature="e#5339#5340#0" expanded="true" />
-            <element signature="e#5386#5387#0" expanded="true" />
-            <element signature="e#5602#5603#0" expanded="true" />
-            <element signature="e#5649#5650#0" expanded="true" />
-            <element signature="e#5842#5843#0" expanded="true" />
-            <element signature="e#5878#5879#0" expanded="true" />
-            <element signature="e#5937#5938#0" expanded="true" />
-            <element signature="e#5987#5988#0" expanded="true" />
-            <element signature="e#6027#6028#0" expanded="true" />
-            <element signature="e#6062#6063#0" expanded="true" />
-            <element signature="e#6119#6120#0" expanded="true" />
-            <element signature="e#6167#6168#0" expanded="true" />
-            <element signature="e#6230#6231#0" expanded="true" />
-            <element signature="e#6276#6277#0" expanded="true" />
-            <element signature="e#6487#6488#0" expanded="true" />
-            <element signature="e#6533#6534#0" expanded="true" />
-            <element signature="e#6741#6742#0" expanded="true" />
-            <element signature="e#6784#6785#0" expanded="true" />
-            <element signature="e#6980#6981#0" expanded="true" />
-            <element signature="e#7023#7024#0" expanded="true" />
-            <element signature="e#7216#7217#0" expanded="true" />
-            <element signature="e#7250#7251#0" expanded="true" />
-            <element signature="e#7323#7324#0" expanded="true" />
-            <element signature="e#7369#7370#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home/homeModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="103" column="49" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
+        <state relative-caret-position="153">
+          <caret line="1506" column="55" selection-start-line="1506" selection-start-column="54" selection-end-line="1506" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home/homeController.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/ApartmentRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="73" column="41" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="41" />
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/ApartmentRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="151" column="26" selection-start-line="151" selection-start-column="26" selection-end-line="151" selection-end-column="26" />
+        <state relative-caret-position="81">
+          <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home/homeView.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/db/repository/RealEstateRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="-395">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -2199,16 +2225,115 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomePropertyChangeModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        <state relative-caret-position="398">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/HomeViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="64" />
+          <folding>
+            <element signature="e#7272#7273#0" expanded="true" />
+            <element signature="e#7310#7311#0" expanded="true" />
+            <element signature="e#7378#7379#0" expanded="true" />
+            <element signature="e#7432#7433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db/sql/real_estate_website.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+          <folding>
+            <marker date="1473462027293" expanded="true" signature="1005:1831" ph="alter TABLE REAL_ESTATE... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/java/jdk/64/1.8.0_45/src.zip!/java/util/stream/Stream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="183" column="18" selection-start-line="183" selection-start-column="18" selection-end-line="183" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/services/RealEstateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/service/RealEstateViewService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="80" column="59" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/mapper/RealEstateMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="174" column="29" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="350" column="14" selection-start-line="350" selection-start-column="14" selection-end-line="350" selection-end-column="14" />
+        <state relative-caret-position="184">
+          <caret line="336" column="0" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/si/seminar/realestatewebsite/web/viewmodel/SearchParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="150" column="86" selection-start-line="150" selection-start-column="69" selection-end-line="150" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home/homeModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="37" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/home/homeView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="238" column="47" selection-start-line="238" selection-start-column="47" selection-end-line="238" selection-end-column="47" />
           <folding />
         </state>
       </provider>

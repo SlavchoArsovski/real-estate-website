@@ -43,8 +43,8 @@ public class RealEstateViewService {
                 .advertismentType(advertismentType)
                 .build();
 
-        List<RealEstate> realEstatesFromSearchParams = Lists.newArrayList();
-//                realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
+        List<RealEstate> realEstatesFromSearchParams =
+                realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
 
         List<RealEstateViewModel> viewModels =
                 realEstatesFromSearchParams
@@ -77,6 +77,10 @@ public class RealEstateViewService {
         homeViewModel.setSelectedParkingIncluded("NO_SELECTION");
         homeViewModel.setMessages(messageSource.getAllMessages(locale));
 
+        List<String> validProperties =
+                realEstateMapper.mapValidPropertiesFromRealEstateType(RealEstateType.HOUSE.name());
+        homeViewModel.setValidProperties(validProperties);
+
         return homeViewModel;
     }
 
@@ -88,8 +92,8 @@ public class RealEstateViewService {
         SearchModel searchModel =
                 buildSearchModelFromPropertyChangeModel(homePropertyChangeModel, advertisementType);
 
-        List<RealEstate> realEstatesFromSearchParams = Lists.newArrayList();
-//                realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
+        List<RealEstate> realEstatesFromSearchParams =
+                realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
 
         List<RealEstateViewModel> realEstateViewModels =
                 realEstatesFromSearchParams
@@ -112,6 +116,10 @@ public class RealEstateViewService {
         homeViewModel.setPoolIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "pool"));
         homeViewModel.setParkingIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "parking"));
         homeViewModel.setMessages(messageSource.getAllMessages(locale));
+
+        List<String> validProperties =
+                realEstateMapper.mapValidPropertiesFromRealEstateType(homePropertyChangeModel.getSelectedRealEstateType());
+        homeViewModel.setValidProperties(validProperties);
         realEstateMapper.mapPropertyChangeModelToViewMode(homeViewModel, homePropertyChangeModel);
 
         return homeViewModel;
@@ -138,45 +146,45 @@ public class RealEstateViewService {
         }
 
         String selectedCentralHeating = homePropertyChangeModel.getSelectedCentralHeating();
-        if (StringUtils.isNoneEmpty(selectedCentralHeating)) {
+        if (StringUtils.isNoneEmpty(selectedCentralHeating) && !StringUtils.equals(selectedCentralHeating, "NO_SELECTION")) {
             boolean isCentralHeatingIncluded =
                     StringUtils.equals("YES", selectedCentralHeating);
             builder.centralHeatingIncluded(isCentralHeatingIncluded);
         }
 
         String selectedAirConditioned = homePropertyChangeModel.getSelectedAirConditioned();
-        if (StringUtils.isNoneEmpty(selectedAirConditioned)) {
+        if (StringUtils.isNoneEmpty(selectedAirConditioned) && !StringUtils.equals(selectedAirConditioned, "NO_SELECTION")) {
             boolean isAirConditioned =
                     StringUtils.equals("YES", selectedAirConditioned);
-            builder.centralHeatingIncluded(isAirConditioned);
+            builder.airConditioned(isAirConditioned);
         }
 
         String selectedGarageIncluded = homePropertyChangeModel.getSelectedGarageIncluded();
-        if (StringUtils.isNoneEmpty(selectedGarageIncluded)) {
+        if (StringUtils.isNoneEmpty(selectedGarageIncluded) && !StringUtils.equals(selectedGarageIncluded, "NO_SELECTION")) {
             boolean isGarageIncluded =
                     StringUtils.equals("YES", selectedGarageIncluded);
-            builder.centralHeatingIncluded(isGarageIncluded);
+            builder.garageIncluded(isGarageIncluded);
         }
 
         String selectedYardIncluded = homePropertyChangeModel.getSelectedYardIncluded();
-        if (StringUtils.isNoneEmpty(selectedYardIncluded)) {
+        if (StringUtils.isNoneEmpty(selectedYardIncluded) && !StringUtils.equals(selectedYardIncluded, "NO_SELECTION")) {
             boolean isYardIncluded =
                     StringUtils.equals("YES", selectedYardIncluded);
-            builder.centralHeatingIncluded(isYardIncluded);
+            builder.yardIncluded(isYardIncluded);
         }
 
         String selectedParkingIncluded = homePropertyChangeModel.getSelectedParkingIncluded();
-        if (StringUtils.isNoneEmpty(selectedParkingIncluded)) {
+        if (StringUtils.isNoneEmpty(selectedParkingIncluded) && !StringUtils.equals(selectedParkingIncluded, "NO_SELECTION")) {
             boolean isParkingIncluded =
                     StringUtils.equals("YES", selectedParkingIncluded);
-            builder.centralHeatingIncluded(isParkingIncluded);
+            builder.parkingIncluded(isParkingIncluded);
         }
 
         String selectedPoolIncluded = homePropertyChangeModel.getSelectedPoolIncluded();
-        if (StringUtils.isNoneEmpty(selectedPoolIncluded)) {
+        if (StringUtils.isNoneEmpty(selectedPoolIncluded) && !StringUtils.equals(selectedParkingIncluded, "NO_SELECTION")) {
             boolean isPoolIncluded =
                     StringUtils.equals("YES", selectedPoolIncluded);
-            builder.centralHeatingIncluded(isPoolIncluded);
+            builder.poolIncluded(isPoolIncluded);
         }
 
         return builder.build();

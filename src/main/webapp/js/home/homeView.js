@@ -10,8 +10,8 @@ var homeView = {
         squareMetersFromInput: '#square-meters_from',
         squareMetersToInput: '#square-meters_to',
         yearOfConstructionInput: '#yearOfConstruction',
-        numberOfBeds: '#numberOfBeds',
-        numberOfRooms: '#numberOfRooms',
+        numberOfBedsInput: '#numberOfBeds',
+        numberOfRoomsInput: '#numberOfRooms',
         centralHeatingDropdown: '#centralHeatingDropdown',
         centralHeatingDropdownSelectedOption: '#centralHeatingDropdown option:selected',
         airConditionedDropdown: '#airConditionedDropdown',
@@ -27,7 +27,17 @@ var homeView = {
         parkingIncludedDropdown: '#parkingIncludedDropdown',
         parkingIncludedDropdownSelectedOption: '#parkingIncludedDropdown option:selected',
         realEstateList: '.real-estate-list',
-        realEstateItemHtmlTemplate: '.real-estate-list-item-template'
+        realEstateItemHtmlTemplate: '.real-estate-list-item-template',
+        yearOfConstructionSearch: '#yearOfConstructionSearch',
+        numberOfRoomsSearch: '#numberOfRoomsSearch',
+        numberOfBedsSearch: '#numberOfBedsSearch',
+        centralHeatingSearch: '#centralHeatingSearch',
+        airConditionSearch: '#airConditionSearch',
+        yardSearch: '#yardSearchClass',
+        garageSearch: '#garageSearch',
+        elevatorSearch: '#elevatorSearch',
+        poolSearch: '#poolSearch',
+        parkingSearch: '#parkingSearch'
     },
 
     initView: function (model) {
@@ -37,6 +47,53 @@ var homeView = {
 
     _initViewChangingEvents: function () {
 
+        var inputKeyDown = function (e) {
+            // Allow: backspace, delete, tab, escape, enter and .
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+                // Allow: Ctrl+A
+                (e.keyCode == 65 && e.ctrlKey === true) ||
+                // Allow: Ctrl+C
+                (e.keyCode == 67 && e.ctrlKey === true) ||
+                // Allow: Ctrl+X
+                (e.keyCode == 88 && e.ctrlKey === true) ||
+                // Allow: home, end, left, right
+                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        }
+
+        $(this.pageComponents.numberOfBedsInput).keydown(function (e) {
+            inputKeyDown(e);
+        });
+
+        $(this.pageComponents.numberOfRoomsInput).keydown(function (e) {
+            inputKeyDown(e);
+        });
+
+        $(this.pageComponents.priceFromInput).keydown(function (e) {
+            inputKeyDown(e);
+        });
+
+        $(this.pageComponents.priceToInput).keydown(function (e) {
+            inputKeyDown(e);
+        });
+
+        $(this.pageComponents.squareMetersFromInput).keydown(function (e) {
+            inputKeyDown(e);
+        });
+
+        $(this.pageComponents.squareMetersToInput).keydown(function (e) {
+            inputKeyDown(e);
+        });
+
+        $(this.pageComponents.yearOfConstructionInput).keydown(function (e) {
+            inputKeyDown(e);
+        });
     },
 
     _initModelChangingEvents: function () {
@@ -70,11 +127,11 @@ var homeView = {
             $(me).trigger('yearOfConstructionChange', event.target.value);
         });
 
-        $(me.pageComponents.numberOfBeds).on('change', function (event) {
+        $(me.pageComponents.numberOfBedsInput).on('change', function (event) {
             $(me).trigger('numberOfBedsChange', event.target.value);
         });
 
-        $(me.pageComponents.numberOfRooms).on('change', function (event) {
+        $(me.pageComponents.numberOfRoomsInput).on('change', function (event) {
             $(me).trigger('numberOfRoomsChange', event.target.value);
         });
 
@@ -110,6 +167,7 @@ var homeView = {
 
     updateView: function (model) {
 
+        this._updateSearchProperties(model.validProperties);
         this._updateRealEstateType(model.selectedRealEstateType);
         this._updatePriceFrom(model.priceFrom);
         this._updatePriceTo(model.priceTo);
@@ -126,6 +184,69 @@ var homeView = {
         this._updatePoolIncluded(model.selectedPoolIncluded);
         this._updateNumberOfRooms(model.numberOfRooms);
         this._updateRealEstates(model.realEstates, model.messages);
+    },
+
+    _updateSearchProperties: function (validProperties) {
+
+        if ($.inArray('YEAR_OF_CONSTRUCTION', validProperties) > -1) {
+            $(this.pageComponents.yearOfConstructionSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.yearOfConstructionSearch).addClass('property-disabled');
+        }
+
+        if ($.inArray('CENTRAL_HEATING_INCLUDED', validProperties) > -1) {
+            $(this.pageComponents.centralHeatingSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.centralHeatingSearch).addClass('property-disabled');
+        }
+
+        if ($.inArray('AIR_CONDITIONED', validProperties) > -1) {
+            $(this.pageComponents.airConditionSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.airConditionSearch).addClass('property-disabled');
+        }
+
+        if ($.inArray('NUMBER_OF_BEDS', validProperties) > -1) {
+            $(this.pageComponents.numberOfBedsSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.numberOfBedsSearch).addClass('property-disabled');
+        }
+
+        if ($.inArray('NUMBER_OF_ROOMS', validProperties) > -1) {
+            $(this.pageComponents.numberOfRoomsSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.numberOfRoomsSearch).addClass('property-disabled');
+        }
+
+        if ($.inArray('YARD_INCLUDED', validProperties) > -1) {
+            $(this.pageComponents.yardSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.yardSearch).addClass('property-disabled');
+        }
+
+        if ($.inArray('GARAGE_INCLUDED', validProperties) > -1) {
+            $(this.pageComponents.garageSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.garageSearch).addClass('property-disabled');
+        }
+
+        if ($.inArray('POOL_INCLUDED', validProperties) > -1) {
+            $(this.pageComponents.poolSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.poolSearch).addClass('property-disabled');
+        }
+
+        if ($.inArray('PARKING_INCLUDED', validProperties) > -1) {
+            $(this.pageComponents.parkingSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.parkingSearch).addClass('property-disabled');
+        }
+
+        if ($.inArray('ELEVATOR_INCLUDED', validProperties) > -1) {
+            $(this.pageComponents.elevatorSearch).removeClass('property-disabled');
+        } else {
+            $(this.pageComponents.elevatorSearch).addClass('property-disabled');
+        }
     },
 
     _updateRealEstateType: function (selectedRealEstateType) {
@@ -159,11 +280,11 @@ var homeView = {
     },
 
     _updateNumberOfBeds: function (numberOfBeds) {
-        $(this.pageComponents.numberOfBeds).val(numberOfBeds);
+        $(this.pageComponents.numberOfBedsInput).val(numberOfBeds);
     },
 
     _updateNumberOfRooms: function (numberOfRooms) {
-        $(this.pageComponents.numberOfRooms).val(numberOfRooms);
+        $(this.pageComponents.numberOfRoomsInput).val(numberOfRooms);
     },
 
     _updateCentralHeating: function (selectedCentralHeating) {

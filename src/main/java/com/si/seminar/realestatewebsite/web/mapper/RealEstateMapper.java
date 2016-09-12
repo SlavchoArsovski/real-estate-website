@@ -1,26 +1,27 @@
 package com.si.seminar.realestatewebsite.web.mapper;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
 import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
-import com.si.seminar.realestatewebsite.web.viewmodel.City;
-import com.si.seminar.realestatewebsite.web.viewmodel.HomePropertyChangeModel;
-import com.si.seminar.realestatewebsite.web.viewmodel.HomeViewModel;
-import com.si.seminar.realestatewebsite.web.viewmodel.RealEstateViewModel;
+import com.si.seminar.realestatewebsite.web.viewmodel.*;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static com.si.seminar.realestatewebsite.web.viewmodel.SearchParam.*;
+
+
 
 /**
  * Contains methods for mapping real estate to view models.
@@ -35,9 +36,9 @@ public class RealEstateMapper implements ApplicationContextAware {
 
     public void mapPropertyChangeModelToViewMode(HomeViewModel homeViewModel, HomePropertyChangeModel homePropertyChangeModel) {
 
+        homeViewModel.setSelectedRealEstateType(homePropertyChangeModel.getSelectedRealEstateType());
         homeViewModel.setPriceFrom(homePropertyChangeModel.getPriceFrom());
         homeViewModel.setPriceTo(homePropertyChangeModel.getPriceTo());
-        homeViewModel.setSelectedRealEstateType(homePropertyChangeModel.getSelectedRealEstateType());
         homeViewModel.setSelectedCity(homePropertyChangeModel.getSelectedCity());
         homeViewModel.setSquareMetersFrom(homePropertyChangeModel.getSquareMetersFrom());
         homeViewModel.setSquareMetersTo(homePropertyChangeModel.getSquareMetersTo());
@@ -133,6 +134,65 @@ public class RealEstateMapper implements ApplicationContextAware {
         optionsDropdown.put("NO", value);
 
         return optionsDropdown;
+    }
+
+    public List<String> mapValidPropertiesFromRealEstateType(String selectedRealEstateType) {
+
+        RealEstateType realEstateType = RealEstateType.valueOf(selectedRealEstateType);
+
+        // default properties
+        List<SearchParam> validProperties =
+                Lists.newArrayList(
+                        REAL_ESTATE_TYPE,
+                        SQUARE_METERS_FROM,
+                        SQUARE_METERS_TO,
+                        PRICE_FROM,
+                        PRICE_TO,
+                        CITY,
+                        REGION);
+
+        switch (realEstateType) {
+            case HOUSE:
+                validProperties.add(YEAR_OF_CONSTRUCTION);
+                validProperties.add(GARAGE_INCLUDED);
+                validProperties.add(CENTRAL_HEATING_INCLUDED);
+                validProperties.add(AIR_CONDITIONED);
+                validProperties.add(NUMBER_OF_FLOORS);
+                validProperties.add(POOL_INCLUDED);
+                validProperties.add(YARD_INCLUDED);
+                break;
+            case APARTMENT:
+                validProperties.add(YEAR_OF_CONSTRUCTION);
+                validProperties.add(CENTRAL_HEATING_INCLUDED);
+                validProperties.add(AIR_CONDITIONED);
+                validProperties.add(NUMBER_OF_ROOMS);
+                validProperties.add(PARKING_INCLUDED);
+                validProperties.add(ELEVATOR_INCLUDED);
+                break;
+            case OFFICE_SPACE:
+                validProperties.add(YEAR_OF_CONSTRUCTION);
+                validProperties.add(CENTRAL_HEATING_INCLUDED);
+                validProperties.add(AIR_CONDITIONED);
+                break;
+            case ROOM:
+                validProperties.add(NUMBER_OF_BEDS);
+                break;
+            case GROUND:
+                break;
+            case GARAGE:
+                break;
+            case AGRICULTURAL_FIELD:
+                break;
+        }
+
+        List<String> properties = validProperties
+                .stream()
+                .map(property -> {
+                    return property.name();
+                })
+                .collect(Collectors.toList());
+
+        return properties;
     }
 
     private String getResourceMessage(String key, Locale locale) {

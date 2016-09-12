@@ -34,7 +34,7 @@ var homeModel = {
         data['selectedYardIncluded'] = this.selectedYardIncluded;
         data['selectedGarageIncluded'] = this.selectedGarageIncluded;
         data['selectedElevatorIncluded'] = this.selectedElevatorIncluded;
-        data['numberOfRooms'] = this.numberOfBeds;
+        data['numberOfRooms'] = this.numberOfRooms;
         data['numberOfBeds'] = this.numberOfBeds;
         data['selectedParkingIncluded'] = this.selectedParkingIncluded;
         data['selectedPoolIncluded'] = this.selectedPoolIncluded;
@@ -148,6 +148,7 @@ var homeModel = {
             numberOfBeds: this.numberOfBeds,
             selectedPoolIncluded: this.selectedPoolIncluded,
             selectedParkingIncluded: this.selectedParkingIncluded,
+            validProperties: this.validProperties,
             realEstates: this.realEstates,
             messages: this.messages
         };

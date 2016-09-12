@@ -334,7 +334,6 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .search-properties > div {
-    display: table;
     font-size: 14px;
     padding: 5px 10px;
     width: 30%;
@@ -349,4 +348,8 @@ input[type="radio"], input[type="checkbox"] {
 
 .propertyValue {
     width: 80%;
+}
+
+.property-disabled {
+    display: none;
 }
