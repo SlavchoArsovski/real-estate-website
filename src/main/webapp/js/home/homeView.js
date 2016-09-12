@@ -59,7 +59,7 @@ var homeView = {
         this._updateCity(model.selectedCity);
         this._updateSquareMetersFrom(model.squareMetersFrom);
         this._updateSquareMetersTo(model.squareMetersTo);
-        this._updateRealEstates(model.realEstates);
+        this._updateRealEstates(model.realEstates, model.messages);
     },
 
     _updateRealEstateType: function (selectedRealEstateType) {
@@ -92,7 +92,7 @@ var homeView = {
         $(this.pageComponents.squareMetersToInput).val(squareMetersTo);
     },
 
-    _updateRealEstates: function (realEstates) {
+    _updateRealEstates: function (realEstates, messages) {
 
         var me = this;
 
@@ -107,7 +107,36 @@ var homeView = {
             templateHtml = templateHtml.replace('realEstateItemTemplate.price', realEstate.price);
             templateHtml = templateHtml.replace('realEstateItemTemplate.region', realEstate.region);
             templateHtml = templateHtml.replace('realEstateItemTemplate.squareMeters', realEstate.squareMeters);
-            templateHtml = templateHtml.replace('realEstateItemTemplate.phone', '070882031');
+            templateHtml = templateHtml.replace('realEstateItemTemplate.phone', '070 882-031');
+            templateHtml = templateHtml.replace(
+                'realEstateItemTemplate.messageRealEstateType',
+                messages['realestatewebsite.fe.messages.general.realEstateType.' + realEstate.realEstateType]
+            );
+            templateHtml = templateHtml.replace(
+                'realEstateItemTemplate.messageAt',
+                messages['realestatewebsite.fe.messages.home.realestatelist.realEstateType.atPlace']
+            );
+            templateHtml = templateHtml.replace(
+                'realEstateItemTemplate.messageArea',
+                messages['realestatewebsite.fe.messages.home.realestatelist.area']
+            );
+
+            templateHtml = templateHtml.replace(
+                'realEstateItemTemplate.messageArea',
+                messages['realestatewebsite.fe.messages.home.realestatelist.price']
+            );
+            templateHtml = templateHtml.replace(
+                'realEstateItemTemplate.messagePrice',
+                messages['realestatewebsite.fe.messages.home.realestatelist.price']
+            );
+            templateHtml = templateHtml.replace(
+                'realEstateItemTemplate.messageCurrency',
+                messages['realestatewebsite.fe.messages.home.realestatelist.currency']
+            );
+            templateHtml = templateHtml.replace(
+                'realEstateItemTemplate.messagePhone',
+                messages['realestatewebsite.fe.messages.home.realestatelist.phone']
+            );
 
             $(me.pageComponents.realEstateList).append(templateHtml);
         });
