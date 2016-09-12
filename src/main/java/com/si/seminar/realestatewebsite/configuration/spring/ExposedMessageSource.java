@@ -13,7 +13,7 @@ import java.util.Set;
 public class ExposedMessageSource extends ReloadableResourceBundleMessageSource {
 
 
-    private Map<String, String> getAllMessages(Locale locale) {
+    public Map<String, String> getAllMessages(Locale locale) {
 
         Map<String, String> messages = Maps.newHashMap();
 
