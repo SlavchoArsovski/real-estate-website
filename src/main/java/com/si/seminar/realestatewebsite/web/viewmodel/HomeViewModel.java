@@ -1,5 +1,7 @@
 package com.si.seminar.realestatewebsite.web.viewmodel;
 
+import com.google.common.collect.Lists;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +19,18 @@ public class HomeViewModel extends ViewModelWithMessage {
     private BigDecimal priceTo;
     private Integer squareMetersFrom;
     private Integer squareMetersTo;
-    private List<RealEstateViewModel> realEstates;
+    private Integer yearOfConstruction;
+    private boolean centralHeatingIncluded;
+    private boolean airConditioned;
+    private boolean yardIncluded;
+    private boolean garageIncluded;
+    private boolean elevatorIncluded;
+    private Integer numberOfFloors;
+    private Integer numberOfBeds;
+    private Integer numberOfOffices;
+    private boolean parkingIncluded;
+
+    private List<RealEstateViewModel> realEstates = Lists.newArrayList();
 
     public Map<String, String> getRealEstateTypesDropdown() {
         return realEstateTypesDropdown;
@@ -33,14 +46,6 @@ public class HomeViewModel extends ViewModelWithMessage {
 
     public void setSelectedRealEstateType(String selectedRealEstateType) {
         this.selectedRealEstateType = selectedRealEstateType;
-    }
-
-    public List<RealEstateViewModel> getRealEstates() {
-        return realEstates;
-    }
-
-    public void setRealEstates(List<RealEstateViewModel> realEstates) {
-        this.realEstates = realEstates;
     }
 
     public Map<String, String> getCitiesDropdown() {
@@ -89,5 +94,93 @@ public class HomeViewModel extends ViewModelWithMessage {
 
     public void setSquareMetersTo(Integer squareMetersTo) {
         this.squareMetersTo = squareMetersTo;
+    }
+
+    public Integer getYearOfConstruction() {
+        return yearOfConstruction;
+    }
+
+    public void setYearOfConstruction(Integer yearOfConstruction) {
+        this.yearOfConstruction = yearOfConstruction;
+    }
+
+    public boolean isCentralHeatingIncluded() {
+        return centralHeatingIncluded;
+    }
+
+    public void setCentralHeatingIncluded(boolean centralHeatingIncluded) {
+        this.centralHeatingIncluded = centralHeatingIncluded;
+    }
+
+    public boolean isAirConditioned() {
+        return airConditioned;
+    }
+
+    public void setAirConditionedIncluded(boolean airConditioned) {
+        this.airConditioned = airConditioned;
+    }
+
+    public boolean isYardIncluded() {
+        return yardIncluded;
+    }
+
+    public void setYardIncluded(boolean yardIncluded) {
+        this.yardIncluded = yardIncluded;
+    }
+
+    public boolean isGarageIncluded() {
+        return garageIncluded;
+    }
+
+    public void setGarageIncluded(boolean garageIncluded) {
+        this.garageIncluded = garageIncluded;
+    }
+
+    public boolean isElevatorIncluded() {
+        return elevatorIncluded;
+    }
+
+    public void setElevatorIncluded(boolean elevatorIncluded) {
+        this.elevatorIncluded = elevatorIncluded;
+    }
+
+    public Integer getNumberOfFloors() {
+        return numberOfFloors;
+    }
+
+    public void setNumberOfFloors(Integer numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
+    }
+
+    public Integer getNumberOfBeds() {
+        return numberOfBeds;
+    }
+
+    public void setNumberOfBeds(Integer numberOfBeds) {
+        this.numberOfBeds = numberOfBeds;
+    }
+
+    public Integer getNumberOfOffices() {
+        return numberOfOffices;
+    }
+
+    public void setNumberOfOffices(Integer numberOfOffices) {
+        this.numberOfOffices = numberOfOffices;
+    }
+
+    public boolean isParkingIncluded() {
+        return parkingIncluded;
+    }
+
+    public void setParkingIncluded(boolean parkingIncluded) {
+        this.parkingIncluded = parkingIncluded;
+    }
+
+    public List<RealEstateViewModel> getRealEstates() {
+        return realEstates;
+    }
+
+    public void setRealEstates(List<RealEstateViewModel> realEstates) {
+        this.realEstates = realEstates;
     }
 }

@@ -34,4 +34,48 @@ $(document).ready(function () {
         homeModel.changeSquareMetersTo(priceTo);
     });
 
+    $(homeView).on('yearOfConstructionChange', function (event, yearOfConstruction) {
+        homeModel.changeYearOfConstruction(yearOfConstruction);
+    });
+
+    $(homeView).on('centralHeatingIncludedChange', function (event, centralHeatingIncluded) {
+        homeModel.changeCentralHeatingIncluded(centralHeatingIncluded);
+    });
+
+    $(homeView).on('airConditionedChange', function (event, airConditioned) {
+        homeModel.changeAirConditioned(airConditioned);
+    });
+
+    $(homeView).on('yardIncludedChange', function (event, yardIncluded) {
+        homeModel.changeYardIncluded(yardIncluded);
+    });
+
+    $(homeView).on('garageIncludedChange', function (event, garageIncluded) {
+        homeModel.changeGarageIncluded(garageIncluded);
+    });
+
+    $(homeView).on('elevatorIncludedChange', function (event, elevatorIncluded) {
+        homeModel.changeElevatorIncluded(elevatorIncluded);
+    });
+
+    $(homeView).on('numberOfFloorsChange', function (event, numberOfFloors) {
+        homeModel.changeNumberOfFloors(numberOfFloors);
+    });
+
+    //     numberOfOffices: this.numberOfOffices,
+    //     parkingIncluded: this.parkingIncluded,
+
+    $(homeView).on('numberOfBedsChange', function (event, numberOfBeds) {
+        homeModel.changeNumberOfBeds(numberOfBeds);
+    });
+
+    $(homeView).on('numberOfOfficesChange', function (event, numberOfOffices) {
+        homeModel.changeNumberOfOffices(numberOfOffices);
+    });
+
+    $(homeView).on('parkingIncludedChange', function (event, parkingIncluded) {
+        homeModel.changeParkingIncluded(parkingIncluded);
+    });
+
+
 });

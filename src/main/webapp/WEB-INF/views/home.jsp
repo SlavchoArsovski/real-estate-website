@@ -136,48 +136,97 @@
                     </div>
 
                     <div>
+                        <label class="propertyText">Year of Construction</label>
+                        <input id="yearOfConstruction" class="propertyValue" type="text"
+                               value="${viewBean.yearOfConstruction}"/>
+                    </div>
+
+                    <div>
                         <label class="propertyText">Central Heating</label>
-                        <input class="propertyValue" type="checkbox">
+                        <c:choose>
+                            <c:when test="${viewBean.centralHeatingIncluded}">
+                                <input id="centralHeatingIncluded" class="propertyValue" type="checkbox"
+                                       checked="checked"/>
+                            </c:when>
+                            <c:otherwise>
+                                <input id="centralHeatingIncluded" class="propertyValue" type="checkbox"/>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
 
                     <div>
                         <label class="propertyText">Air Conditioned</label>
-                        <input class="propertyValue" type="checkbox">
+                        <c:choose>
+                            <c:when test="${viewBean.airConditioned}">
+                                <input id="airConditioned" class="propertyValue" type="checkbox" checked="checked"/>
+                            </c:when>
+                            <c:otherwise>
+                                <input id="airConditioned" class="propertyValue" type="checkbox"/>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
 
                     <div>
                         <label class="propertyText">Yard</label>
-                        <input class="propertyValue" type="checkbox">
+                        <c:choose>
+                            <c:when test="${viewBean.yardIncluded}">
+                                <input id="yardIncluded" class="propertyValue" type="checkbox" checked="checked"/>
+                            </c:when>
+                            <c:otherwise>
+                                <input id="yardIncluded" class="propertyValue" type="checkbox"/>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
 
                     <div>
                         <label class="propertyText">Garage</label>
-                        <input class="propertyValue" type="checkbox">
+                        <c:choose>
+                            <c:when test="${viewBean.garageIncluded}">
+                                <input id="garageIncluded" class="propertyValue" type="checkbox" checked="checked"/>
+                            </c:when>
+                            <c:otherwise>
+                                <input id="garageIncluded" class="propertyValue" type="checkbox"/>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
 
                     <div>
                         <label class="propertyText">Elevator</label>
-                        <input class="propertyValue" type="checkbox">
+                        <c:choose>
+                            <c:when test="${viewBean.elevatorIncluded}">
+                                <input id="elevatorIncluded" class="propertyValue" type="checkbox" checked="checked"/>
+                            </c:when>
+                            <c:otherwise>
+                                <input id="elevatorIncluded" class="propertyValue" type="checkbox"/>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
 
                     <div>
                         <label class="propertyText">Number Of floors</label>
-                        <input class="propertyValue" type="text">
+                        <input id="numberOfFloors" class="propertyValue" type="text">
                     </div>
 
                     <div>
                         <label class="propertyText">Number Of beds</label>
-                        <input class="propertyValue" type="text">
+                        <input id="numberOfBeds" class="propertyValue" type="text">
                     </div>
 
                     <div>
                         <label class="propertyText">Number Of Offices</label>
-                        <input class="propertyValue" type="text">
+                        <input id="numberOfOffices" class="propertyValue" type="text">
                     </div>
 
                     <div>
                         <label class="propertyText">Parking</label>
-                        <input class="propertyValue" type="checkbox">
+                        <c:choose>
+                            <c:when test="${viewBean.parkingIncluded}">
+                                <input id="parkingIncluded" class="propertyValue" type="checkbox" checked="checked"/>
+                            </c:when>
+                            <c:otherwise>
+                                <input id="parkingIncluded" class="propertyValue" type="checkbox"/>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
 
                 </div>

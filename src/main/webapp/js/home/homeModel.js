@@ -28,6 +28,16 @@ var homeModel = {
         data['priceTo'] = this.priceTo;
         data['squareMetersFrom'] = this.squareMetersFrom;
         data['squareMetersTo'] = this.squareMetersTo;
+        data['yearOfConstruction'] = this.yearOfConstruction;
+        data['centralHeatingIncluded'] = this.centralHeatingIncluded;
+        data['airConditioned'] = this.airConditioned;
+        data['yardIncluded'] = this.yardIncluded;
+        data['garageIncluded'] = this.garageIncluded;
+        data['elevatorIncluded'] = this.elevatorIncluded;
+        data['numberOfFloors'] = this.numberOfFloors;
+        data['numberOfBeds'] = this.numberOfBeds;
+        data['numberOfOffices'] = this.numberOfOffices;
+        data['parkingIncluded'] = this.parkingIncluded;
 
         data[key] = value;
         data['changedProperty'] = key;
@@ -79,6 +89,46 @@ var homeModel = {
         this._propertyChange('squareMetersTo', squareMetersTo);
     },
 
+    changeYearOfConstruction: function (yearOfConstruction) {
+        this._propertyChange('yearOfConstruction', yearOfConstruction);
+    },
+
+    changeCentralHeatingIncluded: function (centralHeatingIncluded) {
+        this._propertyChange('centralHeatingIncluded', centralHeatingIncluded);
+    },
+
+    changeAirConditioned: function (airConditioned) {
+        this._propertyChange('airConditioned', airConditioned);
+    },
+
+    changeYardIncluded: function (yardIncluded) {
+        this._propertyChange('yardIncluded', yardIncluded);
+    },
+
+    changeGarageIncluded: function (garageIncluded) {
+        this._propertyChange('garageIncluded', garageIncluded);
+    },
+
+    changeElevatorIncluded: function (elevatorIncluded) {
+        this._propertyChange('elevatorIncluded', elevatorIncluded);
+    },
+
+    changeNumberOfFloors: function (numberOfFloors) {
+        this._propertyChange('numberOfFloors', numberOfFloors);
+    },
+
+    changeNumberOfBeds: function (numberOfBeds) {
+        this._propertyChange('numberOfBeds', numberOfBeds);
+    },
+
+    changeNumberOfOffices: function (numberOfOffices) {
+        this._propertyChange('numberOfOffices', numberOfOffices);
+    },
+
+    changeParkingIncluded: function (parkingIncluded) {
+        this._propertyChange('parkingIncluded', parkingIncluded);
+    },
+
     getModelForView: function () {
         return {
             selectedRealEstateType: this.selectedRealEstateType,
@@ -88,9 +138,17 @@ var homeModel = {
             squareMetersFrom: this.squareMetersFrom,
             squareMetersTo: this.squareMetersTo,
             realEstates: this.realEstates,
+            yearOfConstruction: this.yearOfConstruction,
+            centralHeatingIncluded: this.centralHeatingIncluded,
+            airConditioned: this.airConditioned,
+            yardIncluded: this.yardIncluded,
+            garageIncluded: this.garageIncluded,
+            elevatorIncluded: this.elevatorIncluded,
+            numberOfFloors: this.numberOfFloors,
+            numberOfBeds: this.numberOfBeds,
+            numberOfOffices: this.numberOfOffices,
+            parkingIncluded: this.parkingIncluded,
             messages: this.messages
         };
     }
-
-
 };
