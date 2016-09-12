@@ -102,39 +102,39 @@ var homeView = {
 
             var templateHtml = $(me.pageComponents.realEstateItemHtmlTemplate).html();
 
-            templateHtml = templateHtml.replace('realEstateItemTemplate.address', realEstate.address);
-            templateHtml = templateHtml.replace('realEstateItemTemplate.city', realEstate.city);
-            templateHtml = templateHtml.replace('realEstateItemTemplate.price', realEstate.price);
-            templateHtml = templateHtml.replace('realEstateItemTemplate.region', realEstate.region);
-            templateHtml = templateHtml.replace('realEstateItemTemplate.squareMeters', realEstate.squareMeters);
-            templateHtml = templateHtml.replace('realEstateItemTemplate.phone', '070 882-031');
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.address}', realEstate.address);
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.city}', realEstate.city);
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.price}', realEstate.price);
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.region}', realEstate.region);
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.squareMeters}', realEstate.squareMeters);
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.phone}', '070 882-031');
             templateHtml = templateHtml.replace(
-                'realEstateItemTemplate.messageRealEstateType',
+                '{realEstateItemTemplate.messageRealEstateType}',
                 messages['realestatewebsite.fe.messages.general.realEstateType.' + realEstate.realEstateType]
             );
             templateHtml = templateHtml.replace(
-                'realEstateItemTemplate.messageAt',
+                '{realEstateItemTemplate.messageAt}',
                 messages['realestatewebsite.fe.messages.home.realestatelist.realEstateType.atPlace']
             );
             templateHtml = templateHtml.replace(
-                'realEstateItemTemplate.messageArea',
+                '{realEstateItemTemplate.messageArea}',
                 messages['realestatewebsite.fe.messages.home.realestatelist.area']
             );
 
             templateHtml = templateHtml.replace(
-                'realEstateItemTemplate.messageArea',
+                '{realEstateItemTemplate.messageArea}',
                 messages['realestatewebsite.fe.messages.home.realestatelist.price']
             );
             templateHtml = templateHtml.replace(
-                'realEstateItemTemplate.messagePrice',
+                '{realEstateItemTemplate.messagePrice}',
                 messages['realestatewebsite.fe.messages.home.realestatelist.price']
             );
             templateHtml = templateHtml.replace(
-                'realEstateItemTemplate.messageCurrency',
+                '{realEstateItemTemplate.messageCurrency}',
                 messages['realestatewebsite.fe.messages.home.realestatelist.currency']
             );
             templateHtml = templateHtml.replace(
-                'realEstateItemTemplate.messagePhone',
+                '{realEstateItemTemplate.messagePhone}',
                 messages['realestatewebsite.fe.messages.home.realestatelist.phone']
             );
 

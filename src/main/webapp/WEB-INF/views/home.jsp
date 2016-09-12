@@ -67,11 +67,11 @@
                     </div>
                     <div class="menu-item">
                         <input type="radio" name="property-status" id="recently_sold" value="recently_sold">
-                        <label for="recently_sold">Just Sold</label>
+                        <label for="recently_sold">Add Advertisement</label>
                     </div>
                     <div class="menu-item">
                         <input type="radio" name="property-status" id="property_records" value="property_records">
-                        <label for="property_records">Home Estimate</label>
+                        <label for="property_records">Log In</label>
                     </div>
                 </div>
 
@@ -134,6 +134,52 @@
                         <input id="square-meters_to" class="propertyValue" type="text"
                                value="${viewBean.squareMetersTo}"/>
                     </div>
+
+                    <div>
+                        <label class="propertyText">Central Heating</label>
+                        <input class="propertyValue" type="checkbox">
+                    </div>
+
+                    <div>
+                        <label class="propertyText">Air Conditioned</label>
+                        <input class="propertyValue" type="checkbox">
+                    </div>
+
+                    <div>
+                        <label class="propertyText">Yard</label>
+                        <input class="propertyValue" type="checkbox">
+                    </div>
+
+                    <div>
+                        <label class="propertyText">Garage</label>
+                        <input class="propertyValue" type="checkbox">
+                    </div>
+
+                    <div>
+                        <label class="propertyText">Elevator</label>
+                        <input class="propertyValue" type="checkbox">
+                    </div>
+
+                    <div>
+                        <label class="propertyText">Number Of floors</label>
+                        <input class="propertyValue" type="text">
+                    </div>
+
+                    <div>
+                        <label class="propertyText">Number Of beds</label>
+                        <input class="propertyValue" type="text">
+                    </div>
+
+                    <div>
+                        <label class="propertyText">Number Of Offices</label>
+                        <input class="propertyValue" type="text">
+                    </div>
+
+                    <div>
+                        <label class="propertyText">Parking</label>
+                        <input class="propertyValue" type="checkbox">
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -151,25 +197,26 @@
                 <div class="real-estate-list-item-image"></div>
 
                 <div class="real-estate-list-item-details">
-                    <div>realEstateItemTemplate.address</div>
+
+                    <div>{realEstateItemTemplate.address}</div>
 
                     <div>
-                        realEstateItemTemplate.messageRealEstateType
-                        realEstateItemTemplate.messageAt
-                        realEstateItemTemplate.city, realEstateItemTemplate.region
+                        {realEstateItemTemplate.messageRealEstateType}
+                        {realEstateItemTemplate.messageAt}
+                        {realEstateItemTemplate.city}, {realEstateItemTemplate.region}
                     </div>
 
                     <div>
-                        realEstateItemTemplate.messageArea: realEstateItemTemplate.squareMeters m<sup>2</sup>
+                        {realEstateItemTemplate.messageArea}: {realEstateItemTemplate.squareMeters} m<sup>2</sup>
                     </div>
 
                     <div>
-                        realEstateItemTemplate.messagePrice: realEstateItemTemplate.price
-                        realEstateItemTemplate.messageCurrency
+                        {realEstateItemTemplate.messagePrice}: {realEstateItemTemplate.price}
+                        {realEstateItemTemplate.messageCurrency}
                     </div>
 
                     <div>
-                        realEstateItemTemplate.messagePhone: realEstateItemTemplate.phone
+                        {realEstateItemTemplate.messagePhone}: {realEstateItemTemplate.phone}
                     </div>
                 </div>
             </div>
