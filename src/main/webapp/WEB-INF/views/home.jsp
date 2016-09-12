@@ -142,91 +142,140 @@
                     </div>
 
                     <div>
+                        <label class="propertyText">Number of rooms</label>
+                        <input id="numberOfRooms" class="propertyValue" type="text" value="${viewBean.numberOfRooms}"/>
+                    </div>
+
+                    <div>
+                        <label class="propertyText">Number of beds</label>
+                        <input id="numberOfBeds" class="propertyValue" type="text" value="${viewBean.numberOfBeds}"/>
+                    </div>
+
+
+                    <div>
                         <label class="propertyText">Central Heating</label>
-                        <c:choose>
-                            <c:when test="${viewBean.centralHeatingIncluded}">
-                                <input id="centralHeatingIncluded" class="propertyValue" type="checkbox"
-                                       checked="checked"/>
-                            </c:when>
-                            <c:otherwise>
-                                <input id="centralHeatingIncluded" class="propertyValue" type="checkbox"/>
-                            </c:otherwise>
-                        </c:choose>
+                        <select id="centralHeatingDropdown" class="propertyValue">
+                            <c:forEach items="${viewBean.centralHeatingDropdown}" var="centralHeating">
+
+                                <c:choose>
+                                    <c:when test="${centralHeating.key.equals(viewBean.selectedCentralHeating)}">
+                                        <option value="${centralHeating.key}"
+                                                selected="selected">${centralHeating.value}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${centralHeating.key}">${centralHeating.value}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </select>
                     </div>
 
                     <div>
                         <label class="propertyText">Air Conditioned</label>
-                        <c:choose>
-                            <c:when test="${viewBean.airConditioned}">
-                                <input id="airConditioned" class="propertyValue" type="checkbox" checked="checked"/>
-                            </c:when>
-                            <c:otherwise>
-                                <input id="airConditioned" class="propertyValue" type="checkbox"/>
-                            </c:otherwise>
-                        </c:choose>
+                        <select id="airConditionedDropdown" class="propertyValue">
+                            <c:forEach items="${viewBean.airConditionedDropdown}" var="airConditioned">
+
+                                <c:choose>
+                                    <c:when test="${airConditioned.key.equals(viewBean.selectedAirConditioned)}">
+                                        <option value="${airConditioned.key}"
+                                                selected="selected">${airConditioned.value}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${airConditioned.key}">${airConditioned.value}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </select>
                     </div>
 
                     <div>
                         <label class="propertyText">Yard</label>
-                        <c:choose>
-                            <c:when test="${viewBean.yardIncluded}">
-                                <input id="yardIncluded" class="propertyValue" type="checkbox" checked="checked"/>
-                            </c:when>
-                            <c:otherwise>
-                                <input id="yardIncluded" class="propertyValue" type="checkbox"/>
-                            </c:otherwise>
-                        </c:choose>
+                        <select id="yardIncludedDropdown" class="propertyValue">
+                            <c:forEach items="${viewBean.yardIncludedDropdown}" var="yardIncluded">
+
+                                <c:choose>
+                                    <c:when test="${yardIncluded.key.equals(viewBean.selectedYardIncluded)}">
+                                        <option value="${yardIncluded.key}"
+                                                selected="selected">${yardIncluded.value}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${yardIncluded.key}">${yardIncluded.value}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </select>
                     </div>
 
                     <div>
                         <label class="propertyText">Garage</label>
-                        <c:choose>
-                            <c:when test="${viewBean.garageIncluded}">
-                                <input id="garageIncluded" class="propertyValue" type="checkbox" checked="checked"/>
-                            </c:when>
-                            <c:otherwise>
-                                <input id="garageIncluded" class="propertyValue" type="checkbox"/>
-                            </c:otherwise>
-                        </c:choose>
+                        <select id="garageIncludedDropdown" class="propertyValue">
+                            <c:forEach items="${viewBean.garageIncludedDropdown}" var="garageIncluded">
+
+                                <c:choose>
+                                    <c:when test="${garageIncluded.key.equals(viewBean.selectedGarageIncluded)}">
+                                        <option value="${garageIncluded.key}"
+                                                selected="selected">${garageIncluded.value}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${garageIncluded.key}">${garageIncluded.value}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </select>
                     </div>
 
                     <div>
                         <label class="propertyText">Elevator</label>
-                        <c:choose>
-                            <c:when test="${viewBean.elevatorIncluded}">
-                                <input id="elevatorIncluded" class="propertyValue" type="checkbox" checked="checked"/>
-                            </c:when>
-                            <c:otherwise>
-                                <input id="elevatorIncluded" class="propertyValue" type="checkbox"/>
-                            </c:otherwise>
-                        </c:choose>
+                        <select id="elevatorIncludedDropdown" class="propertyValue">
+                            <c:forEach items="${viewBean.elevatorIncludedDropdown}" var="elevatorIncluded">
+
+                                <c:choose>
+                                    <c:when test="${elevatorIncluded.key.equals(viewBean.selectedElevatorIncluded)}">
+                                        <option value="${elevatorIncluded.key}"
+                                                selected="selected">${elevatorIncluded.value}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${elevatorIncluded.key}">${elevatorIncluded.value}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </select>
                     </div>
 
                     <div>
-                        <label class="propertyText">Number Of floors</label>
-                        <input id="numberOfFloors" class="propertyValue" type="text">
-                    </div>
+                        <label class="propertyText">Pool</label>
+                        <select id="poolIncludedDropdown" class="propertyValue">
+                            <c:forEach items="${viewBean.poolIncludedDropdown}" var="poolIncluded">
 
-                    <div>
-                        <label class="propertyText">Number Of beds</label>
-                        <input id="numberOfBeds" class="propertyValue" type="text">
-                    </div>
-
-                    <div>
-                        <label class="propertyText">Number Of Offices</label>
-                        <input id="numberOfOffices" class="propertyValue" type="text">
+                                <c:choose>
+                                    <c:when test="${poolIncluded.key.equals(viewBean.selectedPoolIncluded)}">
+                                        <option value="${poolIncluded.key}"
+                                                selected="selected">${poolIncluded.value}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${poolIncluded.key}">${poolIncluded.value}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </select>
                     </div>
 
                     <div>
                         <label class="propertyText">Parking</label>
-                        <c:choose>
-                            <c:when test="${viewBean.parkingIncluded}">
-                                <input id="parkingIncluded" class="propertyValue" type="checkbox" checked="checked"/>
-                            </c:when>
-                            <c:otherwise>
-                                <input id="parkingIncluded" class="propertyValue" type="checkbox"/>
-                            </c:otherwise>
-                        </c:choose>
+                        <select id="parkingIncludedDropdown" class="propertyValue">
+                            <c:forEach items="${viewBean.parkingIncludedDropdown}" var="parkingIncluded">
+
+                                <c:choose>
+                                    <c:when test="${parkingIncluded.key.equals(viewBean.selectedParkingIncluded)}">
+                                        <option value="${parkingIncluded.key}"
+                                                selected="selected">${parkingIncluded.value}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${parkingIncluded.key}">${parkingIncluded.value}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </select>
                     </div>
 
                 </div>

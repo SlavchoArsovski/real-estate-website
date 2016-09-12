@@ -1,7 +1,7 @@
 .home-header {
-    height: 500px;
     position: relative;
     display: block;
+    height: 450px;
 }
 
 .home-header .hero-img-wrapper {
@@ -46,6 +46,8 @@
     margin-left: auto;
     padding-left: 10px;
     padding-right: 10px;
+    height: 450px;
+    width: 750px;
 }
 
 .container:before, .container:after {
@@ -54,13 +56,7 @@
 }
 
 .row {
-    margin-left: -10px;
-    margin-right: -10px;
-}
-
-.row:before, .row:after {
-    content: " ";
-    display: table;
+    height: 450px;
 }
 
 .header-group.header-group-white {
@@ -68,7 +64,7 @@
 }
 
 .header-group {
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 .text-center {
@@ -103,12 +99,14 @@
     max-width: 700px;
     margin: 20px auto 0;
     position: relative;
+    height: 375px;
 }
 
 .menu-wrapper {
     display: table;
     width: 700px;
     max-width: 700px;
+    height: 50px;
 }
 
 .menu-wrapper .menu-item {
@@ -285,29 +283,6 @@ input[type="radio"], input[type="checkbox"] {
     vertical-align: middle;
 }
 
-.ra-search:before {
-    content: "\e017";
-    box-sizing: border-box;
-}
-
-@media (min-width: 1280px) {
-    .container {
-        width: 1280px;
-    }
-}
-
-@media (min-width: 996px) {
-    .container {
-        width: 996px;
-    }
-}
-
-@media (min-width: 767px) {
-    .container {
-        width: 750px;
-    }
-}
-
 .real-estate-list {
     font-size: 16px;
     color: #333f48;
@@ -353,27 +328,25 @@ input[type="radio"], input[type="checkbox"] {
 
 .search-properties {
     margin-top: 15px;
+    background-color: rgba(0, 0, 0, 0.65);
+    height: 310px;
+    position: relative;
 }
 
 .search-properties > div {
     display: table;
     font-size: 14px;
     padding: 5px 10px;
-    width: 350px;
-    background-color: rgba(0, 0, 0, 0.65);
+    width: 30%;
+    float: left;
 }
 
 .propertyText {
-    display: table-cell;
+    display: block;
     color: white;
     font-size: 15px;
-    vertical-align: middle;
-    width: 40%;
 }
 
 .propertyValue {
-    vertical-align: middle;
-    display: table-cell;
-    width: 60%;
-    horiz-align: right;
+    width: 80%;
 }

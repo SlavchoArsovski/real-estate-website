@@ -20,16 +20,22 @@ public class HomeViewModel extends ViewModelWithMessage {
     private Integer squareMetersFrom;
     private Integer squareMetersTo;
     private Integer yearOfConstruction;
-    private boolean centralHeatingIncluded;
-    private boolean airConditioned;
-    private boolean yardIncluded;
-    private boolean garageIncluded;
-    private boolean elevatorIncluded;
-    private Integer numberOfFloors;
+    private Map<String, String> centralHeatingDropdown;
+    private String selectedCentralHeating;
+    private Map<String, String> airConditionedDropdown;
+    private String selectedAirConditioned;
+    private Map<String, String> yardIncludedDropdown;
+    private String selectedYardIncluded;
+    private Map<String, String> garageIncludedDropdown;
+    private String selectedGarageIncluded;
+    private Map<String, String> elevatorIncludedDropdown;
+    private String selectedElevatorIncluded;
+    private Integer numberOfRooms;
     private Integer numberOfBeds;
-    private Integer numberOfOffices;
-    private boolean parkingIncluded;
-
+    private Map<String, String> parkingIncludedDropdown;
+    private String selectedParkingIncluded;
+    private Map<String, String> poolIncludedDropdown;
+    private String selectedPoolIncluded;
     private List<RealEstateViewModel> realEstates = Lists.newArrayList();
 
     public Map<String, String> getRealEstateTypesDropdown() {
@@ -104,52 +110,92 @@ public class HomeViewModel extends ViewModelWithMessage {
         this.yearOfConstruction = yearOfConstruction;
     }
 
-    public boolean isCentralHeatingIncluded() {
-        return centralHeatingIncluded;
+    public Map<String, String> getCentralHeatingDropdown() {
+        return centralHeatingDropdown;
     }
 
-    public void setCentralHeatingIncluded(boolean centralHeatingIncluded) {
-        this.centralHeatingIncluded = centralHeatingIncluded;
+    public void setCentralHeatingDropdown(Map<String, String> centralHeatingDropdown) {
+        this.centralHeatingDropdown = centralHeatingDropdown;
     }
 
-    public boolean isAirConditioned() {
-        return airConditioned;
+    public String getSelectedCentralHeating() {
+        return selectedCentralHeating;
     }
 
-    public void setAirConditionedIncluded(boolean airConditioned) {
-        this.airConditioned = airConditioned;
+    public void setSelectedCentralHeating(String selectedCentralHeating) {
+        this.selectedCentralHeating = selectedCentralHeating;
     }
 
-    public boolean isYardIncluded() {
-        return yardIncluded;
+    public Map<String, String> getAirConditionedDropdown() {
+        return airConditionedDropdown;
     }
 
-    public void setYardIncluded(boolean yardIncluded) {
-        this.yardIncluded = yardIncluded;
+    public void setAirConditionedDropdown(Map<String, String> airConditionedDropdown) {
+        this.airConditionedDropdown = airConditionedDropdown;
     }
 
-    public boolean isGarageIncluded() {
-        return garageIncluded;
+    public String getSelectedAirConditioned() {
+        return selectedAirConditioned;
     }
 
-    public void setGarageIncluded(boolean garageIncluded) {
-        this.garageIncluded = garageIncluded;
+    public void setSelectedAirConditioned(String selectedAirConditioned) {
+        this.selectedAirConditioned = selectedAirConditioned;
     }
 
-    public boolean isElevatorIncluded() {
-        return elevatorIncluded;
+    public Map<String, String> getYardIncludedDropdown() {
+        return yardIncludedDropdown;
     }
 
-    public void setElevatorIncluded(boolean elevatorIncluded) {
-        this.elevatorIncluded = elevatorIncluded;
+    public void setYardIncludedDropdown(Map<String, String> yardIncludedDropdown) {
+        this.yardIncludedDropdown = yardIncludedDropdown;
     }
 
-    public Integer getNumberOfFloors() {
-        return numberOfFloors;
+    public String getSelectedYardIncluded() {
+        return selectedYardIncluded;
     }
 
-    public void setNumberOfFloors(Integer numberOfFloors) {
-        this.numberOfFloors = numberOfFloors;
+    public void setSelectedYardIncluded(String selectedYardIncluded) {
+        this.selectedYardIncluded = selectedYardIncluded;
+    }
+
+    public Map<String, String> getGarageIncludedDropdown() {
+        return garageIncludedDropdown;
+    }
+
+    public void setGarageIncludedDropdown(Map<String, String> garageIncludedDropdown) {
+        this.garageIncludedDropdown = garageIncludedDropdown;
+    }
+
+    public String getSelectedGarageIncluded() {
+        return selectedGarageIncluded;
+    }
+
+    public void setSelectedGarageIncluded(String selectedGarageIncluded) {
+        this.selectedGarageIncluded = selectedGarageIncluded;
+    }
+
+    public Map<String, String> getElevatorIncludedDropdown() {
+        return elevatorIncludedDropdown;
+    }
+
+    public void setElevatorIncludedDropdown(Map<String, String> elevatorIncludedDropdown) {
+        this.elevatorIncludedDropdown = elevatorIncludedDropdown;
+    }
+
+    public String getSelectedElevatorIncluded() {
+        return selectedElevatorIncluded;
+    }
+
+    public void setSelectedElevatorIncluded(String selectedElevatorIncluded) {
+        this.selectedElevatorIncluded = selectedElevatorIncluded;
+    }
+
+    public Integer getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public void setNumberOfRooms(Integer numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
     }
 
     public Integer getNumberOfBeds() {
@@ -160,20 +206,36 @@ public class HomeViewModel extends ViewModelWithMessage {
         this.numberOfBeds = numberOfBeds;
     }
 
-    public Integer getNumberOfOffices() {
-        return numberOfOffices;
+    public Map<String, String> getParkingIncludedDropdown() {
+        return parkingIncludedDropdown;
     }
 
-    public void setNumberOfOffices(Integer numberOfOffices) {
-        this.numberOfOffices = numberOfOffices;
+    public void setParkingIncludedDropdown(Map<String, String> parkingIncludedDropdown) {
+        this.parkingIncludedDropdown = parkingIncludedDropdown;
     }
 
-    public boolean isParkingIncluded() {
-        return parkingIncluded;
+    public String getSelectedParkingIncluded() {
+        return selectedParkingIncluded;
     }
 
-    public void setParkingIncluded(boolean parkingIncluded) {
-        this.parkingIncluded = parkingIncluded;
+    public void setSelectedParkingIncluded(String selectedParkingIncluded) {
+        this.selectedParkingIncluded = selectedParkingIncluded;
+    }
+
+    public Map<String, String> getPoolIncludedDropdown() {
+        return poolIncludedDropdown;
+    }
+
+    public void setPoolIncludedDropdown(Map<String, String> poolIncludedDropdown) {
+        this.poolIncludedDropdown = poolIncludedDropdown;
+    }
+
+    public String getSelectedPoolIncluded() {
+        return selectedPoolIncluded;
+    }
+
+    public void setSelectedPoolIncluded(String selectedPoolIncluded) {
+        this.selectedPoolIncluded = selectedPoolIncluded;
     }
 
     public List<RealEstateViewModel> getRealEstates() {

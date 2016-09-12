@@ -13,6 +13,16 @@ public class HomePropertyChangeModel {
     private BigDecimal priceTo;
     private Integer squareMetersFrom;
     private Integer squareMetersTo;
+    private Integer yearOfConstruction;
+    private String selectedCentralHeating;
+    private String selectedAirConditioned;
+    private String selectedYardIncluded;
+    private String selectedGarageIncluded;
+    private String selectedElevatorIncluded;
+    private Integer numberOfRooms;
+    private Integer numberOfBeds;
+    private String selectedParkingIncluded;
+    private String selectedPoolIncluded;
 
     public String getSelectedRealEstateType() {
         return selectedRealEstateType;
@@ -60,5 +70,85 @@ public class HomePropertyChangeModel {
 
     public void setSquareMetersTo(Integer squareMetersTo) {
         this.squareMetersTo = squareMetersTo;
+    }
+
+    public Integer getYearOfConstruction() {
+        return yearOfConstruction;
+    }
+
+    public void setYearOfConstruction(Integer yearOfConstruction) {
+        this.yearOfConstruction = yearOfConstruction;
+    }
+
+    public String getSelectedCentralHeating() {
+        return selectedCentralHeating;
+    }
+
+    public void setSelectedCentralHeating(String selectedCentralHeating) {
+        this.selectedCentralHeating = selectedCentralHeating;
+    }
+
+    public String getSelectedAirConditioned() {
+        return selectedAirConditioned;
+    }
+
+    public void setSelectedAirConditioned(String selectedAirConditioned) {
+        this.selectedAirConditioned = selectedAirConditioned;
+    }
+
+    public String getSelectedYardIncluded() {
+        return selectedYardIncluded;
+    }
+
+    public void setSelectedYardIncluded(String selectedYardIncluded) {
+        this.selectedYardIncluded = selectedYardIncluded;
+    }
+
+    public String getSelectedGarageIncluded() {
+        return selectedGarageIncluded;
+    }
+
+    public void setSelectedGarageIncluded(String selectedGarageIncluded) {
+        this.selectedGarageIncluded = selectedGarageIncluded;
+    }
+
+    public String getSelectedElevatorIncluded() {
+        return selectedElevatorIncluded;
+    }
+
+    public void setSelectedElevatorIncluded(String selectedElevatorIncluded) {
+        this.selectedElevatorIncluded = selectedElevatorIncluded;
+    }
+
+    public Integer getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public void setNumberOfRooms(Integer numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
+    }
+
+    public Integer getNumberOfBeds() {
+        return numberOfBeds;
+    }
+
+    public void setNumberOfBeds(Integer numberOfBeds) {
+        this.numberOfBeds = numberOfBeds;
+    }
+
+    public String getSelectedParkingIncluded() {
+        return selectedParkingIncluded;
+    }
+
+    public void setSelectedParkingIncluded(String selectedParkingIncluded) {
+        this.selectedParkingIncluded = selectedParkingIncluded;
+    }
+
+    public String getSelectedPoolIncluded() {
+        return selectedPoolIncluded;
+    }
+
+    public void setSelectedPoolIncluded(String selectedPoolIncluded) {
+        this.selectedPoolIncluded = selectedPoolIncluded;
     }
 }

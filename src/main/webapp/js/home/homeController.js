@@ -58,19 +58,17 @@ $(document).ready(function () {
         homeModel.changeElevatorIncluded(elevatorIncluded);
     });
 
-    $(homeView).on('numberOfFloorsChange', function (event, numberOfFloors) {
-        homeModel.changeNumberOfFloors(numberOfFloors);
-    });
-
-    //     numberOfOffices: this.numberOfOffices,
-    //     parkingIncluded: this.parkingIncluded,
-
     $(homeView).on('numberOfBedsChange', function (event, numberOfBeds) {
         homeModel.changeNumberOfBeds(numberOfBeds);
     });
 
-    $(homeView).on('numberOfOfficesChange', function (event, numberOfOffices) {
-        homeModel.changeNumberOfOffices(numberOfOffices);
+    $(homeView).on('numberOfRoomsChange', function (event, numberOfRooms) {
+        homeModel.changeNumberOfRooms(numberOfRooms);
+    });
+
+
+    $(homeView).on('poolIncludedChange', function (event, poolIncluded) {
+        homeModel.changePoolIncluded(poolIncluded);
     });
 
     $(homeView).on('parkingIncludedChange', function (event, parkingIncluded) {

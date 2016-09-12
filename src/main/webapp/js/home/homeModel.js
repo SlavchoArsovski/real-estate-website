@@ -29,15 +29,15 @@ var homeModel = {
         data['squareMetersFrom'] = this.squareMetersFrom;
         data['squareMetersTo'] = this.squareMetersTo;
         data['yearOfConstruction'] = this.yearOfConstruction;
-        data['centralHeatingIncluded'] = this.centralHeatingIncluded;
-        data['airConditioned'] = this.airConditioned;
-        data['yardIncluded'] = this.yardIncluded;
-        data['garageIncluded'] = this.garageIncluded;
-        data['elevatorIncluded'] = this.elevatorIncluded;
-        data['numberOfFloors'] = this.numberOfFloors;
+        data['selectedCentralHeating'] = this.selectedCentralHeating;
+        data['selectedAirConditioned'] = this.selectedAirConditioned;
+        data['selectedYardIncluded'] = this.selectedYardIncluded;
+        data['selectedGarageIncluded'] = this.selectedGarageIncluded;
+        data['selectedElevatorIncluded'] = this.selectedElevatorIncluded;
+        data['numberOfRooms'] = this.numberOfBeds;
         data['numberOfBeds'] = this.numberOfBeds;
-        data['numberOfOffices'] = this.numberOfOffices;
-        data['parkingIncluded'] = this.parkingIncluded;
+        data['selectedParkingIncluded'] = this.selectedParkingIncluded;
+        data['selectedPoolIncluded'] = this.selectedPoolIncluded;
 
         data[key] = value;
         data['changedProperty'] = key;
@@ -94,39 +94,40 @@ var homeModel = {
     },
 
     changeCentralHeatingIncluded: function (centralHeatingIncluded) {
-        this._propertyChange('centralHeatingIncluded', centralHeatingIncluded);
+        this._propertyChange('selectedCentralHeating', centralHeatingIncluded);
     },
 
     changeAirConditioned: function (airConditioned) {
-        this._propertyChange('airConditioned', airConditioned);
+        this._propertyChange('selectedAirConditioned', airConditioned);
     },
 
     changeYardIncluded: function (yardIncluded) {
-        this._propertyChange('yardIncluded', yardIncluded);
+        this._propertyChange('selectedYardIncluded', yardIncluded);
     },
 
     changeGarageIncluded: function (garageIncluded) {
-        this._propertyChange('garageIncluded', garageIncluded);
+        this._propertyChange('selectedGarageIncluded', garageIncluded);
     },
 
     changeElevatorIncluded: function (elevatorIncluded) {
-        this._propertyChange('elevatorIncluded', elevatorIncluded);
+        this._propertyChange('selectedElevatorIncluded', elevatorIncluded);
     },
 
-    changeNumberOfFloors: function (numberOfFloors) {
-        this._propertyChange('numberOfFloors', numberOfFloors);
+
+    changeNumberOfRooms: function (numberOfRooms) {
+        this._propertyChange('numberOfRooms', numberOfRooms);
     },
 
     changeNumberOfBeds: function (numberOfBeds) {
         this._propertyChange('numberOfBeds', numberOfBeds);
     },
 
-    changeNumberOfOffices: function (numberOfOffices) {
-        this._propertyChange('numberOfOffices', numberOfOffices);
+    changePoolIncluded: function (poolIncluded) {
+        this._propertyChange('selectedPoolIncluded', poolIncluded);
     },
 
     changeParkingIncluded: function (parkingIncluded) {
-        this._propertyChange('parkingIncluded', parkingIncluded);
+        this._propertyChange('selectedParkingIncluded', parkingIncluded);
     },
 
     getModelForView: function () {
@@ -137,17 +138,17 @@ var homeModel = {
             priceTo: this.priceTo,
             squareMetersFrom: this.squareMetersFrom,
             squareMetersTo: this.squareMetersTo,
-            realEstates: this.realEstates,
             yearOfConstruction: this.yearOfConstruction,
-            centralHeatingIncluded: this.centralHeatingIncluded,
-            airConditioned: this.airConditioned,
-            yardIncluded: this.yardIncluded,
-            garageIncluded: this.garageIncluded,
-            elevatorIncluded: this.elevatorIncluded,
-            numberOfFloors: this.numberOfFloors,
+            selectedCentralHeating: this.selectedCentralHeating,
+            selectedAirConditioned: this.selectedAirConditioned,
+            selectedYardIncluded: this.selectedYardIncluded,
+            selectedGarageIncluded: this.selectedGarageIncluded,
+            selectedElevatorIncluded: this.selectedElevatorIncluded,
+            numberOfRooms: this.numberOfRooms,
             numberOfBeds: this.numberOfBeds,
-            numberOfOffices: this.numberOfOffices,
-            parkingIncluded: this.parkingIncluded,
+            selectedPoolIncluded: this.selectedPoolIncluded,
+            selectedParkingIncluded: this.selectedParkingIncluded,
+            realEstates: this.realEstates,
             messages: this.messages
         };
     }
