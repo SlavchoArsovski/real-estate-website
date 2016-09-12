@@ -6,10 +6,16 @@ import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
 import com.si.seminar.realestatewebsite.web.viewmodel.City;
 import com.si.seminar.realestatewebsite.web.viewmodel.RealEstateViewModel;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -24,7 +30,7 @@ public class RealEstateMapper implements ApplicationContextAware {
     public static final String CITIES_MESSAGE_KEY_PREFIX = "realestatewebsite.fe.messages.general.cities";
 
     private ApplicationContext appContext;
-
+    
     public RealEstateViewModel mapRealEstateToRealEstateViewModel(RealEstate realEstate) {
 
         RealEstateViewModel realEstateViewModel = new RealEstateViewModel();
@@ -34,8 +40,22 @@ public class RealEstateMapper implements ApplicationContextAware {
         realEstateViewModel.setDescription(realEstate.getDescription());
         realEstateViewModel.setAddress(realEstate.getAddress());
         realEstateViewModel.setRegion(realEstate.getRegion());
-
+        realEstateViewModel.setPrice(formatBigDecimal(realEstate.getPrice()));
+        realEstateViewModel.setSquareMeters(String.valueOf(realEstate.getSquareMeters()));
         return realEstateViewModel;
+    }
+
+    public String formatBigDecimal(BigDecimal number) {
+
+        number = number.setScale(2, BigDecimal.ROUND_HALF_UP);
+
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
+        df.setMinimumFractionDigits(0);
+
+        String result = df.format(number);
+
+        return result;
     }
 
     public Map<String, String> mapRealEstateTypes(Locale locale) {

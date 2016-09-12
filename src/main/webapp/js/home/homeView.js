@@ -8,11 +8,12 @@ var homeView = {
         cityDropdown: '#cityDropdown',
         cityDropdownSelectedOption: '#cityDropdown option:selected',
         squareMetersFromInput: '#square-meters_from',
-        squareMetersToInput: '#square-meters_to'
+        squareMetersToInput: '#square-meters_to',
+        realEstateList: '.real-estate-list',
+        realEstateItemHtmlTemplate: '.real-estate-list-item-template'
     },
 
     initView: function (model) {
-
         this._initViewChangingEvents();
         this._initModelChangingEvents();
     },
@@ -58,6 +59,7 @@ var homeView = {
         this._updateCity(model.selectedCity);
         this._updateSquareMetersFrom(model.squareMetersFrom);
         this._updateSquareMetersTo(model.squareMetersTo);
+        this._updateRealEstates(model.realEstates);
     },
 
     _updateRealEstateType: function (selectedRealEstateType) {
@@ -88,6 +90,28 @@ var homeView = {
 
     _updateSquareMetersTo: function (squareMetersTo) {
         $(this.pageComponents.squareMetersToInput).val(squareMetersTo);
+    },
+
+    _updateRealEstates: function (realEstates) {
+
+        var me = this;
+
+        $(me.pageComponents.realEstateList).html('');
+
+        $.each(realEstates, function (index, realEstate) {
+
+            var templateHtml = $(me.pageComponents.realEstateItemHtmlTemplate).html();
+
+            templateHtml = templateHtml.replace('realEstateItemTemplate.address', realEstate.address);
+            templateHtml = templateHtml.replace('realEstateItemTemplate.city', realEstate.city);
+            templateHtml = templateHtml.replace('realEstateItemTemplate.price', realEstate.price);
+            templateHtml = templateHtml.replace('realEstateItemTemplate.region', realEstate.region);
+            templateHtml = templateHtml.replace('realEstateItemTemplate.squareMeters', realEstate.squareMeters);
+            templateHtml = templateHtml.replace('realEstateItemTemplate.phone', '070882031');
+
+            $(me.pageComponents.realEstateList).append(templateHtml);
+        });
+
     }
 
 };

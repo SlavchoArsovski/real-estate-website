@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Home view model.
  */
-public class HomeViewModel {
+public class HomeViewModel extends ViewModelWithMessage {
 
     private Map<String, String> realEstateTypesDropdown;
     private String selectedRealEstateType;

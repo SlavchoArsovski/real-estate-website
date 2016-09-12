@@ -48,8 +48,6 @@
                 <h1>
                     <span>Discover Your Perfect Home</span>
                 </h1>
-                <p class="header-section-secondary text-center hidden-xs hidden-xxs">with the most complete source of
-                    homes for sale &amp; real estate near you</p>
             </header>
             <div class="home-search-wrapper">
                 <div id="menu-wrapper" class="menu-wrapper">
@@ -78,8 +76,10 @@
                 </div>
 
                 <div class="search-properties">
+
                     <div>
-                        <select id="realEstateTypeDropdown">
+                        <label class="propertyText">Real Estate Type</label>
+                        <select id="realEstateTypeDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.realEstateTypesDropdown}" var="realEstateType">
 
                                 <c:choose>
@@ -96,15 +96,18 @@
                     </div>
 
                     <div>
-                        Price from: <input id="price_from" type="text" value="${viewBean.priceFrom}"/>
+                        <label class="propertyText">Price from</label>
+                        <input id="price_from" class="propertyValue" type="text" value="${viewBean.priceFrom}"/>
                     </div>
 
                     <div>
-                        Price to: <input id="price_to" type="text" value="${viewBean.priceTo}"/>
+                        <label class="propertyText">Price to</label>
+                        <input id="price_to" class="propertyValue" type="text" value="${viewBean.priceTo}"/>
                     </div>
 
                     <div>
-                        <select id="cityDropdown">
+                        <label class="propertyText">City</label>
+                        <select id="cityDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.citiesDropdown}" var="city">
 
                                 <c:choose>
@@ -121,12 +124,15 @@
                     </div>
 
                     <div>
-                        Square Meters from: <input id="square-meters_from" type="text"
-                                                   value="${viewBean.squareMetersFrom}"/>
+                        <label class="propertyText">Square Meters from</label>
+                        <input id="square-meters_from" class="propertyValue" type="text"
+                               value="${viewBean.squareMetersFrom}"/>
                     </div>
 
                     <div>
-                        Square Meters to: <input id="square-meters_to" type="text" value="${viewBean.squareMetersTo}"/>
+                        <label class="propertyText">Square Meters to</label>
+                        <input id="square-meters_to" class="propertyValue" type="text"
+                               value="${viewBean.squareMetersTo}"/>
                     </div>
                 </div>
             </div>
@@ -139,7 +145,38 @@
 
     <div class="real-estate-container">
 
+        <div class="real-estate-list-item-template">
+            <div class="real-estate-list-item">
+
+                <div class="real-estate-list-item-image"></div>
+
+                <div class="real-estate-list-item-details">
+                    <div>realEstateItemTemplate.address</div>
+
+                    <div>
+                        realEstateItemTemplate.messageRealEstateType
+                        realEstateItemTemplate.messageAt
+                        realEstateItemTemplate.city, realEstateItemTemplate.region
+                    </div>
+
+                    <div>
+                        realEstateItemTemplate.messageArea: realEstateItemTemplate.squareMeters m<sup>2</sup>
+                    </div>
+
+                    <div>
+                        realEstateItemTemplate.messagePrice: realEstateItemTemplate.price
+                        realEstateItemTemplate.messageCurrency
+                    </div>
+
+                    <div>
+                        realEstateItemTemplate.messagePhone: realEstateItemTemplate.phone
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="real-estate-list">
+
             <c:forEach items="${viewBean.realEstates}" var="realEstate">
 
                 <div class="real-estate-list-item">
@@ -160,11 +197,14 @@
                         <div>
                             <spring:message
                                     code="realestatewebsite.fe.messages.home.realestatelist.area"/>: ${realEstate.squareMeters}
+                            m<sup>2</sup>
                         </div>
 
                         <div>
                             <spring:message
                                     code="realestatewebsite.fe.messages.home.realestatelist.price"/>: ${realEstate.price}
+                            <spring:message
+                                    code="realestatewebsite.fe.messages.home.realestatelist.currency"/>
                         </div>
 
                         <div>

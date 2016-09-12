@@ -86,7 +86,8 @@ var homeModel = {
             priceFrom: this.priceFrom,
             priceTo: this.priceTo,
             squareMetersFrom: this.squareMetersFrom,
-            squareMetersTo: this.squareMetersTo
+            squareMetersTo: this.squareMetersTo,
+            realEstates: this.realEstates
         };
     }
 

@@ -49,7 +49,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+        ExposedMessageSource messageSource = new ExposedMessageSource();
         messageSource.setBasename("/i18/messages");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
@@ -58,7 +58,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public LocaleResolver localeResolver(){
         CookieLocaleResolver resolver = new CookieLocaleResolver();
-        resolver.setDefaultLocale(new Locale("en"));
+        resolver.setDefaultLocale(new Locale("mk"));
         resolver.setCookieName("myLocaleCookie");
         resolver.setCookieMaxAge(4800);
         return resolver;

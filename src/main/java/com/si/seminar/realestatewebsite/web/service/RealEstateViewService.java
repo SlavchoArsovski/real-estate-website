@@ -1,6 +1,7 @@
 package com.si.seminar.realestatewebsite.web.service;
 
 import com.google.common.collect.Lists;
+import com.si.seminar.realestatewebsite.configuration.spring.ExposedMessageSource;
 import com.si.seminar.realestatewebsite.db.datamodel.*;
 import com.si.seminar.realestatewebsite.services.RealEstateService;
 import com.si.seminar.realestatewebsite.web.mapper.RealEstateMapper;
@@ -9,6 +10,7 @@ import com.si.seminar.realestatewebsite.web.viewmodel.HomePropertyChangeModel;
 import com.si.seminar.realestatewebsite.web.viewmodel.HomeViewModel;
 import com.si.seminar.realestatewebsite.web.viewmodel.RealEstateViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -28,6 +30,10 @@ public class RealEstateViewService {
 
     @Autowired
     private RealEstateMapper realEstateMapper;
+
+    @Autowired
+    private ExposedMessageSource messageSource;
+
 
     public HomeViewModel getInitialViewModel(AdvertisementType advertismentType, Locale locale) {
 
@@ -54,6 +60,7 @@ public class RealEstateViewService {
         homeViewModel.setSelectedRealEstateType(RealEstateType.HOUSE.name());
         homeViewModel.setCitiesDropdown(realEstateMapper.mapCities(locale));
         homeViewModel.setSelectedCity("ALL");
+        homeViewModel.setMessages(messageSource.getAllMessages(locale));
 
         return homeViewModel;
     }
@@ -100,6 +107,7 @@ public class RealEstateViewService {
         homeViewModel.setSelectedCity(homePropertyChangeModel.getSelectedCity());
         homeViewModel.setSquareMetersFrom(homePropertyChangeModel.getSquareMetersFrom());
         homeViewModel.setSquareMetersTo(homePropertyChangeModel.getSquareMetersTo());
+        homeViewModel.setMessages(messageSource.getAllMessages(locale));
 
         return homeViewModel;
 
