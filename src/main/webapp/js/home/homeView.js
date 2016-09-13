@@ -27,17 +27,7 @@ var homeView = {
         parkingIncludedDropdown: '#parkingIncludedDropdown',
         parkingIncludedDropdownSelectedOption: '#parkingIncludedDropdown option:selected',
         realEstateList: '.real-estate-list',
-        realEstateItemHtmlTemplate: '.real-estate-list-item-template',
-        yearOfConstructionSearch: '#yearOfConstructionSearch',
-        numberOfRoomsSearch: '#numberOfRoomsSearch',
-        numberOfBedsSearch: '#numberOfBedsSearch',
-        centralHeatingSearch: '#centralHeatingSearch',
-        airConditionSearch: '#airConditionSearch',
-        yardSearch: '#yardSearchClass',
-        garageSearch: '#garageSearch',
-        elevatorSearch: '#elevatorSearch',
-        poolSearch: '#poolSearch',
-        parkingSearch: '#parkingSearch'
+        realEstateItemHtmlTemplate: '.real-estate-list-item-template'
     },
 
     initView: function (model) {
@@ -189,64 +179,65 @@ var homeView = {
     _updateSearchProperties: function (validProperties) {
 
         if ($.inArray('YEAR_OF_CONSTRUCTION', validProperties) > -1) {
-            $(this.pageComponents.yearOfConstructionSearch).removeClass('property-disabled');
+            $(this.pageComponents.yearOfConstructionInput).removeAttr('disabled');
         } else {
-            $(this.pageComponents.yearOfConstructionSearch).addClass('property-disabled');
-        }
-
-        if ($.inArray('CENTRAL_HEATING_INCLUDED', validProperties) > -1) {
-            $(this.pageComponents.centralHeatingSearch).removeClass('property-disabled');
-        } else {
-            $(this.pageComponents.centralHeatingSearch).addClass('property-disabled');
-        }
-
-        if ($.inArray('AIR_CONDITIONED', validProperties) > -1) {
-            $(this.pageComponents.airConditionSearch).removeClass('property-disabled');
-        } else {
-            $(this.pageComponents.airConditionSearch).addClass('property-disabled');
-        }
-
-        if ($.inArray('NUMBER_OF_BEDS', validProperties) > -1) {
-            $(this.pageComponents.numberOfBedsSearch).removeClass('property-disabled');
-        } else {
-            $(this.pageComponents.numberOfBedsSearch).addClass('property-disabled');
+            $(this.pageComponents.yearOfConstructionInput).attr('disabled', 'disabled');
         }
 
         if ($.inArray('NUMBER_OF_ROOMS', validProperties) > -1) {
-            $(this.pageComponents.numberOfRoomsSearch).removeClass('property-disabled');
+            $(this.pageComponents.numberOfRoomsInput).removeAttr('disabled');
         } else {
-            $(this.pageComponents.numberOfRoomsSearch).addClass('property-disabled');
+            $(this.pageComponents.numberOfRoomsInput).attr('disabled', 'disabled');
+        }
+
+        if ($.inArray('NUMBER_OF_BEDS', validProperties) > -1) {
+            $(this.pageComponents.numberOfBedsInput).removeAttr('disabled');
+        } else {
+            $(this.pageComponents.numberOfBedsInput).attr('disabled', 'disabled');
+        }
+
+        if ($.inArray('CENTRAL_HEATING_INCLUDED', validProperties) > -1) {
+            $(this.pageComponents.centralHeatingDropdown).removeAttr('disabled');
+        } else {
+            $(this.pageComponents.centralHeatingDropdown).attr('disabled', 'disabled');
+        }
+
+        if ($.inArray('AIR_CONDITIONED', validProperties) > -1) {
+            $(this.pageComponents.airConditionedDropdown).removeAttr('disabled');
+        } else {
+            $(this.pageComponents.airConditionedDropdown).attr('disabled', 'disabled');
         }
 
         if ($.inArray('YARD_INCLUDED', validProperties) > -1) {
-            $(this.pageComponents.yardSearch).removeClass('property-disabled');
+            $(this.pageComponents.yardIncludedDropdown).removeAttr('disabled');
         } else {
-            $(this.pageComponents.yardSearch).addClass('property-disabled');
+            $(this.pageComponents.yardIncludedDropdown).attr('disabled', 'disabled');
         }
 
         if ($.inArray('GARAGE_INCLUDED', validProperties) > -1) {
-            $(this.pageComponents.garageSearch).removeClass('property-disabled');
+            $(this.pageComponents.garageIncludedDropdown).removeAttr('disabled');
         } else {
-            $(this.pageComponents.garageSearch).addClass('property-disabled');
-        }
-
-        if ($.inArray('POOL_INCLUDED', validProperties) > -1) {
-            $(this.pageComponents.poolSearch).removeClass('property-disabled');
-        } else {
-            $(this.pageComponents.poolSearch).addClass('property-disabled');
-        }
-
-        if ($.inArray('PARKING_INCLUDED', validProperties) > -1) {
-            $(this.pageComponents.parkingSearch).removeClass('property-disabled');
-        } else {
-            $(this.pageComponents.parkingSearch).addClass('property-disabled');
+            $(this.pageComponents.garageIncludedDropdown).attr('disabled', 'disabled');
         }
 
         if ($.inArray('ELEVATOR_INCLUDED', validProperties) > -1) {
-            $(this.pageComponents.elevatorSearch).removeClass('property-disabled');
+            $(this.pageComponents.elevatorIncludedDropdown).removeAttr('disabled');
         } else {
-            $(this.pageComponents.elevatorSearch).addClass('property-disabled');
+            $(this.pageComponents.elevatorIncludedDropdown).attr('disabled', 'disabled');
         }
+
+        if ($.inArray('POOL_INCLUDED', validProperties) > -1) {
+            $(this.pageComponents.poolIncludedDropdown).removeAttr('disabled');
+        } else {
+            $(this.pageComponents.poolIncludedDropdown).attr('disabled', 'disabled');
+        }
+
+        if ($.inArray('PARKING_INCLUDED', validProperties) > -1) {
+            $(this.pageComponents.parkingIncludedDropdown).removeAttr('disabled');
+        } else {
+            $(this.pageComponents.parkingIncludedDropdown).attr('disabled', 'disabled');
+        }
+
     },
 
     _updateRealEstateType: function (selectedRealEstateType) {

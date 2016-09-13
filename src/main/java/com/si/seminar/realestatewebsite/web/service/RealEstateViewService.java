@@ -36,11 +36,11 @@ public class RealEstateViewService {
     private ExposedMessageSource messageSource;
 
 
-    public HomeViewModel getInitialViewModel(AdvertisementType advertismentType, Locale locale) {
+    public HomeViewModel getInitialViewModel(AdvertisementType advertisementType, Locale locale) {
 
         SearchModel searchModel = new SearchModel
                 .Builder(RealEstateType.HOUSE)
-                .advertismentType(advertismentType)
+                .advertismentType(advertisementType)
                 .build();
 
         List<RealEstate> realEstatesFromSearchParams =

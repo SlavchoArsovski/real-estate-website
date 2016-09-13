@@ -350,6 +350,6 @@ input[type="radio"], input[type="checkbox"] {
     width: 80%;
 }
 
-.property-disabled {
-    display: none;
+.propertyValue:disabled {
+    background-color: #aaaaaa;
 }
