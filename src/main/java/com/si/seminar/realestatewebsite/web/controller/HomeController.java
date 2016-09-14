@@ -61,7 +61,7 @@ public class HomeController {
             method = RequestMethod.POST,
             params = {"changedProperty"})
     @ResponseBody
-    public HomeViewModel home(
+    public HomeViewModel propertyChanged(
             @ModelAttribute HomePropertyChangeModel homePropertyChangeModel,
             @RequestParam(name = "changedProperty") String changedProperty,
             Locale locale) {

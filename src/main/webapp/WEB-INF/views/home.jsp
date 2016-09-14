@@ -6,6 +6,7 @@
 
 <spring:url value="/css/main.css" var="mainCss"/>
 <spring:url value="/js/jquery-3.1.0.min.js" var="jqueryJs"/>
+<spring:url value="/js/utils/utils.js" var="utils"/>
 <spring:url value="/js//home/homeView.js" var="homeView"/>
 <spring:url value="/js/home/homeModel.js" var="homeModel"/>
 <spring:url value="/js/home/homeController.js" var="homeController"/>
@@ -20,6 +21,7 @@
 
     <link href="${mainCss}" rel="stylesheet"/>
     <script src="${jqueryJs}" type="application/javascript"></script>
+    <script src="${utils}" type="application/javascript"></script>
     <script src="${homeView}" type="application/javascript"></script>
     <script src="${homeModel}" type="application/javascript"></script>
     <script src="${homeController}" type="application/javascript"></script>
@@ -47,27 +49,25 @@
             </div>
             <div class="home-search-wrapper">
                 <div id="menu-wrapper" class="menu-wrapper">
-                    <div class="menu-item"
-                         onclick="window.location.href=window.location.pathname + '?advertisementType=SALE'">
-                        <input type="radio" name="property-status" id="for_sale" value="for_sale" checked="checked">
-                        <label for="for_sale">
+                    <div class="menu-item">
+                        <input type="radio" checked="checked">
+                        <a href="home?advertisementType=SALE">
                             <spring:message code="realestatewebsite.fe.messages.home.menu.item.buy"/>
-                        </label>
+                        </a>
                     </div>
-                    <div class="menu-item"
-                         onclick="window.location.href=window.location.pathname + '?advertisementType=RENT'">
-                        <input type="radio" name="property-status" id="for_rent" value="for_rent">
-                        <label for="for_rent">
+                    <div class="menu-item">
+                        <input type="radio">
+                        <a href="home?advertisementType=RENT">
                             <spring:message code="realestatewebsite.fe.messages.home.menu.item.rent"/>
-                        </label>
+                        </a>
                     </div>
                     <div class="menu-item">
-                        <input type="radio" name="property-status" id="recently_sold" value="recently_sold">
-                        <label for="recently_sold">Add Advertisement</label>
+                        <input type="radio">
+                        <a href="addAdvertisement">Add Advertisement</a>
                     </div>
                     <div class="menu-item">
-                        <input type="radio" name="property-status" id="property_records" value="property_records">
-                        <label for="property_records">Log In</label>
+                        <input type="radio">
+                        <a href="#">Log In</a>
                     </div>
                 </div>
 

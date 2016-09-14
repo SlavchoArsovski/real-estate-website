@@ -146,18 +146,18 @@ input[type="radio"], input[type="checkbox"] {
     line-height: normal;
 }
 
-.home-header .home-search-wrapper .menu-wrapper .menu-item input[type="radio"]:checked + label {
+.home-header .home-search-wrapper .menu-wrapper .menu-item input[type="radio"]:checked + a {
     font-weight: 700;
 }
 
-.home-header .home-search-wrapper .menu-wrapper .menu-item input[type="radio"]:checked + label, .home-header .home-search-wrapper .menu-wrapper .menu-item label:hover {
+.home-header .home-search-wrapper .menu-wrapper .menu-item input[type="radio"]:checked + a, .home-header .home-search-wrapper .menu-wrapper .menu-item a:hover {
     background-color: black;
     border-color: #d92228;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.home-header .home-search-wrapper .menu-wrapper .menu-item label {
+.home-header .home-search-wrapper .menu-wrapper .menu-item a {
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.65);
     display: block;
@@ -166,6 +166,7 @@ input[type="radio"], input[type="checkbox"] {
     padding: 15px 0 10px;
     cursor: pointer;
     border-bottom: 5px solid transparent;
+    text-decoration: none;
 }
 
 .search-input-group {
