@@ -145,8 +145,8 @@ public class SearchModel {
             return this;
         }
 
-        public Builder advertismentType(AdvertisementType advertismentType) {
-            this.advertisementType = advertismentType;
+        public Builder advertismentType(AdvertisementType advertisementType) {
+            this.advertisementType = advertisementType;
             return this;
         }
 

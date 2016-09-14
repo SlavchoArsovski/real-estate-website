@@ -51,6 +51,7 @@ public class RealEstateMapper implements ApplicationContextAware {
         homeViewModel.setSelectedPoolIncluded(homePropertyChangeModel.getSelectedPoolIncluded());
         homeViewModel.setSelectedYardIncluded(homePropertyChangeModel.getSelectedYardIncluded());
         homeViewModel.setYearOfConstruction(homePropertyChangeModel.getYearOfConstruction());
+        homeViewModel.setAdvertisementType(homePropertyChangeModel.getAdvertisementType());
     }
     
     public RealEstateViewModel mapRealEstateToRealEstateViewModel(RealEstate realEstate) {

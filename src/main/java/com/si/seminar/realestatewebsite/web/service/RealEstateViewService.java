@@ -76,6 +76,7 @@ public class RealEstateViewService {
         homeViewModel.setParkingIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "parking"));
         homeViewModel.setSelectedParkingIncluded("NO_SELECTION");
         homeViewModel.setMessages(messageSource.getAllMessages(locale));
+        homeViewModel.setAdvertisementType(advertisementType.name());
 
         List<String> validProperties =
                 realEstateMapper.mapValidPropertiesFromRealEstateType(RealEstateType.HOUSE.name());
@@ -84,13 +85,10 @@ public class RealEstateViewService {
         return homeViewModel;
     }
 
-    public HomeViewModel getViewModelAfterPropertyChange(
-            HomePropertyChangeModel homePropertyChangeModel,
-            AdvertisementType advertisementType,
-            Locale locale) {
+    public HomeViewModel getViewModelAfterPropertyChange(HomePropertyChangeModel homePropertyChangeModel, Locale locale) {
 
         SearchModel searchModel =
-                buildSearchModelFromPropertyChangeModel(homePropertyChangeModel, advertisementType);
+                buildSearchModelFromPropertyChangeModel(homePropertyChangeModel);
 
         List<RealEstate> realEstatesFromSearchParams =
                 realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
@@ -126,13 +124,11 @@ public class RealEstateViewService {
 
     }
 
-    private SearchModel buildSearchModelFromPropertyChangeModel(
-            HomePropertyChangeModel homePropertyChangeModel,
-            AdvertisementType advertisementType) {
+    private SearchModel buildSearchModelFromPropertyChangeModel(HomePropertyChangeModel homePropertyChangeModel) {
 
         SearchModel.Builder builder = new SearchModel
                 .Builder(RealEstateType.valueOf(homePropertyChangeModel.getSelectedRealEstateType()))
-                .advertismentType(advertisementType)
+                .advertismentType(AdvertisementType.valueOf(homePropertyChangeModel.getAdvertisementType()))
                 .priceFrom(homePropertyChangeModel.getPriceFrom())
                 .priceTo(homePropertyChangeModel.getPriceTo())
                 .squareMetersTo(homePropertyChangeModel.getSquareMetersTo())

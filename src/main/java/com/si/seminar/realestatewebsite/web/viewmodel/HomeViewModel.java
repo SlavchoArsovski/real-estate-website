@@ -38,6 +38,7 @@ public class HomeViewModel extends ViewModelWithMessage {
     private String selectedPoolIncluded;
     private List<String> validProperties = Lists.newArrayList();
     private List<RealEstateViewModel> realEstates = Lists.newArrayList();
+    private String advertisementType;
 
     public Map<String, String> getRealEstateTypesDropdown() {
         return realEstateTypesDropdown;
@@ -253,5 +254,13 @@ public class HomeViewModel extends ViewModelWithMessage {
 
     public void setRealEstates(List<RealEstateViewModel> realEstates) {
         this.realEstates = realEstates;
+    }
+
+    public String getAdvertisementType() {
+        return advertisementType;
+    }
+
+    public void setAdvertisementType(String advertisementType) {
+        this.advertisementType = advertisementType;
     }
 }

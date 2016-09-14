@@ -26,12 +26,12 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView home(
-            @RequestParam(name = "advertisementType", required = false, defaultValue = "SALE") AdvertisementType advertismentType,
+            @RequestParam(name = "advertisementType", required = false, defaultValue = "SALE") AdvertisementType advertisementType,
             Locale locale) {
 
         ModelAndView modelAndView = new ModelAndView(HOME_VIEW_NAME);
 
-        HomeViewModel initialViewModel = viewService.getInitialViewModel(advertismentType, locale);
+        HomeViewModel initialViewModel = viewService.getInitialViewModel(advertisementType, locale);
         modelAndView.addObject(VIEW_BEAN, initialViewModel);
 
         return modelAndView;
@@ -41,15 +41,18 @@ public class HomeController {
     /**
      * Initially initializes the JSON model.
      *
-     * @return CapitalRequirementAtRetirementModel model as JSON.
+     * @return HomeViewModel model as JSON.
      */
     @ResponseBody
-    @RequestMapping(value = "/propertyChanged", method = RequestMethod.GET)
+    @RequestMapping(
+            value = "/propertyChanged",
+            method = RequestMethod.GET,
+            params = {"advertisementType"})
     public HomeViewModel initializeJSONModel(
-            @RequestParam(name = "advertisementType", required = false, defaultValue = "SALE") AdvertisementType advertismentType,
+            @RequestParam(name = "advertisementType") AdvertisementType advertisementType,
             Locale locale) {
 
-        HomeViewModel initialViewModel = viewService.getInitialViewModel(advertismentType, locale);
+        HomeViewModel initialViewModel = viewService.getInitialViewModel(advertisementType, locale);
         return initialViewModel;
     }
 
@@ -61,13 +64,12 @@ public class HomeController {
     public HomeViewModel home(
             @ModelAttribute HomePropertyChangeModel homePropertyChangeModel,
             @RequestParam(name = "changedProperty") String changedProperty,
-            @RequestParam(name = "advertisementType", defaultValue = "SALE") AdvertisementType advertisementType,
             Locale locale) {
 
+        System.out.println(homePropertyChangeModel.getAdvertisementType());
         HomeViewModel viewModel =
                 viewService.getViewModelAfterPropertyChange(
                         homePropertyChangeModel,
-                        advertisementType,
                         locale);
 
         return viewModel;

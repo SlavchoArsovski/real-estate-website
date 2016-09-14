@@ -1,13 +1,42 @@
 var homeModel = {
 
+    _getParameterByName: function (name, url) {
+        if (!url) {
+            url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+
+        if (!results) {
+            return undefined;
+        }
+        if (!results[2]) {
+            return '';
+        }
+
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    },
+
     init: function (afterInit) {
         var url = 'http://localhost:8080/real-estate-website/home/propertyChanged';
         var self = this;
+
+        var data = {};
+        var advertisementType = self._getParameterByName('advertisementType');
+
+        if (!advertisementType) {
+            advertisementType = 'SALE';
+        }
+
+        data['advertisementType'] = advertisementType;
+
         $.ajax({
             dataType: "json",
             type: 'GET',
             url: url,
             cache: false,
+            data: data,
             success: function (response) {
                 self.update(response, true);
                 if (afterInit) {
@@ -38,6 +67,7 @@ var homeModel = {
         data['numberOfBeds'] = this.numberOfBeds;
         data['selectedParkingIncluded'] = this.selectedParkingIncluded;
         data['selectedPoolIncluded'] = this.selectedPoolIncluded;
+        data['advertisementType'] = this.advertisementType;
 
         data[key] = value;
         data['changedProperty'] = key;
@@ -150,6 +180,7 @@ var homeModel = {
             selectedParkingIncluded: this.selectedParkingIncluded,
             validProperties: this.validProperties,
             realEstates: this.realEstates,
+            advertisementType: this.advertisementType,
             messages: this.messages
         };
     }

@@ -23,6 +23,7 @@ public class HomePropertyChangeModel {
     private Integer numberOfBeds;
     private String selectedParkingIncluded;
     private String selectedPoolIncluded;
+    private String advertisementType;
 
     public String getSelectedRealEstateType() {
         return selectedRealEstateType;
@@ -150,5 +151,13 @@ public class HomePropertyChangeModel {
 
     public void setSelectedPoolIncluded(String selectedPoolIncluded) {
         this.selectedPoolIncluded = selectedPoolIncluded;
+    }
+
+    public String getAdvertisementType() {
+        return advertisementType;
+    }
+
+    public void setAdvertisementType(String advertisementType) {
+        this.advertisementType = advertisementType;
     }
 }
