@@ -1,0 +1,18 @@
+.advertisementForm {
+    margin: 30px 10px;
+}
+
+.advertisementForm > div {
+    display: table;
+    margin: 15px 0;
+}
+
+.property {
+    display: table-cell;
+    width: 200px;
+}
+
+.propertyValue {
+    display: table-cell;
+    width: 200px;
+}

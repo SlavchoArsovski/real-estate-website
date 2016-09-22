@@ -354,3 +354,7 @@ input[type="radio"], input[type="checkbox"] {
 .propertyValue:disabled {
     background-color: #aaaaaa;
 }
+
+.advertisementForm {
+    width: 300 pxD;
+}
