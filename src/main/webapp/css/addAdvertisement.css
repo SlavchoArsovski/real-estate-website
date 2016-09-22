@@ -16,3 +16,10 @@
     display: table-cell;
     width: 200px;
 }
+
+.description {
+    display: table-cell;
+    width: 400px;
+    resize: none;
+    height: 200px;
+}

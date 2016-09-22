@@ -37,97 +37,130 @@
            action="addAdvertisement" cssClass="advertisementForm">
 
     <div>
-        <label class="property">Real Estate Type</label>
+        <label class="property">
+            <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.realEstateType"/>
+        </label>
         <form:select class="propertyValue" path="selectedRealEstateType" items="${viewBean.realEstateTypes}"
                      onchange="return submitAdvertisementFormAfterRealEstateTypeChange()"/>
     </div>
 
     <div>
-        <label class="property">Description</label>
-        <form:textarea class="propertyValue" path="description"/>
+        <label class="property">
+            <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.description"/>
+        </label>
     </div>
 
     <div>
-        <label class="property">City</label>
+        <form:textarea class="description" path="description"/>
+    </div>
+
+    <div>
+        <label class="property">
+            <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.city"/>
+        </label>
         <form:select class="propertyValue" path="selectedCity" items="${viewBean.cities}"/>
     </div>
 
     <div>
-        <label class="property">Price</label>
+        <label class="property">
+            <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.price"/>
+        </label>
         <form:input class="propertyValue" path="price" type="text"/>
     </div>
 
     <div>
-        <label class="property">Square Meters</label>
+        <label class="property">
+            <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.squareMeters"/>
+        </label>
         <form:input class="propertyValue" path="squareMeters" type="text"/>
     </div>
 
     <c:if test="${viewBean.validProperties.contains('YEAR_OF_CONSTRUCTION')}">
         <div>
-            <label class="property">Year Of Construction</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.yearOfConstruction"/>
+            </label>
             <form:input class="propertyValue" path="yearOfConstruction" type="text"/>
         </div>
     </c:if>
 
     <c:if test="${viewBean.validProperties.contains('NUMBER_OF_ROOMS')}">
         <div>
-            <label class="property">Number of rooms</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.numberOfRooms"/>
+            </label>
             <form:input class="propertyValue" path="numberOfRooms" type="text"/>
         </div>
     </c:if>
 
     <c:if test="${viewBean.validProperties.contains('NUMBER_OF_BEDS')}">
         <div>
-            <label class="property">Number of beds</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.numberOfBeds"/>
+            </label>
             <form:input class="propertyValue" path="numberOfBeds" type="text"/>
         </div>
     </c:if>
 
     <c:if test="${viewBean.validProperties.contains('CENTRAL_HEATING_INCLUDED')}">
         <div>
-            <label class="property">Central Heating</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.centralHeating"/>
+            </label>
             <form:checkbox class="propertyValue" path="centralHeating"/>
         </div>
     </c:if>
 
     <c:if test="${viewBean.validProperties.contains('AIR_CONDITIONED')}">
         <div>
-            <label class="property">Air Conditioned</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.airConditioned"/>
+            </label>
             <form:checkbox class="propertyValue" path="airConditioned"/>
         </div>
     </c:if>
 
     <c:if test="${viewBean.validProperties.contains('ELEVATOR_INCLUDED')}">
         <div>
-            <label class="property">Elevator</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.elevator"/>
+            </label>
             <form:checkbox class="propertyValue" path="elevator"/>
         </div>
     </c:if>
 
     <c:if test="${viewBean.validProperties.contains('GARAGE_INCLUDED')}">
         <div>
-            <label class="property">Garage</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.garage"/>
+            </label>
             <form:checkbox class="propertyValue" path="garage"/>
         </div>
     </c:if>
 
     <c:if test="${viewBean.validProperties.contains('PARKING_INCLUDED')}">
         <div>
-            <label class="property">Parking</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.parking"/>
+            </label>
             <form:checkbox class="propertyValue" path="parking"/>
         </div>
     </c:if>
 
     <c:if test="${viewBean.validProperties.contains('YARD_INCLUDED')}">
         <div>
-            <label class="property">Yard</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.yard"/>
+            </label>
             <form:checkbox class="propertyValue" path="yard"/>
         </div>
     </c:if>
 
     <c:if test="${viewBean.validProperties.contains('POOL_INCLUDED')}">
         <div>
-            <label class="property">Pool</label>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.pool"/>
+            </label>
             <form:checkbox class="propertyValue" path="pool"/>
         </div>
     </c:if>

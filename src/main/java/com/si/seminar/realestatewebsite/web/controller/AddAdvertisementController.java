@@ -45,7 +45,7 @@ public class AddAdvertisementController {
                 realEstateMapper.mapValidPropertiesFromRealEstateType(RealEstateType.HOUSE.name());
         attributeValue.setValidProperties(validProperties);
 
-        modelAndView.addObject("viewBean", attributeValue);
+        modelAndView.addObject(VIEW_BEAN, attributeValue);
         return modelAndView;
     }
 
@@ -66,7 +66,7 @@ public class AddAdvertisementController {
                 realEstateMapper.mapValidPropertiesFromRealEstateType(selectedRealEstateType.name());
         attributeValue.setValidProperties(validProperties);
 
-        modelAndView.addObject("viewBean", attributeValue);
+        modelAndView.addObject(VIEW_BEAN, attributeValue);
         return modelAndView;
     }
 

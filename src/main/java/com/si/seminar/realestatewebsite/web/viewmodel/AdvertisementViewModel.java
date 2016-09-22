@@ -28,6 +28,8 @@ public class AdvertisementViewModel {
     private boolean parking;
     private boolean yard;
     private boolean pool;
+    private String selectedAdvertisementType;
+    private Map<String, String> advertisementTypes;
     private List<String> validProperties = Lists.newArrayList();
 
     public String getSelectedRealEstateType() {
@@ -164,6 +166,22 @@ public class AdvertisementViewModel {
 
     public void setPool(boolean pool) {
         this.pool = pool;
+    }
+
+    public String getSelectedAdvertisementType() {
+        return selectedAdvertisementType;
+    }
+
+    public void setSelectedAdvertisementType(String selectedAdvertisementType) {
+        this.selectedAdvertisementType = selectedAdvertisementType;
+    }
+
+    public Map<String, String> getAdvertisementTypes() {
+        return advertisementTypes;
+    }
+
+    public void setAdvertisementTypes(Map<String, String> advertisementTypes) {
+        this.advertisementTypes = advertisementTypes;
     }
 
     public List<String> getValidProperties() {
