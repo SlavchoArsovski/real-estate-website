@@ -66,7 +66,6 @@ public class HomeController {
             @RequestParam(name = "changedProperty") String changedProperty,
             Locale locale) {
 
-        System.out.println(homePropertyChangeModel.getAdvertisementType());
         HomeViewModel viewModel =
                 viewService.getViewModelAfterPropertyChange(
                         homePropertyChangeModel,

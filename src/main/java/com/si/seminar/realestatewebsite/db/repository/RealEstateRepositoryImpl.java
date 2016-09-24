@@ -7,10 +7,7 @@ import com.si.seminar.realestatewebsite.db.datamodel.SearchModel;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.util.List;
 
 /**
@@ -34,6 +31,7 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
         List<Predicate> predicates = getPredicates(searchModel, criteriaBuilder, realEstateRoot);
 
         criteriaQuery.where(predicates.toArray(new Predicate[0]));
+        criteriaQuery.orderBy(criteriaBuilder.desc(realEstateRoot.get(RealEstate_.createdOn)));
 
         List<T> resultList =
                 entityManager
@@ -125,6 +123,7 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
 
         List<Predicate> predicates = getPredicates(searchModel, builder, realEstateRoot);
         countQuery.where(predicates.toArray(new Predicate[0]));
+        countQuery.orderBy(builder.desc(realEstateRoot.get(RealEstate_.createdOn)));
 
         Long result =
                 entityManager

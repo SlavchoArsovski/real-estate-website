@@ -37,14 +37,14 @@
     <div id="hero-img-wrapper" class="hero-img-wrapper">
         <div class="hero-img-fallback">
             <img alt="realtor.com for sale home page"
-                 src="${imageFolderPrefix}/wallpapers_1.jpg">
+                 src="${imageFolderPrefix}/wallpapers_2.jpg">
         </div>
     </div>
     <div class="container home-header-content">
         <div class="row">
             <div class="header-group header-group-white text-center" id="hero-header-text">
                 <h1>
-                    <span>Discover Your Perfect Home</span>
+                    <span><spring:message code="realestatewebsite.fe.messages.home.pageTitle"/></span>
                 </h1>
             </div>
             <div class="home-search-wrapper">
@@ -61,20 +61,27 @@
                             <spring:message code="realestatewebsite.fe.messages.home.menu.item.rent"/>
                         </a>
                     </div>
+
                     <div class="menu-item">
                         <input type="radio">
-                        <a href="addAdvertisement">Add Advertisement</a>
+                        <a href="addAdvertisement">
+                            <spring:message code="realestatewebsite.fe.messages.home.menu.item.addAdvertisement"/>
+                        </a>
                     </div>
                     <div class="menu-item">
                         <input type="radio">
-                        <a href="#">Log In</a>
+                        <a href="#">
+                            <spring:message code="realestatewebsite.fe.messages.home.menu.item.login"/>
+                        </a>
                     </div>
                 </div>
 
                 <div class="search-properties">
 
                     <div>
-                        <label class="propertyText">Real Estate Type</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.realEstateType"/>
+                        </label>
                         <select id="realEstateTypeDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.realEstateTypesDropdown}" var="realEstateType">
                                 <option value="${realEstateType.key}"
@@ -84,17 +91,25 @@
                     </div>
 
                     <div>
-                        <label class="propertyText">Price from</label>
-                        <input id="price_from" class="propertyValue" type="text" value="${viewBean.priceFrom}"/>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.priceFrom"/>
+                        </label>
+                        <input id="price_from" class="propertyValue" type="text" value="${viewBean.priceFrom}"
+                               placeholder="M2"/>
                     </div>
 
                     <div>
-                        <label class="propertyText">Price to</label>
-                        <input id="price_to" class="propertyValue" type="text" value="${viewBean.priceTo}"/>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.priceTo"/>
+                        </label>
+                        <input id="price_to" class="propertyValue" type="text" value="${viewBean.priceTo}"
+                               placeholder="M2"/>
                     </div>
 
                     <div>
-                        <label class="propertyText">City</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.city"/>
+                        </label>
                         <select id="cityDropdown" class="propertyValue">
                             <c:forEach items="${viewBean.citiesDropdown}" var="city">
                                 <option value="${city.key}" ${city.key.equals(viewBean.selectedCity) ? 'selected' : ''}>${city.value}</option>
@@ -104,37 +119,49 @@
                     </div>
 
                     <div>
-                        <label class="propertyText">Square Meters from</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.squareMetersFrom"/>
+                        </label>
                         <input id="square-meters_from" class="propertyValue" type="text"
-                               value="${viewBean.squareMetersFrom}"/>
+                               value="${viewBean.squareMetersFrom}" placeholder="€"/>
                     </div>
 
                     <div>
-                        <label class="propertyText">Square Meters to</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.priceTo"/>
+                        </label>
                         <input id="square-meters_to" class="propertyValue" type="text"
-                               value="${viewBean.squareMetersTo}"/>
+                               value="${viewBean.squareMetersTo}" placeholder="€"/>
                     </div>
 
                     <div>
-                        <label class="propertyText">Year of Construction</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.yearOfConstruction"/>
+                        </label>
                         <input id="yearOfConstruction" class="propertyValue" type="text"
                                value="${viewBean.yearOfConstruction}" ${viewBean.validProperties.contains('YEAR_OF_CONSTRUCTION') ? '' : 'disabled'} />
                     </div>
 
                     <div>
-                        <label class="propertyText">Number of rooms</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.numberOfRooms"/>
+                        </label>
                         <input id="numberOfRooms" class="propertyValue" type="text"
                                value="${viewBean.numberOfRooms}" ${viewBean.validProperties.contains('NUMBER_OF_ROOMS') ? '' : 'disabled'} />
                     </div>
 
                     <div>
-                        <label class="propertyText">Number of beds</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.numberOfBeds"/>
+                        </label>
                         <input id="numberOfBeds" class="propertyValue" type="text"
                                value="${viewBean.numberOfBeds}" ${viewBean.validProperties.contains('NUMBER_OF_BEDS') ? '' : 'disabled'} />
                     </div>
 
                     <div>
-                        <label class="propertyText">Central Heating</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.centralHeating"/>
+                        </label>
 
                         <select id="centralHeatingDropdown"
                                 class="propertyValue" ${viewBean.validProperties.contains('CENTRAL_HEATING_INCLUDED') ? '' : 'disabled'} >
@@ -147,7 +174,9 @@
                     </div>
 
                     <div>
-                        <label class="propertyText">Air Conditioned</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.airConditioned"/>
+                        </label>
                         <select id="airConditionedDropdown"
                                 class="propertyValue" ${viewBean.validProperties.contains('AIR_CONDITIONED') ? '' : 'disabled'}>
                             <c:forEach items="${viewBean.airConditionedDropdown}" var="airConditioned">
@@ -159,7 +188,9 @@
                     </div>
 
                     <div>
-                        <label class="propertyText">Yard</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.yard"/>
+                        </label>
                         <select id="yardIncludedDropdown"
                                 class="propertyValue" ${viewBean.validProperties.contains('YARD_INCLUDED') ? '' : 'disabled'}>
                             <c:forEach items="${viewBean.yardIncludedDropdown}" var="yardIncluded">
@@ -171,7 +202,9 @@
                     </div>
 
                     <div>
-                        <label class="propertyText">Garage</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.garage"/>
+                        </label>
                         <select id="garageIncludedDropdown"
                                 class="propertyValue" ${viewBean.validProperties.contains('GARAGE_INCLUDED') ? '' : 'disabled'}>
                             <c:forEach items="${viewBean.garageIncludedDropdown}" var="garageIncluded">
@@ -183,7 +216,9 @@
                     </div>
 
                     <div>
-                        <label class="propertyText">Elevator</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.elevator"/>
+                        </label>
                         <select id="elevatorIncludedDropdown"
                                 class="propertyValue" ${viewBean.validProperties.contains('ELEVATOR_INCLUDED') ? '' : 'disabled'}>
                             <c:forEach items="${viewBean.elevatorIncludedDropdown}" var="elevatorIncluded">
@@ -195,7 +230,9 @@
                     </div>
 
                     <div>
-                        <label class="propertyText">Pool</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.pool"/>
+                        </label>
                         <select id="poolIncludedDropdown"
                                 class="propertyValue" ${viewBean.validProperties.contains('POOL_INCLUDED') ? '' : 'disabled'}>
                             <c:forEach items="${viewBean.poolIncludedDropdown}" var="poolIncluded">
@@ -209,7 +246,9 @@
                     <div style="clear: both"/>
 
                     <div>
-                        <label class="propertyText">Parking</label>
+                        <label class="propertyText">
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.parking"/>
+                        </label>
                         <select id="parkingIncludedDropdown"
                                 class="propertyValue" ${viewBean.validProperties.contains('PARKING_INCLUDED') ? '' : 'disabled'}>
                             <c:forEach items="${viewBean.parkingIncludedDropdown}" var="parkingIncluded">

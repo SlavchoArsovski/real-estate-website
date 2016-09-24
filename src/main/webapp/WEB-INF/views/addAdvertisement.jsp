@@ -93,13 +93,15 @@
         <form:select class="propertyValue" path="selectedCity" items="${viewBean.cities}"/>
     </div>
 
-    <div>
-        <label class="property">
-            <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.address"/>
-        </label>
-        <form:input class="propertyValue" path="address" type="text"/>
-        <form:errors path="address"/>
-    </div>
+    <spring:bind path="address">
+        <div>
+            <label class="property">
+                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.address"/>
+            </label>
+            <form:input class="propertyValue" path="address" type="text"/>
+            <form:errors path="address"/>
+        </div>
+    </spring:bind>
 
     <div>
         <label class="property">
