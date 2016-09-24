@@ -2,6 +2,7 @@ package com.si.seminar.realestatewebsite.db.datamodel;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Real Estate DB model.
@@ -51,6 +52,10 @@ public abstract class RealEstate {
     @Column(name = "ADVERTISEMENT_TYPE")
     @Enumerated(EnumType.STRING)
     private AdvertisementType advertisementType;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "CREATED_ON")
+    private Date createdOn;
 
     public Long getId() {
         return id;
@@ -130,5 +135,13 @@ public abstract class RealEstate {
 
     public void setAdvertisementType(AdvertisementType advertisementType) {
         this.advertisementType = advertisementType;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
     }
 }

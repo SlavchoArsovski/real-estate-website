@@ -294,7 +294,7 @@ input[type="radio"], input[type="checkbox"] {
 
 .real-estate-list-item {
     cursor: pointer;
-    padding: 10px 5px;
+    padding: 10px 0;
     display: table;
     width: 700px;
     height: 150px;
@@ -356,5 +356,5 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .advertisementForm {
-    width: 300 pxD;
+    width: 300px;
 }

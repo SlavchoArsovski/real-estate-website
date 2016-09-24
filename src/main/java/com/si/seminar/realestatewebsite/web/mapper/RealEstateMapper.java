@@ -2,8 +2,7 @@ package com.si.seminar.realestatewebsite.web.mapper;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
-import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
+import com.si.seminar.realestatewebsite.db.datamodel.*;
 import com.si.seminar.realestatewebsite.web.viewmodel.*;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -34,7 +33,9 @@ public class RealEstateMapper implements ApplicationContextAware {
 
     private ApplicationContext appContext;
 
-    public void mapPropertyChangeModelToViewMode(HomeViewModel homeViewModel, HomePropertyChangeModel homePropertyChangeModel) {
+    public void mapPropertyChangeModelToViewModel(
+            HomeViewModel homeViewModel,
+            HomePropertyChangeModel homePropertyChangeModel) {
 
         homeViewModel.setSelectedRealEstateType(homePropertyChangeModel.getSelectedRealEstateType());
         homeViewModel.setPriceFrom(homePropertyChangeModel.getPriceFrom());
@@ -194,6 +195,103 @@ public class RealEstateMapper implements ApplicationContextAware {
                 .collect(Collectors.toList());
 
         return properties;
+    }
+
+    public Map<String, String> mapAdvertisementTypes(Locale locale) {
+
+        Map<String, String> advertisementTypes = Maps.newLinkedHashMap();
+
+        String value = getResourceMessage("realestatewebsite.fe.messages.addAdvertisement.advertisementType.SALE", locale);
+        advertisementTypes.put("SALE", value);
+
+        value = getResourceMessage("realestatewebsite.fe.messages.addAdvertisement.advertisementType.RENT", locale);
+        advertisementTypes.put("RENT", value);
+
+        return advertisementTypes;
+    }
+
+    public RealEstate mapAdvertisementViewModelToRealEstate(AdvertisementViewModel advertisementViewModel) {
+
+        String selectedRealEstateType = advertisementViewModel.getSelectedRealEstateType();
+        RealEstateType realEstateType = RealEstateType.valueOf(selectedRealEstateType);
+
+        RealEstate realEstate;
+
+        switch (realEstateType) {
+            case HOUSE:
+                realEstate = mapHouseFromAdvertisementViewModel(advertisementViewModel);
+                break;
+            case APARTMENT:
+                realEstate = mapApartmentFromAdvertisementViewModel(advertisementViewModel);
+                break;
+            case OFFICE_SPACE:
+                realEstate = mapOfficeSpaceFromAdvertisementViewModel(advertisementViewModel);
+                break;
+            case GROUND:
+                realEstate = new Ground();
+                break;
+            case GARAGE:
+                realEstate = new Garage();
+                break;
+            case ROOM:
+                realEstate = new Room();
+                break;
+            case AGRICULTURAL_FIELD:
+                realEstate = new AgriculturalField();
+                break;
+            default:
+                throw new RuntimeException("Unsupported real estate type");
+        }
+
+        realEstate.setRealEstateType(realEstateType);
+        realEstate.setCity(advertisementViewModel.getSelectedCity());
+        realEstate.setPrice(advertisementViewModel.getPrice());
+        realEstate.setSquareMeters(advertisementViewModel.getSquareMeters());
+        realEstate.setCity(advertisementViewModel.getSelectedCity());
+        realEstate.setRegion("Region");
+        realEstate.setDescription(advertisementViewModel.getDescription());
+        realEstate.setAdvertisementType(AdvertisementType.valueOf(advertisementViewModel.getSelectedAdvertisementType()));
+        realEstate.setAddress(advertisementViewModel.getAddress());
+
+        return realEstate;
+    }
+
+    private RealEstate mapHouseFromAdvertisementViewModel(AdvertisementViewModel advertisementViewModel) {
+
+        House house = new House();
+
+        house.setYardIncluded(advertisementViewModel.isYard());
+        house.setAirConditioned(advertisementViewModel.isAirConditioned());
+        house.setGarageIncluded(advertisementViewModel.isGarage());
+        house.setYearOfConstruction(advertisementViewModel.getYearOfConstruction());
+        house.setNumberOfFloors(advertisementViewModel.getNumberOfFloors());
+        house.setPoolIncluded(advertisementViewModel.isPool());
+
+        return house;
+    }
+
+    private RealEstate mapApartmentFromAdvertisementViewModel(AdvertisementViewModel advertisementViewModel) {
+
+        Apartment apartment = new Apartment();
+
+        apartment.setYearOfConstruction(advertisementViewModel.getYearOfConstruction());
+        apartment.setAirConditioned(advertisementViewModel.isAirConditioned());
+        apartment.setElevatorIncluded(advertisementViewModel.isElevator());
+        apartment.setFloorNumber(advertisementViewModel.getFloorNumber());
+        apartment.setParkingIncluded(advertisementViewModel.isParking());
+        apartment.setCentralHeatingIncluded(advertisementViewModel.isParking());
+
+        return apartment;
+    }
+
+    private RealEstate mapOfficeSpaceFromAdvertisementViewModel(AdvertisementViewModel advertisementViewModel) {
+
+        OfficeSpace officeSpace = new OfficeSpace();
+
+        officeSpace.setCentralHeatingIncluded(advertisementViewModel.isCentralHeating());
+        officeSpace.setYearOfConstruction(advertisementViewModel.getYearOfConstruction());
+
+        return officeSpace;
     }
 
     private String getResourceMessage(String key, Locale locale) {

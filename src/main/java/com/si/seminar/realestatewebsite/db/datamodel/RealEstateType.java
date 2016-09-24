@@ -11,5 +11,5 @@ public enum RealEstateType {
     GARAGE,
     OFFICE_SPACE,
     AGRICULTURAL_FIELD,
-    GROUND
+    GROUND;
 }

@@ -19,4 +19,11 @@ public interface RealEstateService {
      * @return List of {@link RealEstate} that matched the given criteria.
      */
     List<RealEstate> getRealEstatesFromSearchParams(SearchModel searchModel, int pageNumber);
+
+    /**
+     * Saves the given real estate type.
+     *
+     * @param realEstate the real estate to be persisted.
+     */
+    void saveRealEstate(RealEstate realEstate);
 }

@@ -30,7 +30,7 @@ public class ApartmentRepositoryImpl extends RealEstateRepositoryImpl<Apartment>
 
         if (searchModel.getYearOfConstruction().isPresent()) {
             predicates.add(
-                    criteriaBuilder.equal(
+                    criteriaBuilder.greaterThanOrEqualTo(
                             realEstateRoot.get(Apartment_.yearOfConstruction),
                             searchModel.getYearOfConstruction().get()));
         }

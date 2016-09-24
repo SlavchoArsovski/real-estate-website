@@ -30,7 +30,7 @@ public class HouseRepositoryImpl extends RealEstateRepositoryImpl<House> {
 
         if (searchModel.getYearOfConstruction().isPresent()) {
             predicates.add(
-                    criteriaBuilder.equal(
+                    criteriaBuilder.greaterThanOrEqualTo(
                             realEstateRoot.get(House_.yearOfConstruction),
                             searchModel.getYearOfConstruction().get()));
         }

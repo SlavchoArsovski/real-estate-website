@@ -1,6 +1,5 @@
 package com.si.seminar.realestatewebsite.web.service;
 
-import com.google.common.collect.Lists;
 import com.si.seminar.realestatewebsite.configuration.spring.ExposedMessageSource;
 import com.si.seminar.realestatewebsite.db.datamodel.AdvertisementType;
 import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
@@ -8,15 +7,14 @@ import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
 import com.si.seminar.realestatewebsite.db.datamodel.SearchModel;
 import com.si.seminar.realestatewebsite.services.RealEstateService;
 import com.si.seminar.realestatewebsite.web.mapper.RealEstateMapper;
-import com.si.seminar.realestatewebsite.web.viewmodel.HomePropertyChangeModel;
-import com.si.seminar.realestatewebsite.web.viewmodel.HomeViewModel;
-import com.si.seminar.realestatewebsite.web.viewmodel.RealEstateViewModel;
+import com.si.seminar.realestatewebsite.web.viewmodel.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -85,6 +83,13 @@ public class RealEstateViewService {
         return homeViewModel;
     }
 
+    /**
+     * Get view model after property change.
+     *
+     * @param homePropertyChangeModel the home property change model.
+     * @param locale                  the locale.
+     * @return home view model.
+     */
     public HomeViewModel getViewModelAfterPropertyChange(HomePropertyChangeModel homePropertyChangeModel, Locale locale) {
 
         SearchModel searchModel =
@@ -118,7 +123,7 @@ public class RealEstateViewService {
         List<String> validProperties =
                 realEstateMapper.mapValidPropertiesFromRealEstateType(homePropertyChangeModel.getSelectedRealEstateType());
         homeViewModel.setValidProperties(validProperties);
-        realEstateMapper.mapPropertyChangeModelToViewMode(homeViewModel, homePropertyChangeModel);
+        realEstateMapper.mapPropertyChangeModelToViewModel(homeViewModel, homePropertyChangeModel);
 
         return homeViewModel;
 
@@ -184,5 +189,33 @@ public class RealEstateViewService {
         }
 
         return builder.build();
+    }
+
+    public AdvertisementViewModel getInitialAdvertisementViewModel(RealEstateType realEstateType, Locale locale) {
+
+        AdvertisementViewModel advertisementViewModel = new AdvertisementViewModel();
+        advertisementViewModel.setRealEstateTypes(realEstateMapper.mapRealEstateTypes(locale));
+        advertisementViewModel.setSelectedRealEstateType(realEstateType.name());
+
+        Map<String, String> cities = realEstateMapper.mapCities(locale);
+        cities.remove("ALL");
+        advertisementViewModel.setCities(cities);
+        advertisementViewModel.setAdvertisementTypes(realEstateMapper.mapAdvertisementTypes(locale));
+        advertisementViewModel.setSelectedCity(City.Skopje.name());
+
+        List<String> validProperties =
+                realEstateMapper.mapValidPropertiesFromRealEstateType(realEstateType.name());
+        advertisementViewModel.setValidProperties(validProperties);
+
+        return advertisementViewModel;
+    }
+
+    public void saveAdvertisement(AdvertisementViewModel advertisementViewModel) {
+
+        RealEstate realEstate =
+                realEstateMapper.mapAdvertisementViewModelToRealEstate(advertisementViewModel);
+
+        realEstateService.saveRealEstate(realEstate);
+
     }
 }

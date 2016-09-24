@@ -1,19 +1,21 @@
 CREATE sequence REAL_ESTATE_ID_SEQUENCE start with 10000;
 
+
 CREATE TABLE REAL_ESTATE (
 
   ID number(19,0) not null,
 
   -- all real estate properties
-	DESCRIPTION varchar2(40),
+	DESCRIPTION varchar2(200),
   REAL_ESTATE_TYPE varchar2(40) not null,
   SQUARE_METERS number(5,0),
   CITY varchar2(40) not null,
   REGION varchar2(40) not null,
-  ADDRESS varchar2(100) not null,
+  ADDRESS varchar2(100),
   PRICE number(19,0),
   IMAGE_PATH varchar2(100),
   ADVERTISEMENT_TYPE varchar2(10),
+  CREATED_ON timestamp,
 
   -- house, apartment and office space common properties
   YEAR_OF_CONSTRUCTION number(4,0),

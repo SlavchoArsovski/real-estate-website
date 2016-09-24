@@ -1,15 +1,13 @@
 package com.si.seminar.realestatewebsite.services;
 
 import com.google.common.collect.Lists;
-import com.si.seminar.realestatewebsite.db.datamodel.OfficeSpace;
-import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
-import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
-import com.si.seminar.realestatewebsite.db.datamodel.SearchModel;
+import com.si.seminar.realestatewebsite.db.datamodel.*;
 import com.si.seminar.realestatewebsite.db.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -81,9 +79,43 @@ public class RealEstateServiceImpl implements RealEstateService {
                         agriculturalFieldRepository.getAllRealEstatesFromSearchModel(searchModel, pageNumber, pageSize);
                 break;
             default:
-                // TODO: find all
+                throw new RuntimeException("Not supported real estate type");
         }
 
         return realEstates;
+    }
+
+    @Override
+    public void saveRealEstate(RealEstate realEstate) {
+
+        realEstate.setCreatedOn(new Date());
+
+        switch (realEstate.getRealEstateType()) {
+            case HOUSE:
+                houseRepository.save((House) realEstate);
+                break;
+            case APARTMENT:
+                apartmentRepository.save((Apartment) realEstate);
+                break;
+            case OFFICE_SPACE:
+                officeSpaceRepository.save((OfficeSpace) realEstate);
+                break;
+            case ROOM:
+                roomRepository.save((Room) realEstate);
+                break;
+            case GARAGE:
+                garageRepository.save((Garage) realEstate);
+                break;
+            case GROUND:
+                groundRepository.save((Ground) realEstate);
+                break;
+            case AGRICULTURAL_FIELD:
+                agriculturalFieldRepository.save((AgriculturalField) realEstate);
+                break;
+            default:
+                throw new RuntimeException("Not supported real estate type");
+        }
+
+
     }
 }

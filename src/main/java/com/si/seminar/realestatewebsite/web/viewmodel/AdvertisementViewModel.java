@@ -1,6 +1,7 @@
 package com.si.seminar.realestatewebsite.web.viewmodel;
 
 import com.google.common.collect.Lists;
+import com.sun.deploy.util.StringUtils;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,13 +15,17 @@ public class AdvertisementViewModel {
     private String selectedRealEstateType;
     private Map<String, String> realEstateTypes;
     private String description;
+    private String address;
     private String selectedCity;
+    private String region;
     private Map<String, String> cities;
     private BigDecimal price;
     private Integer squareMeters;
     private Integer yearOfConstruction;
     private Integer numberOfRooms;
     private Integer numberOfBeds;
+    private Integer numberOfFloors;
+    private Integer floorNumber;
     private boolean centralHeating;
     private boolean airConditioned;
     private boolean elevator;
@@ -56,12 +61,28 @@ public class AdvertisementViewModel {
         this.description = description;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getSelectedCity() {
         return selectedCity;
     }
 
     public void setSelectedCity(String selectedCity) {
         this.selectedCity = selectedCity;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public Map<String, String> getCities() {
@@ -110,6 +131,22 @@ public class AdvertisementViewModel {
 
     public void setNumberOfBeds(Integer numberOfBeds) {
         this.numberOfBeds = numberOfBeds;
+    }
+
+    public Integer getNumberOfFloors() {
+        return numberOfFloors;
+    }
+
+    public void setNumberOfFloors(Integer numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
+    }
+
+    public Integer getFloorNumber() {
+        return floorNumber;
+    }
+
+    public void setFloorNumber(Integer floorNumber) {
+        this.floorNumber = floorNumber;
     }
 
     public boolean isCentralHeating() {
