@@ -21,6 +21,15 @@ public interface RealEstateService {
     List<RealEstate> getRealEstatesFromSearchParams(SearchModel searchModel, int pageNumber);
 
     /**
+     * Gets number of Real Estates found From Search Parameters.
+     *
+     * @param searchModel the search model.
+     *
+     * @return count of total real estates found.
+     */
+    int getRealEstatesCountFromSearchParams(SearchModel searchModel);
+
+    /**
      * Saves the given real estate type.
      *
      * @param realEstate the real estate to be persisted.

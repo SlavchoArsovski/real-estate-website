@@ -1,7 +1,6 @@
 package com.si.seminar.realestatewebsite.web.viewmodel;
 
 import com.google.common.collect.Lists;
-import com.sun.deploy.util.StringUtils;
 
 import java.math.BigDecimal;
 import java.util.List;

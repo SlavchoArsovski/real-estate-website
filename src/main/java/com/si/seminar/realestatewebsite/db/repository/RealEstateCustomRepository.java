@@ -11,4 +11,6 @@ import java.util.List;
 public interface RealEstateCustomRepository<T extends RealEstate> {
 
     List<T> getAllRealEstatesFromSearchModel(SearchModel searchModel, int pageIndex, int pageSize);
+
+    int getRealEstatesCountFromSearchModel(SearchModel searchModel);
 }

@@ -44,6 +44,9 @@ public class RealEstateViewService {
         List<RealEstate> realEstatesFromSearchParams =
                 realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
 
+        int count =
+                realEstateService.getRealEstatesCountFromSearchParams(searchModel);
+
         List<RealEstateViewModel> viewModels =
                 realEstatesFromSearchParams
                         .stream()
@@ -55,6 +58,7 @@ public class RealEstateViewService {
 
         HomeViewModel homeViewModel = new HomeViewModel();
         homeViewModel.setRealEstates(viewModels);
+        homeViewModel.setRealEstateCount(count);
         homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes(locale));
         homeViewModel.setSelectedRealEstateType(RealEstateType.HOUSE.name());
         homeViewModel.setCitiesDropdown(realEstateMapper.mapCities(locale));
@@ -98,6 +102,9 @@ public class RealEstateViewService {
         List<RealEstate> realEstatesFromSearchParams =
                 realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
 
+        int count =
+                realEstateService.getRealEstatesCountFromSearchParams(searchModel);
+
         List<RealEstateViewModel> realEstateViewModels =
                 realEstatesFromSearchParams
                         .stream()
@@ -108,7 +115,7 @@ public class RealEstateViewService {
 
         HomeViewModel homeViewModel = new HomeViewModel();
         homeViewModel.setRealEstates(realEstateViewModels);
-
+        homeViewModel.setRealEstateCount(count);
         homeViewModel.setCitiesDropdown(realEstateMapper.mapCities(locale));
         homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes(locale));
         homeViewModel.setCentralHeatingDropdown(realEstateMapper.mapYesNoOptions(locale, "centralHeating"));

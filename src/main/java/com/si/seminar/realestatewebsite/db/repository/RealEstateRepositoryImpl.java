@@ -31,6 +31,25 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
 
         Root<T> realEstateRoot = criteriaQuery.from(getType());
 
+        List<Predicate> predicates = getPredicates(searchModel, criteriaBuilder, realEstateRoot);
+
+        criteriaQuery.where(predicates.toArray(new Predicate[0]));
+
+        List<T> resultList =
+                entityManager
+                        .createQuery(criteriaQuery)
+                        .setFirstResult(pageIndex * pageSize)
+                        .setMaxResults(pageSize)
+                        .getResultList();
+
+        return resultList;
+    }
+
+    private List<Predicate> getPredicates(
+            SearchModel searchModel,
+            CriteriaBuilder criteriaBuilder,
+            Root<T> realEstateRoot) {
+
         List<Predicate> predicates = Lists.newArrayList();
 
         if (searchModel.getAdvertisementType().isPresent()) {
@@ -85,17 +104,7 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
                 addCustomPredicates(criteriaBuilder, realEstateRoot, searchModel);
 
         predicates.addAll(customPredicates);
-
-        criteriaQuery.where(predicates.toArray(new Predicate[0]));
-
-        List<T> resultList =
-                entityManager
-                        .createQuery(criteriaQuery)
-                        .setFirstResult(pageIndex * pageSize)
-                        .setMaxResults(pageSize)
-                        .getResultList();
-
-        return resultList;
+        return predicates;
     }
 
     protected List<Predicate> addCustomPredicates(
@@ -104,6 +113,25 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
             SearchModel searchModel) {
 
         return Lists.newArrayList();
+    }
+
+    public int getRealEstatesCountFromSearchModel(SearchModel searchModel) {
+
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Long> countQuery = builder.createQuery(Long.class);
+
+        Root<T> realEstateRoot = countQuery.from(getType());
+        countQuery.select(builder.count(realEstateRoot));
+
+        List<Predicate> predicates = getPredicates(searchModel, builder, realEstateRoot);
+        countQuery.where(predicates.toArray(new Predicate[0]));
+
+        Long result =
+                entityManager
+                        .createQuery(countQuery)
+                        .getSingleResult();
+
+        return result.intValue();
     }
 
 }

@@ -1,6 +1,5 @@
 package com.si.seminar.realestatewebsite.services;
 
-import com.google.common.collect.Lists;
 import com.si.seminar.realestatewebsite.db.datamodel.*;
 import com.si.seminar.realestatewebsite.db.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +45,7 @@ public class RealEstateServiceImpl implements RealEstateService {
             SearchModel searchModel,
             int pageNumber) {
 
-        List<RealEstate> realEstates = Lists.newArrayList();
+        List<RealEstate> realEstates;
         RealEstateType selectedRealEstateType = searchModel.getRealEstateType();
 
         switch (selectedRealEstateType) {
@@ -83,6 +82,41 @@ public class RealEstateServiceImpl implements RealEstateService {
         }
 
         return realEstates;
+    }
+
+    @Override
+    public int getRealEstatesCountFromSearchParams(SearchModel searchModel) {
+
+        int count;
+        RealEstateType selectedRealEstateType = searchModel.getRealEstateType();
+
+        switch (selectedRealEstateType) {
+            case HOUSE:
+                count = houseRepository.getRealEstatesCountFromSearchModel(searchModel);
+                break;
+            case APARTMENT:
+                count = apartmentRepository.getRealEstatesCountFromSearchModel(searchModel);
+                break;
+            case OFFICE_SPACE:
+                count = officeSpaceRepository.getRealEstatesCountFromSearchModel(searchModel);
+                break;
+            case ROOM:
+                count = roomRepository.getRealEstatesCountFromSearchModel(searchModel);
+                break;
+            case GARAGE:
+                count = garageRepository.getRealEstatesCountFromSearchModel(searchModel);
+                break;
+            case GROUND:
+                count = groundRepository.getRealEstatesCountFromSearchModel(searchModel);
+                break;
+            case AGRICULTURAL_FIELD:
+                count = agriculturalFieldRepository.getRealEstatesCountFromSearchModel(searchModel);
+                break;
+            default:
+                throw new RuntimeException("Not supported real estate type");
+        }
+
+        return count;
     }
 
     @Override
