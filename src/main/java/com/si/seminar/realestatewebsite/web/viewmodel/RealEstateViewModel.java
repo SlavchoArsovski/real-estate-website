@@ -8,7 +8,6 @@ public class RealEstateViewModel {
     private String realEstateType;
     private String description;
     private String city;
-    private String region;
     private String address;
     private String price;
     private String imagePath;
@@ -37,14 +36,6 @@ public class RealEstateViewModel {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
     }
 
     public String getAddress() {

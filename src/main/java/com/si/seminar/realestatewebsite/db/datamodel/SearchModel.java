@@ -15,7 +15,6 @@ public class SearchModel {
     private final Integer squareMetersFrom;
     private final Integer squareMetersTo;
     private final String city;
-    private final String region;
     private final String address;
     private final BigDecimal priceFrom;
     private final BigDecimal priceTo;
@@ -40,7 +39,6 @@ public class SearchModel {
         private Integer squareMetersFrom;
         private Integer squareMetersTo;
         private String city;
-        private String region;
         private String address;
         private BigDecimal priceFrom;
         private BigDecimal priceTo;
@@ -72,11 +70,6 @@ public class SearchModel {
 
         public Builder city(String city) {
             this.city = city;
-            return this;
-        }
-
-        public Builder region(String region) {
-            this.region = region;
             return this;
         }
 
@@ -160,7 +153,6 @@ public class SearchModel {
         this.squareMetersFrom = builder.squareMetersFrom;
         this.squareMetersTo = builder.squareMetersTo;
         this.city = builder.city;
-        this.region = builder.region;
         this.address = builder.address;
         this.priceFrom = builder.priceFrom;
         this.priceTo = builder.priceTo;
@@ -191,10 +183,6 @@ public class SearchModel {
 
     public Optional<String> getCity() {
         return Optional.ofNullable(city);
-    }
-
-    public Optional<String> getRegion() {
-        return Optional.ofNullable(region);
     }
 
     public Optional<String> getAddress() {

@@ -37,9 +37,6 @@ public abstract class RealEstate {
     @Column(name = "CITY")
     private String city;
 
-    @Column(name = "REGION")
-    private String region;
-
     @Column(name = "ADDRESS")
     private String address;
 
@@ -95,14 +92,6 @@ public abstract class RealEstate {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
     }
 
     public String getAddress() {

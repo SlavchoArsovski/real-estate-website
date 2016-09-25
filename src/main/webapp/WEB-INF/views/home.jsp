@@ -282,7 +282,7 @@
                     <div>
                         {realEstateItemTemplate.messageRealEstateType}
                         {realEstateItemTemplate.messageAt}
-                        {realEstateItemTemplate.city}, {realEstateItemTemplate.region}
+                        {realEstateItemTemplate.city}
                     </div>
 
                     <div>
@@ -317,7 +317,7 @@
                                     code="realestatewebsite.fe.messages.general.realEstateType.${realEstate.realEstateType}"/>
                             <spring:message
                                     code="realestatewebsite.fe.messages.home.realestatelist.realEstateType.atPlace"/>
-                                ${realEstate.city}, ${realEstate.region}
+                                ${realEstate.city}
                         </div>
 
                         <div>

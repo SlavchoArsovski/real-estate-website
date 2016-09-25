@@ -306,7 +306,6 @@ var homeView = {
             templateHtml = templateHtml.replace('{realEstateItemTemplate.address}', realEstate.address);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.city}', realEstate.city);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.price}', realEstate.price);
-            templateHtml = templateHtml.replace('{realEstateItemTemplate.region}', realEstate.region);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.squareMeters}', realEstate.squareMeters);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.phone}', '070 882-031');
             templateHtml = templateHtml.replace(

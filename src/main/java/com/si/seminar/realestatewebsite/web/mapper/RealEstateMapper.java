@@ -14,7 +14,6 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -63,7 +62,6 @@ public class RealEstateMapper implements ApplicationContextAware {
         realEstateViewModel.setCity(realEstate.getCity());
         realEstateViewModel.setDescription(realEstate.getDescription());
         realEstateViewModel.setAddress(realEstate.getAddress());
-        realEstateViewModel.setRegion(realEstate.getRegion());
         realEstateViewModel.setPrice(formatBigDecimal(realEstate.getPrice()));
         realEstateViewModel.setSquareMeters(String.valueOf(realEstate.getSquareMeters()));
         return realEstateViewModel;
@@ -150,8 +148,7 @@ public class RealEstateMapper implements ApplicationContextAware {
                         SQUARE_METERS_TO,
                         PRICE_FROM,
                         PRICE_TO,
-                        CITY,
-                        REGION);
+                        CITY);
 
         switch (realEstateType) {
             case HOUSE:
@@ -248,7 +245,6 @@ public class RealEstateMapper implements ApplicationContextAware {
         realEstate.setPrice(advertisementViewModel.getPrice());
         realEstate.setSquareMeters(advertisementViewModel.getSquareMeters());
         realEstate.setCity(advertisementViewModel.getSelectedCity());
-        realEstate.setRegion("Region");
         realEstate.setDescription(advertisementViewModel.getDescription());
         realEstate.setAdvertisementType(AdvertisementType.valueOf(advertisementViewModel.getSelectedAdvertisementType()));
         realEstate.setAddress(advertisementViewModel.getAddress());

@@ -16,7 +16,6 @@ public class AdvertisementViewModel {
     private String description;
     private String address;
     private String selectedCity;
-    private String region;
     private Map<String, String> cities;
     private BigDecimal price;
     private Integer squareMeters;
@@ -74,14 +73,6 @@ public class AdvertisementViewModel {
 
     public void setSelectedCity(String selectedCity) {
         this.selectedCity = selectedCity;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
     }
 
     public Map<String, String> getCities() {

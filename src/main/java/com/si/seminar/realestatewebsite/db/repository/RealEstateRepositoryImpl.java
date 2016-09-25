@@ -64,13 +64,6 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
                             searchModel.getCity().get()));
         }
 
-        if (searchModel.getRegion().isPresent()) {
-            predicates.add(
-                    criteriaBuilder.equal(
-                            realEstateRoot.get(RealEstate_.region),
-                            searchModel.getRegion().get()));
-        }
-
         if (searchModel.getPriceFrom().isPresent()) {
             predicates.add(
                     criteriaBuilder.greaterThanOrEqualTo(

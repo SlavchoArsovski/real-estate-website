@@ -8,7 +8,6 @@ public enum SearchParam {
     SQUARE_METERS_FROM,
     SQUARE_METERS_TO,
     CITY,
-    REGION,
     PRICE_FROM,
     PRICE_TO,
     YEAR_OF_CONSTRUCTION,

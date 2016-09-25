@@ -1,6 +1,5 @@
 CREATE sequence REAL_ESTATE_ID_SEQUENCE start with 10000;
 
-
 CREATE TABLE REAL_ESTATE (
 
   ID number(19,0) not null,
@@ -10,7 +9,6 @@ CREATE TABLE REAL_ESTATE (
   REAL_ESTATE_TYPE varchar2(40) not null,
   SQUARE_METERS number(5,0),
   CITY varchar2(40) not null,
-  REGION varchar2(40) not null,
   ADDRESS varchar2(100),
   PRICE number(19,0),
   IMAGE_PATH varchar2(100),
