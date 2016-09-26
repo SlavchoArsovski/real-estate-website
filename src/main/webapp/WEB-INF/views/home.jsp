@@ -95,7 +95,7 @@
                             <spring:message code="realestatewebsite.fe.messages.home.property.text.priceFrom"/>
                         </label>
                         <input id="price_from" class="propertyValue" type="text" value="${viewBean.priceFrom}"
-                               placeholder="M2"/>
+                               placeholder="€"/>
                     </div>
 
                     <div>
@@ -103,7 +103,7 @@
                             <spring:message code="realestatewebsite.fe.messages.home.property.text.priceTo"/>
                         </label>
                         <input id="price_to" class="propertyValue" type="text" value="${viewBean.priceTo}"
-                               placeholder="M2"/>
+                               placeholder="€"/>
                     </div>
 
                     <div>
@@ -123,7 +123,7 @@
                             <spring:message code="realestatewebsite.fe.messages.home.property.text.squareMetersFrom"/>
                         </label>
                         <input id="square-meters_from" class="propertyValue" type="text"
-                               value="${viewBean.squareMetersFrom}" placeholder="€"/>
+                               value="${viewBean.squareMetersFrom}" placeholder="M2"/>
                     </div>
 
                     <div>
@@ -131,7 +131,7 @@
                             <spring:message code="realestatewebsite.fe.messages.home.property.text.priceTo"/>
                         </label>
                         <input id="square-meters_to" class="propertyValue" type="text"
-                               value="${viewBean.squareMetersTo}" placeholder="€"/>
+                               value="${viewBean.squareMetersTo}" placeholder="M2"/>
                     </div>
 
                     <div>
@@ -301,7 +301,7 @@
             </div>
         </div>
 
-        <div class="real-estate-list">
+        <div id="realEstateList" class="real-estate-list">
 
             <c:forEach items="${viewBean.realEstates}" var="realEstate">
 

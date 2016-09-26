@@ -39,7 +39,8 @@ public class HomeViewModel extends ViewModelWithMessage {
     private List<String> validProperties = Lists.newArrayList();
     private List<RealEstateViewModel> realEstates = Lists.newArrayList();
     private String advertisementType;
-    private int realEstateCount;
+    private int realEstateListNumberOfPages;
+    private int realEstateListPageNumber;
 
     public Map<String, String> getRealEstateTypesDropdown() {
         return realEstateTypesDropdown;
@@ -265,11 +266,19 @@ public class HomeViewModel extends ViewModelWithMessage {
         this.advertisementType = advertisementType;
     }
 
-    public int getRealEstateCount() {
-        return realEstateCount;
+    public int getRealEstateListNumberOfPages() {
+        return realEstateListNumberOfPages;
     }
 
-    public void setRealEstateCount(int realEstateCount) {
-        this.realEstateCount = realEstateCount;
+    public void setRealEstateListNumberOfPages(int realEstateListNumberOfPages) {
+        this.realEstateListNumberOfPages = realEstateListNumberOfPages;
+    }
+
+    public int getRealEstateListPageNumber() {
+        return realEstateListPageNumber;
+    }
+
+    public void setRealEstateListPageNumber(int realEstateListPageNumber) {
+        this.realEstateListPageNumber = realEstateListPageNumber;
     }
 }

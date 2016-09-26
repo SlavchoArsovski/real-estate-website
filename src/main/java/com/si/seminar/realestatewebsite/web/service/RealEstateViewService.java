@@ -10,6 +10,7 @@ import com.si.seminar.realestatewebsite.web.mapper.RealEstateMapper;
 import com.si.seminar.realestatewebsite.web.viewmodel.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,6 +34,7 @@ public class RealEstateViewService {
     @Autowired
     private ExposedMessageSource messageSource;
 
+    private int pageSize = 5;
 
     public HomeViewModel getInitialViewModel(AdvertisementType advertisementType, Locale locale) {
 
@@ -41,11 +43,14 @@ public class RealEstateViewService {
                 .advertismentType(advertisementType)
                 .build();
 
+        int pageNumber = 0;
+
         List<RealEstate> realEstatesFromSearchParams =
-                realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
+                realEstateService.getRealEstatesFromSearchParams(searchModel, pageNumber);
 
         int count =
                 realEstateService.getRealEstatesCountFromSearchParams(searchModel);
+        int numberOfPages = getNumberOfPages(count);
 
         List<RealEstateViewModel> viewModels =
                 realEstatesFromSearchParams
@@ -58,7 +63,8 @@ public class RealEstateViewService {
 
         HomeViewModel homeViewModel = new HomeViewModel();
         homeViewModel.setRealEstates(viewModels);
-        homeViewModel.setRealEstateCount(count);
+        homeViewModel.setRealEstateListPageNumber(pageNumber + 1);
+        homeViewModel.setRealEstateListNumberOfPages(numberOfPages);
         homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes(locale));
         homeViewModel.setSelectedRealEstateType(RealEstateType.HOUSE.name());
         homeViewModel.setCitiesDropdown(realEstateMapper.mapCities(locale));
@@ -87,6 +93,20 @@ public class RealEstateViewService {
         return homeViewModel;
     }
 
+    private int getNumberOfPages(int count) {
+        int numberOfPages;
+        if (count < pageSize) {
+            numberOfPages = 1;
+        } else {
+            numberOfPages = count / pageSize;
+
+            if (count % pageSize != 0) {
+                numberOfPages++;
+            }
+        }
+        return numberOfPages;
+    }
+
     /**
      * Get view model after property change.
      *
@@ -94,16 +114,20 @@ public class RealEstateViewService {
      * @param locale                  the locale.
      * @return home view model.
      */
-    public HomeViewModel getViewModelAfterPropertyChange(HomePropertyChangeModel homePropertyChangeModel, Locale locale) {
+    public HomeViewModel getViewModelAfterPropertyChange(
+            HomePropertyChangeModel homePropertyChangeModel,
+            int pageNumber,
+            Locale locale) {
 
         SearchModel searchModel =
                 buildSearchModelFromPropertyChangeModel(homePropertyChangeModel);
 
         List<RealEstate> realEstatesFromSearchParams =
-                realEstateService.getRealEstatesFromSearchParams(searchModel, 0);
+                realEstateService.getRealEstatesFromSearchParams(searchModel, pageNumber - 1);
 
         int count =
                 realEstateService.getRealEstatesCountFromSearchParams(searchModel);
+        int numberOfPages = getNumberOfPages(count);
 
         List<RealEstateViewModel> realEstateViewModels =
                 realEstatesFromSearchParams
@@ -115,7 +139,8 @@ public class RealEstateViewService {
 
         HomeViewModel homeViewModel = new HomeViewModel();
         homeViewModel.setRealEstates(realEstateViewModels);
-        homeViewModel.setRealEstateCount(count);
+        homeViewModel.setRealEstateListPageNumber(pageNumber);
+        homeViewModel.setRealEstateListNumberOfPages(numberOfPages);
         homeViewModel.setCitiesDropdown(realEstateMapper.mapCities(locale));
         homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes(locale));
         homeViewModel.setCentralHeatingDropdown(realEstateMapper.mapYesNoOptions(locale, "centralHeating"));
@@ -138,8 +163,11 @@ public class RealEstateViewService {
 
     private SearchModel buildSearchModelFromPropertyChangeModel(HomePropertyChangeModel homePropertyChangeModel) {
 
+        RealEstateType realEstateType =
+                RealEstateType.valueOf(homePropertyChangeModel.getSelectedRealEstateType());
+
         SearchModel.Builder builder = new SearchModel
-                .Builder(RealEstateType.valueOf(homePropertyChangeModel.getSelectedRealEstateType()))
+                .Builder(realEstateType)
                 .advertismentType(AdvertisementType.valueOf(homePropertyChangeModel.getAdvertisementType()))
                 .priceFrom(homePropertyChangeModel.getPriceFrom())
                 .priceTo(homePropertyChangeModel.getPriceTo())

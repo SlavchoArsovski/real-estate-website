@@ -30,6 +30,9 @@ var homeView = {
         realEstateItemHtmlTemplate: '.real-estate-list-item-template'
     },
 
+    pageNumber: undefined,
+    numberOfPages: undefined,
+
     initView: function (model) {
         this._initViewChangingEvents();
         this._initModelChangingEvents();
@@ -133,6 +136,20 @@ var homeView = {
             $(me).trigger('parkingIncludedChange', $(me.pageComponents.parkingIncludedDropdownSelectedOption).val());
         });
 
+        $(window).scroll(function () {
+
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                // reached bottom, load new page if available
+                console.log('end reached');
+
+                if (me.pageNumber < me.numberOfPages) {
+                    me.pageNumber++;
+                    $(me).trigger('pageNumberChange', me.pageNumber);
+                }
+            }
+
+        });
+
     },
 
     updateView: function (model) {
@@ -153,7 +170,10 @@ var homeView = {
         this._updateParkingIncluded(model.selectedParkingIncluded);
         this._updatePoolIncluded(model.selectedPoolIncluded);
         this._updateNumberOfRooms(model.numberOfRooms);
-        this._updateRealEstates(model.realEstates, model.messages);
+        this._updateRealEstates(model.realEstates, model.realEstateListPageNumber, model.messages);
+
+        this.pageNumber = model.realEstateListPageNumber;
+        this.numberOfPages = model.realEstateListNumberOfPages;
     },
 
     _updateSearchProperties: function (validProperties) {
@@ -293,11 +313,13 @@ var homeView = {
         $(this.pageComponents.parkingIncludedDropdown + ' option[value="' + selectedParkingIncluded + '"]').attr('selected', 'selected');
     },
 
-    _updateRealEstates: function (realEstates, messages) {
+    _updateRealEstates: function (realEstates, pageNumber, messages) {
 
         var me = this;
 
-        $(me.pageComponents.realEstateList).html('');
+        if (pageNumber === 1) {
+            $(me.pageComponents.realEstateList).html('');
+        }
 
         $.each(realEstates, function (index, realEstate) {
 

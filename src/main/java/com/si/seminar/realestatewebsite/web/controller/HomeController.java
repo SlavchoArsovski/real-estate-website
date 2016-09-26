@@ -66,9 +66,30 @@ public class HomeController {
             @RequestParam(name = "changedProperty") String changedProperty,
             Locale locale) {
 
+        int pageNumber = 1;
         HomeViewModel viewModel =
                 viewService.getViewModelAfterPropertyChange(
                         homePropertyChangeModel,
+                        pageNumber,
+                        locale);
+
+        return viewModel;
+    }
+
+    @RequestMapping(
+            value = "/pageNumberChanged",
+            method = RequestMethod.POST,
+            params = {"pageNumber"})
+    @ResponseBody
+    public HomeViewModel pageNumberChange(
+            @ModelAttribute HomePropertyChangeModel homePropertyChangeModel,
+            @RequestParam(name = "pageNumber") int pageNumber,
+            Locale locale) {
+
+        HomeViewModel viewModel =
+                viewService.getViewModelAfterPropertyChange(
+                        homePropertyChangeModel,
+                        pageNumber,
                         locale);
 
         return viewModel;

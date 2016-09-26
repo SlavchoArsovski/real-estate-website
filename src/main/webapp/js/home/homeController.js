@@ -77,5 +77,9 @@ $(document).ready(function () {
         homeModel.changeParkingIncluded(parkingIncluded);
     });
 
+    $(homeView).on('pageNumberChange', function (event, pageNumber) {
+        homeModel.changePageNumber(pageNumber);
+    });
+
 
 });

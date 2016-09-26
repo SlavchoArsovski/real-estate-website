@@ -46,6 +46,7 @@ public class RealEstateMapper implements ApplicationContextAware {
         homeViewModel.setSelectedCentralHeating(homePropertyChangeModel.getSelectedCentralHeating());
         homeViewModel.setSelectedElevatorIncluded(homePropertyChangeModel.getSelectedElevatorIncluded());
         homeViewModel.setSelectedGarageIncluded(homePropertyChangeModel.getSelectedGarageIncluded());
+        homeViewModel.setSelectedParkingIncluded(homePropertyChangeModel.getSelectedParkingIncluded());
         homeViewModel.setNumberOfBeds(homePropertyChangeModel.getNumberOfBeds());
         homeViewModel.setNumberOfRooms(homePropertyChangeModel.getNumberOfRooms());
         homeViewModel.setSelectedPoolIncluded(homePropertyChangeModel.getSelectedPoolIncluded());
@@ -64,6 +65,7 @@ public class RealEstateMapper implements ApplicationContextAware {
         realEstateViewModel.setAddress(realEstate.getAddress());
         realEstateViewModel.setPrice(formatBigDecimal(realEstate.getPrice()));
         realEstateViewModel.setSquareMeters(String.valueOf(realEstate.getSquareMeters()));
+
         return realEstateViewModel;
     }
 

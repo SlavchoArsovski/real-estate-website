@@ -65,6 +65,42 @@ var homeModel = {
         });
     },
 
+    _pageNumberChange: function (pageNumber) {
+        var url = 'http://localhost:8080/real-estate-website/home/pageNumberChanged';
+        var data = {};
+        var self = this;
+
+        data['selectedRealEstateType'] = this.selectedRealEstateType;
+        data['selectedCity'] = this.selectedCity;
+        data['priceFrom'] = this.priceFrom;
+        data['priceTo'] = this.priceTo;
+        data['squareMetersFrom'] = this.squareMetersFrom;
+        data['squareMetersTo'] = this.squareMetersTo;
+        data['yearOfConstruction'] = this.yearOfConstruction;
+        data['selectedCentralHeating'] = this.selectedCentralHeating;
+        data['selectedAirConditioned'] = this.selectedAirConditioned;
+        data['selectedYardIncluded'] = this.selectedYardIncluded;
+        data['selectedGarageIncluded'] = this.selectedGarageIncluded;
+        data['selectedElevatorIncluded'] = this.selectedElevatorIncluded;
+        data['numberOfRooms'] = this.numberOfRooms;
+        data['numberOfBeds'] = this.numberOfBeds;
+        data['selectedParkingIncluded'] = this.selectedParkingIncluded;
+        data['selectedPoolIncluded'] = this.selectedPoolIncluded;
+        data['advertisementType'] = this.advertisementType;
+
+        data['pageNumber'] = pageNumber;
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: data,
+            success: function (response) {
+                var newModel = response;
+                self.update(newModel);
+            }
+        });
+    },
+
     update: function (newModel, noTrigger) {
         for (var key in newModel) {
             //copy all the fields
@@ -142,6 +178,10 @@ var homeModel = {
         this._propertyChange('selectedParkingIncluded', parkingIncluded);
     },
 
+    changePageNumber: function (pageNumber) {
+        this._pageNumberChange(pageNumber);
+    },
+
     getModelForView: function () {
         return {
             selectedRealEstateType: this.selectedRealEstateType,
@@ -163,6 +203,8 @@ var homeModel = {
             validProperties: this.validProperties,
             realEstates: this.realEstates,
             advertisementType: this.advertisementType,
+            realEstateListNumberOfPages: this.realEstateListNumberOfPages,
+            realEstateListPageNumber: this.realEstateListPageNumber,
             messages: this.messages
         };
     }
