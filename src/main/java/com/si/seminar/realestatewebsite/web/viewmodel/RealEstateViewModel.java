@@ -13,6 +13,8 @@ public class RealEstateViewModel {
     private String imagePath;
     private String squareMeters;
     private String yearOfConstruction;
+    private Long realEstateId;
+    private String realEstateImageType;
 
     public String getRealEstateType() {
         return realEstateType;
@@ -76,5 +78,21 @@ public class RealEstateViewModel {
 
     public void setYearOfConstruction(String yearOfConstruction) {
         this.yearOfConstruction = yearOfConstruction;
+    }
+
+    public Long getRealEstateId() {
+        return realEstateId;
+    }
+
+    public void setRealEstateId(Long realEstateId) {
+        this.realEstateId = realEstateId;
+    }
+
+    public String getRealEstateImageType() {
+        return realEstateImageType;
+    }
+
+    public void setRealEstateImageType(String realEstateImageType) {
+        this.realEstateImageType = realEstateImageType;
     }
 }

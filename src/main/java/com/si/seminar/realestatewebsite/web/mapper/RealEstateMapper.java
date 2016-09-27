@@ -65,6 +65,8 @@ public class RealEstateMapper implements ApplicationContextAware {
         realEstateViewModel.setAddress(realEstate.getAddress());
         realEstateViewModel.setPrice(formatBigDecimal(realEstate.getPrice()));
         realEstateViewModel.setSquareMeters(String.valueOf(realEstate.getSquareMeters()));
+        realEstateViewModel.setRealEstateId(realEstate.getId());
+        realEstateViewModel.setRealEstateImageType(realEstate.getImageType());
 
         return realEstateViewModel;
     }

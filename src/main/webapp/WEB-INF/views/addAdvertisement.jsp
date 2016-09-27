@@ -59,7 +59,7 @@
 <a href="addAdvertisement?language=en">EN</a> | <a href="addAdvertisement?language=mk">MK</a>
 
 <form:form id="advertisementForm" name="advertisementForm" method="post" modelAttribute="viewBean"
-           action="addAdvertisement" cssClass="advertisementForm">
+           action="addAdvertisement" cssClass="advertisementForm" enctype="multipart/form-data">
 
     <div>
         <label class="property">
@@ -117,6 +117,13 @@
         </label>
         <form:input id="squareMeters" class="propertyValue" path="squareMeters" type="text" placeholder="M2"/>
         <form:errors path="squareMeters"/>
+    </div>
+
+    <div>
+        <label class="property">
+            <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.image"/>
+        </label>
+        <form:input id="realEstateImage" path="realEstateImage" class="propertyValue" type="file"/>
     </div>
 
     <c:if test="${viewBean.validProperties.contains('YEAR_OF_CONSTRUCTION')}">

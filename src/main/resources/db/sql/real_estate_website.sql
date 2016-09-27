@@ -11,7 +11,7 @@ CREATE TABLE REAL_ESTATE (
   CITY varchar2(40) not null,
   ADDRESS varchar2(100),
   PRICE number(19,0),
-  IMAGE_PATH varchar2(100),
+  IMAGE_TYPE varchar2(20),
   ADVERTISEMENT_TYPE varchar2(10),
   CREATED_ON timestamp,
 

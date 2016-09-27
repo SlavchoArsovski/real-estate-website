@@ -293,7 +293,6 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .real-estate-list-item {
-    cursor: pointer;
     padding: 10px 0;
     display: table;
     width: 700px;
@@ -306,9 +305,9 @@ input[type="radio"], input[type="checkbox"] {
 .real-estate-list-item-image {
     display: table-cell;
     width: 250px;
-    background-image: url('../images/nophoto.png');
     background-repeat: no-repeat;
     background-size: 250px 140px;
+    padding: 0 10px;
 }
 
 .real-estate-list-item-details {
@@ -357,4 +356,8 @@ input[type="radio"], input[type="checkbox"] {
 
 .advertisementForm {
     width: 300px;
+}
+
+.more-link {
+    text-align: right;
 }

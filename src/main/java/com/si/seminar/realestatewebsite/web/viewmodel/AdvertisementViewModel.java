@@ -1,6 +1,7 @@
 package com.si.seminar.realestatewebsite.web.viewmodel;
 
 import com.google.common.collect.Lists;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -33,6 +34,7 @@ public class AdvertisementViewModel {
     private boolean pool;
     private String selectedAdvertisementType;
     private Map<String, String> advertisementTypes;
+    private MultipartFile realEstateImage;
     private List<String> validProperties = Lists.newArrayList();
 
     public String getSelectedRealEstateType() {
@@ -217,5 +219,13 @@ public class AdvertisementViewModel {
 
     public void setValidProperties(List<String> validProperties) {
         this.validProperties = validProperties;
+    }
+
+    public MultipartFile getRealEstateImage() {
+        return realEstateImage;
+    }
+
+    public void setRealEstateImage(MultipartFile realEstateImage) {
+        this.realEstateImage = realEstateImage;
     }
 }

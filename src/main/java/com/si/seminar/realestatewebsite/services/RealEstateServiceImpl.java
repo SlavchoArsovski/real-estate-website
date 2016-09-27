@@ -2,21 +2,38 @@ package com.si.seminar.realestatewebsite.services;
 
 import com.si.seminar.realestatewebsite.db.datamodel.*;
 import com.si.seminar.realestatewebsite.db.repository.*;
+import org.apache.commons.io.IOUtils;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Implementation of {@link RealEstateService}.
  */
 @Service
-public class RealEstateServiceImpl implements RealEstateService {
+public class RealEstateServiceImpl implements RealEstateService, ApplicationContextAware {
 
     @Value("${realEstateWebsite.home.realEstatesListComponent.pagesize}")
     private int pageSize;
+
+    @Value("${realEstateWebsite.realEstateImagesFolderPath}")
+    private String realEstateImagesFolderPath;
+
+    private ApplicationContext applicationContext;
 
     @Autowired
     private HouseRepository houseRepository;
@@ -151,5 +168,88 @@ public class RealEstateServiceImpl implements RealEstateService {
         }
 
 
+    }
+
+    @Override
+    public void saveRealEstateImage(MultipartFile realEstateImage, Long imageId) {
+
+        String contentType = realEstateImage.getContentType();
+
+        Pattern imageTypePattern = Pattern.compile("image/(.+)");
+        Matcher matcher = imageTypePattern.matcher(contentType);
+
+        if (!matcher.matches()) {
+            throw new RuntimeException("incorrect image format");
+        }
+
+        String imageType = matcher.group(1);
+
+        String fullImagePath = String.format(
+                "%sRealEstateImage_%s.%s",
+                realEstateImagesFolderPath,
+                imageId,
+                imageType);
+
+        try {
+            BufferedImage src = ImageIO.read(realEstateImage.getInputStream());
+            File destination = new File(fullImagePath);
+            ImageIO.write(src, imageType, destination);
+        } catch (IOException e) {
+            throw new RuntimeException("image can't be stored");
+        }
+
+    }
+
+    @Override
+    public byte[] getRealEstateImage(Long imageId, String imageType) {
+
+        String realEstateImagePath = String.format("file:%sRealEstateImage_%s.%s", realEstateImagesFolderPath, imageId, imageType);
+        byte[] byteArray;
+        Resource resource = applicationContext.getResource(realEstateImagePath);
+
+        try {
+            byteArray = IOUtils.toByteArray(resource.getInputStream());
+        } catch (IOException e) {
+            throw new RuntimeException("image is not found");
+        }
+        return byteArray;
+    }
+
+    @Override
+    public RealEstate getRealEstateByIdAndType(Long id, RealEstateType realEstateType) {
+
+        RealEstate realEstate;
+        switch (realEstateType) {
+            case HOUSE:
+                realEstate = houseRepository.findById(id);
+                break;
+            case APARTMENT:
+                realEstate = apartmentRepository.findById(id);
+                break;
+            case OFFICE_SPACE:
+                realEstate = officeSpaceRepository.findById(id);
+                break;
+            case GARAGE:
+                realEstate = garageRepository.findById(id);
+                break;
+            case GROUND:
+                realEstate = groundRepository.findById(id);
+                break;
+            case ROOM:
+                realEstate = roomRepository.findById(id);
+                break;
+            case AGRICULTURAL_FIELD:
+                realEstate = agriculturalFieldRepository.findById(id);
+                break;
+            default:
+                throw new RuntimeException("not supported real estate type");
+        }
+
+        return realEstate;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
     }
 }

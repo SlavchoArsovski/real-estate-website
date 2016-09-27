@@ -10,12 +10,13 @@ import com.si.seminar.realestatewebsite.web.mapper.RealEstateMapper;
 import com.si.seminar.realestatewebsite.web.viewmodel.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -250,7 +251,28 @@ public class RealEstateViewService {
         RealEstate realEstate =
                 realEstateMapper.mapAdvertisementViewModelToRealEstate(advertisementViewModel);
 
+        if (!advertisementViewModel.getRealEstateImage().isEmpty()) {
+
+            String contentType = advertisementViewModel.getRealEstateImage().getContentType();
+
+            Pattern imageTypePattern = Pattern.compile("image/(.+)");
+            Matcher matcher = imageTypePattern.matcher(contentType);
+
+            if (!matcher.matches()) {
+                throw new RuntimeException("incorrect image format");
+            }
+
+            String imageType = matcher.group(1);
+
+            realEstate.setImageType(imageType);
+        }
+
         realEstateService.saveRealEstate(realEstate);
 
+        boolean imageUploaded = !advertisementViewModel.getRealEstateImage().isEmpty();
+
+        if (imageUploaded) {
+            realEstateService.saveRealEstateImage(advertisementViewModel.getRealEstateImage(), realEstate.getId());
+        }
     }
 }

@@ -1,7 +1,9 @@
 package com.si.seminar.realestatewebsite.services;
 
 import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
+import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
 import com.si.seminar.realestatewebsite.db.datamodel.SearchModel;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -35,4 +37,11 @@ public interface RealEstateService {
      * @param realEstate the real estate to be persisted.
      */
     void saveRealEstate(RealEstate realEstate);
+
+    void saveRealEstateImage(MultipartFile realEstateImage, Long imageId);
+
+    byte[] getRealEstateImage(Long imageId, String imageType);
+
+    RealEstate getRealEstateByIdAndType(Long id, RealEstateType realEstateType);
+
 }

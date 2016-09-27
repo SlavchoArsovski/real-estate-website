@@ -273,7 +273,9 @@
         <div class="real-estate-list-item-template">
             <div class="real-estate-list-item">
 
-                <div class="real-estate-list-item-image"></div>
+                <img class="real-estate-list-item-image"
+                     src="realEstateImage/{realEstateItemTemplate.realEstateId}?type={realEstateItemTemplate.realEstateImageType}"
+                     alt="image no found"/>
 
                 <div class="real-estate-list-item-details">
 
@@ -297,6 +299,13 @@
                     <div>
                         {realEstateItemTemplate.messagePhone}: {realEstateItemTemplate.phone}
                     </div>
+
+                    <div class="more-link">
+                        <a href="advertisementDetail?realEstateId={realEstateItemTemplate.realEstateId}&realEstateType={realEstateItemTemplate.realEstateType}">
+                            Повеќе
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -307,7 +316,9 @@
 
                 <div class="real-estate-list-item">
 
-                    <div class="real-estate-list-item-image"></div>
+                    <img class="real-estate-list-item-image"
+                         src="realEstateImage/${realEstate.realEstateId}?type=${realEstate.realEstateImageType}"
+                         alt="image no found"/>
 
                     <div class="real-estate-list-item-details">
                         <div>${realEstate.address}</div>
@@ -336,6 +347,12 @@
                         <div>
                             <spring:message code="realestatewebsite.fe.messages.home.realestatelist.phone"/>: 070
                             882-031
+                        </div>
+
+                        <div class="more-link">
+                            <a href="advertisementDetail?realEstateId=${realEstate.realEstateId}&realEstateType=${realEstate.realEstateType}">
+                                Повеќе
+                            </a>
                         </div>
                     </div>
                 </div>

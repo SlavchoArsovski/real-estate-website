@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -41,7 +42,10 @@ public class AddAdvertisementController {
 
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
+
         binder.setValidator(advertisementValidator);
+
+        binder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
     }
 
     /**

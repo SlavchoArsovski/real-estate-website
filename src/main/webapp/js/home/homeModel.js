@@ -1,7 +1,7 @@
 var homeModel = {
 
     init: function (afterInit) {
-        var url = 'http://localhost:8080/real-estate-website/home/propertyChanged';
+        var url = '/real-estate-website/home/propertyChanged';
         var self = this;
 
         var data = {};
@@ -29,7 +29,7 @@ var homeModel = {
     },
 
     _propertyChange: function (key, value) {
-        var url = 'http://localhost:8080/real-estate-website/home/propertyChanged';
+        var url = '/real-estate-website/home/propertyChanged';
         var data = {};
         var self = this;
 
@@ -66,7 +66,7 @@ var homeModel = {
     },
 
     _pageNumberChange: function (pageNumber) {
-        var url = 'http://localhost:8080/real-estate-website/home/pageNumberChanged';
+        var url = '/real-estate-website/home/pageNumberChanged';
         var data = {};
         var self = this;
 

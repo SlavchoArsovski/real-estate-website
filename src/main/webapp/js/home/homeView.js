@@ -325,6 +325,10 @@ var homeView = {
 
             var templateHtml = $(me.pageComponents.realEstateItemHtmlTemplate).html();
 
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.realEstateId}', realEstate.realEstateId);
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.realEstateId}', realEstate.realEstateId);
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.realEstateType}', realEstate.realEstateType);
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.realEstateImageType}', realEstate.realEstateImageType);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.address}', realEstate.address);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.city}', realEstate.city);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.price}', realEstate.price);

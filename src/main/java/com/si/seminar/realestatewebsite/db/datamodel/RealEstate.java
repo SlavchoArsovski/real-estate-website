@@ -43,8 +43,8 @@ public abstract class RealEstate {
     @Column(name = "PRICE")
     private BigDecimal price;
 
-    @Column(name = "IMAGE_PATH")
-    private String imagePath;
+    @Column(name = "IMAGE_TYPE")
+    private String imageType;
 
     @Column(name = "ADVERTISEMENT_TYPE")
     @Enumerated(EnumType.STRING)
@@ -110,12 +110,12 @@ public abstract class RealEstate {
         this.price = price;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getImageType() {
+        return imageType;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
     }
 
     public AdvertisementType getAdvertisementType() {
