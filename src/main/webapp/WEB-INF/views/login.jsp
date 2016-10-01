@@ -74,6 +74,11 @@
                     <input name="submit" type="submit" value="${submitText}"/>
                 </td>
             </tr>
+            <tr>
+                <td><a href="home">Почетна</a></td>
+                <td><a href="registration">Регистрација</a></td>
+            </tr>
+
         </table>
 
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

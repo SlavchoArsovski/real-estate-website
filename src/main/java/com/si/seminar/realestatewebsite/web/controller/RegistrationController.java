@@ -1,10 +1,20 @@
 package com.si.seminar.realestatewebsite.web.controller;
 
+import com.si.seminar.realestatewebsite.db.datamodel.User;
+import com.si.seminar.realestatewebsite.web.validator.UserValidator;
+import com.si.seminar.realestatewebsite.web.viewmodel.UserViewModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Registration controller.
@@ -12,26 +22,37 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class RegistrationController {
 
-//    @RequestMapping(value = "/registration", method = RequestMethod.GET)
-//    public String registration(Model model) {
-//
-//        model.addAttribute("userForm", new User());
-//
-//        return "registration";
-//    }
-//
-//    @RequestMapping(value = "/registration", method = RequestMethod.POST)
-//    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
-//        userValidator.validate(userForm, bindingResult);
-//
-//        if (bindingResult.hasErrors()) {
-//            return "registration";
-//        }
-//
-//        userService.save(userForm);
-//
-//        securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
-//
-//        return "redirect:/welcome";
-//    }
+    public static final String VIEW_BEAN = "viewBean";
+    public static final String REGISTRATION_VIEW_NAME = "registration";
+
+    @Autowired
+    private UserValidator userValidator;
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.setValidator(userValidator);
+    }
+
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public ModelAndView registration() {
+
+        ModelAndView modelAndView = new ModelAndView(REGISTRATION_VIEW_NAME);
+        modelAndView.addObject(VIEW_BEAN, new UserViewModel());
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public ModelAndView registration(
+            @ModelAttribute @Validated UserViewModel userViewModel,
+            BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            ModelAndView modelAndView = new ModelAndView("registration");
+            modelAndView.addObject(VIEW_BEAN, userViewModel);
+            return modelAndView;
+        }
+
+        return new ModelAndView("redirect:/home");
+    }
 }
