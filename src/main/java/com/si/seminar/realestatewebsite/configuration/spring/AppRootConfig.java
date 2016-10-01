@@ -16,7 +16,7 @@ import org.springframework.core.io.Resource;
  * App root spring configuration.
  */
 @Configuration
-@Import({ DataModelConfiguration.class })
+@Import({DataModelConfiguration.class, SecurityConfig.class})
 @ComponentScan( basePackageClasses = { ServiceComponents.class} )
 public class AppRootConfig  implements ApplicationContextAware {
 

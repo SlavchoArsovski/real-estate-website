@@ -63,25 +63,12 @@ public class RealEstateMapper implements ApplicationContextAware {
         realEstateViewModel.setCity(realEstate.getCity());
         realEstateViewModel.setDescription(realEstate.getDescription());
         realEstateViewModel.setAddress(realEstate.getAddress());
-        realEstateViewModel.setPrice(formatBigDecimal(realEstate.getPrice()));
+        realEstateViewModel.setPrice(BigDecimalFormatter.formatBigDecimal(realEstate.getPrice()));
         realEstateViewModel.setSquareMeters(String.valueOf(realEstate.getSquareMeters()));
         realEstateViewModel.setRealEstateId(realEstate.getId());
         realEstateViewModel.setRealEstateImageType(realEstate.getImageType());
 
         return realEstateViewModel;
-    }
-
-    public String formatBigDecimal(BigDecimal number) {
-
-        number = number.setScale(2, BigDecimal.ROUND_HALF_UP);
-
-        DecimalFormat df = new DecimalFormat();
-        df.setMaximumFractionDigits(2);
-        df.setMinimumFractionDigits(0);
-
-        String result = df.format(number);
-
-        return result;
     }
 
     public Map<String, String> mapRealEstateTypes(Locale locale) {
@@ -202,10 +189,10 @@ public class RealEstateMapper implements ApplicationContextAware {
 
         Map<String, String> advertisementTypes = Maps.newLinkedHashMap();
 
-        String value = getResourceMessage("realestatewebsite.fe.messages.addAdvertisement.advertisementType.SALE", locale);
+        String value = getResourceMessage("realestatewebsite.fe.messages.general.advertisementType.SALE", locale);
         advertisementTypes.put("SALE", value);
 
-        value = getResourceMessage("realestatewebsite.fe.messages.addAdvertisement.advertisementType.RENT", locale);
+        value = getResourceMessage("realestatewebsite.fe.messages.general.advertisementType.RENT", locale);
         advertisementTypes.put("RENT", value);
 
         return advertisementTypes;

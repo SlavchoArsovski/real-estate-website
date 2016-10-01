@@ -52,3 +52,25 @@ alter TABLE REAL_ESTATE add (
   constraint PARKING_INCLUDED_CHECK check ( PARKING_INCLUDED in (0, 1)),
   constraint ELEVATOR_INCLUDED_CHECK check ( ELEVATOR_INCLUDED in (0, 1))
 );
+
+CREATE TABLE PORTAL_USER (
+  USER_NAME VARCHAR(45) NOT NULL,
+  PASSWORD VARCHAR(45) NOT NULL,
+  ENABLED number(1,0) DEFAULT 1
+);
+
+alter TABLE PORTAL_USER add (
+  constraint PK_USERS primary key (USER_NAME)
+);
+
+CREATE TABLE PORTAL_USER_ROLES (
+  USER_ROLE_ID number(11,0) NOT NULL,
+  USER_NAME varchar(45) NOT NULL,
+  ROLE varchar(45) NOT NULL
+);
+
+alter TABLE PORTAL_USER_ROLES add (
+  constraint PK_USER_ROLES primary key (USER_ROLE_ID),
+  constraint FK_USERS foreign key (USER_NAME) references PORTAL_USER(USER_NAME),
+  constraint ROLE_USER unique (USER_ROLE_ID, USER_NAME)
+);

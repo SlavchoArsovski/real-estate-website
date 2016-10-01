@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <spring:url value="/css/main.css" var="mainCss"/>
@@ -32,6 +32,32 @@
 <body>
 
 <a href="home?language=en">EN</a> | <a href="home?language=mk">MK</a>
+
+<sec:authorize access="hasRole('ROLE_USER')">
+    <!-- For login user -->
+    <c:url value="/logout" var="logoutUrl"/>
+    <form action="${logoutUrl}" method="post" id="logoutForm">
+        <input type="hidden" name="${_csrf.parameterName}"
+               value="${_csrf.token}"/>
+    </form>
+    <script>
+        function formSubmit() {
+            document.getElementById("logoutForm").submit();
+        }
+    </script>
+
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <h2>
+            <spring:message code="realestatewebsite.fe.messages.general.user"/>
+            : ${pageContext.request.userPrincipal.name} |
+            <a href="javascript:formSubmit()">
+                <spring:message code="realestatewebsite.fe.messages.general.logout"/>
+            </a>
+        </h2>
+    </c:if>
+
+
+</sec:authorize>
 
 <div class="home-header" id="homepage-header">
     <div id="hero-img-wrapper" class="hero-img-wrapper">
@@ -301,7 +327,8 @@
                     </div>
 
                     <div class="more-link">
-                        <a href="advertisementDetail?realEstateId={realEstateItemTemplate.realEstateId}&realEstateType={realEstateItemTemplate.realEstateType}">
+                        <a href="advertisementDetail?realEstateId={realEstateItemTemplate.realEstateId}&realEstateType={realEstateItemTemplate.realEstateType}"
+                           target="_blank">
                             Повеќе
                         </a>
                     </div>
@@ -350,7 +377,8 @@
                         </div>
 
                         <div class="more-link">
-                            <a href="advertisementDetail?realEstateId=${realEstate.realEstateId}&realEstateType=${realEstate.realEstateType}">
+                            <a href="advertisementDetail?realEstateId=${realEstate.realEstateId}&realEstateType=${realEstate.realEstateType}"
+                               target="_blank">
                                 Повеќе
                             </a>
                         </div>

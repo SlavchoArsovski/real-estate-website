@@ -306,8 +306,9 @@ input[type="radio"], input[type="checkbox"] {
     display: table-cell;
     width: 250px;
     background-repeat: no-repeat;
-    background-size: 250px 140px;
+    background-size: 250px 160px;
     padding: 0 10px;
+    height: 165px;
 }
 
 .real-estate-list-item-details {
