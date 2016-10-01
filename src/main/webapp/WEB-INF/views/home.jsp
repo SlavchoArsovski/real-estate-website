@@ -47,13 +47,13 @@
     </script>
 
     <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <h2>
+        <div>
             <spring:message code="realestatewebsite.fe.messages.general.user"/>
             : ${pageContext.request.userPrincipal.name} |
             <a href="javascript:formSubmit()">
                 <spring:message code="realestatewebsite.fe.messages.general.logout"/>
             </a>
-        </h2>
+        </div>
     </c:if>
 
 
@@ -96,7 +96,7 @@
                     </div>
                     <div class="menu-item">
                         <input type="radio">
-                        <a href="#">
+                        <a href="login">
                             <spring:message code="realestatewebsite.fe.messages.home.menu.item.login"/>
                         </a>
                     </div>

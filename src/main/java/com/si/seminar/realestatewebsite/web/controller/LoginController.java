@@ -1,5 +1,7 @@
 package com.si.seminar.realestatewebsite.web.controller;
 
+import com.si.seminar.realestatewebsite.web.utils.MessageResolverService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,17 +18,36 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
+    public static final String LABEL_INVALID_CREDENTIALS =
+            "realestatewebsite.fe.messages.login.label.invalidCredentials";
+    public static final String LABEL_SUCCESSFUL_LOGOUT =
+            "realestatewebsite.fe.messages.login.label.successfulLogout";
+
+    @Autowired
+    private MessageResolverService messageResolverService;
+
+    /**
+     * Handles login page.
+     *
+     * @param error  the error occurred message.
+     * @param logout the logut message.
+     * @return model and view.
+     */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login(@RequestParam(value = "error", required = false) String error,
-                              @RequestParam(value = "logout", required = false) String logout) {
+    public ModelAndView login(
+            @RequestParam(value = "error", required = false) String error,
+            @RequestParam(value = "logout", required = false) String logout) {
 
         ModelAndView model = new ModelAndView();
         if (error != null) {
-            model.addObject("error", "Invalid username and password!");
+            String invalidCredentialMessage =
+                    messageResolverService.getResourceMessage(LABEL_INVALID_CREDENTIALS);
+            model.addObject("error", invalidCredentialMessage);
         }
 
         if (logout != null) {
-            model.addObject("msg", "You've been logged out successfully.");
+            String logoutSuccessMessage = messageResolverService.getResourceMessage(LABEL_SUCCESSFUL_LOGOUT);
+            model.addObject("msg", logoutSuccessMessage);
         }
         model.setViewName("login");
 
@@ -34,13 +55,16 @@ public class LoginController {
 
     }
 
-    //for 403 access denied page
+    /**
+     * Handles access denied page.
+     *
+     * @return model and view.
+     */
     @RequestMapping(value = "/403", method = RequestMethod.GET)
-    public ModelAndView accesssDenied() {
+    public ModelAndView accessDenied() {
 
         ModelAndView model = new ModelAndView();
 
-        //check if user is login
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (!(auth instanceof AnonymousAuthenticationToken)) {
             UserDetails userDetail = (UserDetails) auth.getPrincipal();
