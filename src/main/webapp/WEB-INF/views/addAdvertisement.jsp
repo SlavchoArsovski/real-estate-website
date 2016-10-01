@@ -59,7 +59,8 @@
 <a href="addAdvertisement?language=en">EN</a> | <a href="addAdvertisement?language=mk">MK</a>
 
 <form:form id="advertisementForm" name="advertisementForm" method="post" modelAttribute="viewBean"
-           action="addAdvertisement" cssClass="advertisementForm" enctype="multipart/form-data">
+           action="addAdvertisement?${_csrf.parameterName}=${_csrf.token}" cssClass="advertisementForm"
+           enctype="multipart/form-data">
 
     <div>
         <label class="property">
@@ -221,6 +222,7 @@
         <input id="submitAdvertisement" name="submit" type="submit" value="${submitText}">
         </input>
     </div>
+
 
 </form:form>
 
