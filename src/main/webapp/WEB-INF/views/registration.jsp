@@ -34,7 +34,7 @@
         }
 
         #registration-box {
-            width: 300px;
+            width: 350px;
             padding: 20px;
             margin: 100px auto;
             background: #fff;
@@ -51,7 +51,8 @@
 
 <div id="registration-box">
 
-    <form:form name="registrationFrom" modelAttribute="viewBean" method="POST" enctype="utf8">
+    <form:form name="userForm" modelAttribute="userForm" method="POST" enctype="utf8">
+
         <table>
             <tr>
                 <td>
@@ -60,7 +61,11 @@
                 <td>
                     <form:input type="text" name="userName" path="userName" value=""/>
                 </td>
-                <form:errors path="userName" element="div"/>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <form:errors path="userName" element="div"/>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -68,6 +73,10 @@
                 </td>
                 <td>
                     <form:input type="text" name="email" path="email" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
                     <form:errors path="email" element="div"/>
                 </td>
             </tr>
@@ -77,6 +86,10 @@
                 </td>
                 <td>
                     <form:input type="text" name="phoneNumber" path="phoneNumber" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
                     <form:errors path="phoneNumber" element="div"/>
                 </td>
             </tr>
@@ -86,6 +99,10 @@
                 </td>
                 <td>
                     <form:input type="password" name="password" path="password" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
                     <form:errors path="password" element="div"/>
                 </td>
             </tr>
@@ -95,6 +112,10 @@
                 </td>
                 <td>
                     <form:input type="password" name="passwordConfirm" path="passwordConfirm" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
                     <form:errors path="passwordConfirm" element="div"/>
                 </td>
             </tr>

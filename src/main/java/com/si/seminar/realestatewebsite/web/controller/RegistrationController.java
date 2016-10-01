@@ -1,6 +1,5 @@
 package com.si.seminar.realestatewebsite.web.controller;
 
-import com.si.seminar.realestatewebsite.db.datamodel.User;
 import com.si.seminar.realestatewebsite.web.validator.UserValidator;
 import com.si.seminar.realestatewebsite.web.viewmodel.UserViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,6 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Registration controller.
@@ -22,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class RegistrationController {
 
-    public static final String VIEW_BEAN = "viewBean";
+    public static final String VIEW_BEAN = "userForm";
     public static final String REGISTRATION_VIEW_NAME = "registration";
 
     @Autowired
@@ -34,25 +31,24 @@ public class RegistrationController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public ModelAndView registration() {
+    public String registration(Model model) {
 
-        ModelAndView modelAndView = new ModelAndView(REGISTRATION_VIEW_NAME);
-        modelAndView.addObject(VIEW_BEAN, new UserViewModel());
+        model.addAttribute(VIEW_BEAN, new UserViewModel());
 
-        return modelAndView;
+        return REGISTRATION_VIEW_NAME;
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public ModelAndView registration(
-            @ModelAttribute @Validated UserViewModel userViewModel,
-            BindingResult bindingResult) {
+    public String registration(
+            @ModelAttribute("userForm") @Validated UserViewModel userViewModel,
+            BindingResult bindingResult,
+            Model model) {
 
         if (bindingResult.hasErrors()) {
-            ModelAndView modelAndView = new ModelAndView("registration");
-            modelAndView.addObject(VIEW_BEAN, userViewModel);
-            return modelAndView;
+            model.addAttribute(VIEW_BEAN, userViewModel);
+            return REGISTRATION_VIEW_NAME;
         }
 
-        return new ModelAndView("redirect:/home");
+        return "redirect:/home";
     }
 }
