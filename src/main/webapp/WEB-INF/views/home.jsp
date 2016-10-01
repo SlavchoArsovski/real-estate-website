@@ -28,6 +28,11 @@
 
     <title><spring:message code="realestatewebsite.fe.messages.home.title"/></title>
 
+    <script type="text/javascript">
+        var csrfParameter = '${_csrf.parameterName}';
+        var csrfToken = '${_csrf.token}';
+    </script>
+
 </head>
 <body>
 

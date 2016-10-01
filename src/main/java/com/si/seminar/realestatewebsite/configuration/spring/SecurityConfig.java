@@ -32,9 +32,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
+                .antMatchers("/", "/home", "login", "advertisementDetail").permitAll()
                 .antMatchers("/addAdvertisement/**").hasRole("USER")
                 .and()
-                .formLogin().loginPage("/login").failureUrl("/login?error")
+                .formLogin().loginPage("/login").failureUrl("/login?error").defaultSuccessUrl("/home")
                 .usernameParameter("username").passwordParameter("password")
                 .and()
                 .logout().logoutSuccessUrl("/login?logout")

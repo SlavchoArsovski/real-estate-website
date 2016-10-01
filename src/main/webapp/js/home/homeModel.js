@@ -50,6 +50,7 @@ var homeModel = {
         data['selectedParkingIncluded'] = this.selectedParkingIncluded;
         data['selectedPoolIncluded'] = this.selectedPoolIncluded;
         data['advertisementType'] = this.advertisementType;
+        data[csrfParameter] = csrfToken;
 
         data[key] = value;
         data['changedProperty'] = key;
@@ -87,6 +88,7 @@ var homeModel = {
         data['selectedParkingIncluded'] = this.selectedParkingIncluded;
         data['selectedPoolIncluded'] = this.selectedPoolIncluded;
         data['advertisementType'] = this.advertisementType;
+        data[csrfParameter] = csrfToken;
 
         data['pageNumber'] = pageNumber;
 
