@@ -15,6 +15,7 @@ public class RealEstateViewModel {
     private String yearOfConstruction;
     private Long realEstateId;
     private String realEstateImageType;
+    private String phoneNumber;
 
     public String getRealEstateType() {
         return realEstateType;
@@ -94,5 +95,13 @@ public class RealEstateViewModel {
 
     public void setRealEstateImageType(String realEstateImageType) {
         this.realEstateImageType = realEstateImageType;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

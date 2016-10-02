@@ -377,8 +377,8 @@
                         </div>
 
                         <div>
-                            <spring:message code="realestatewebsite.fe.messages.home.realestatelist.phone"/>: 070
-                            882-031
+                            <spring:message
+                                    code="realestatewebsite.fe.messages.home.realestatelist.phone"/>: ${realEstate.phoneNumber}
                         </div>
 
                         <div class="more-link">

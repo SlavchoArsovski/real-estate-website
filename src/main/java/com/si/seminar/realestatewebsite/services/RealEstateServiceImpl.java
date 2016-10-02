@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.io.Resource;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,8 +18,10 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -55,6 +59,9 @@ public class RealEstateServiceImpl implements RealEstateService, ApplicationCont
 
     @Autowired
     private AgriculturalFieldRepository agriculturalFieldRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @SuppressWarnings("unchecked")
     @Override
@@ -139,6 +146,14 @@ public class RealEstateServiceImpl implements RealEstateService, ApplicationCont
     @Override
     public void saveRealEstate(RealEstate realEstate) {
 
+        org.springframework.security.core.userdetails.User principal =
+                (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        Optional<com.si.seminar.realestatewebsite.db.datamodel.User> user =
+                userRepository.findByUserName(principal.getUsername());
+
+        realEstate.setUser(user.get());
+
         realEstate.setCreatedOn(new Date());
 
         switch (realEstate.getRealEstateType()) {
@@ -205,14 +220,23 @@ public class RealEstateServiceImpl implements RealEstateService, ApplicationCont
 
         String realEstateImagePath = String.format("file:%sRealEstateImage_%s.%s", realEstateImagesFolderPath, imageId, imageType);
         byte[] byteArray;
-        Resource resource = applicationContext.getResource(realEstateImagePath);
 
         try {
+            Resource resource = applicationContext.getResource(realEstateImagePath);
             byteArray = IOUtils.toByteArray(resource.getInputStream());
         } catch (IOException e) {
-            throw new RuntimeException("image is not found");
+            byteArray = getFallbackImage();
         }
         return byteArray;
+    }
+
+    private byte[] getFallbackImage() {
+        Resource resource = applicationContext.getResource("classpath:nophoto.png");
+        try {
+            return IOUtils.toByteArray(resource.getInputStream());
+        } catch (IOException e) {
+            throw new RuntimeException("failed to load fallback image");
+        }
     }
 
     @Override

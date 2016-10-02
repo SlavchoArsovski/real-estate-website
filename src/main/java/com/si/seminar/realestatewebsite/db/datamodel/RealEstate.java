@@ -54,6 +54,10 @@ public abstract class RealEstate {
     @Column(name = "CREATED_ON")
     private Date createdOn;
 
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "USER_NAME", nullable = false, referencedColumnName = "USER_NAME")
+    private User user;
+
     public Long getId() {
         return id;
     }
@@ -132,5 +136,13 @@ public abstract class RealEstate {
 
     public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

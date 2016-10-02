@@ -70,6 +70,7 @@ public class RealEstateMapper {
         realEstateViewModel.setSquareMeters(String.valueOf(realEstate.getSquareMeters()));
         realEstateViewModel.setRealEstateId(realEstate.getId());
         realEstateViewModel.setRealEstateImageType(realEstate.getImageType());
+        realEstateViewModel.setPhoneNumber(realEstate.getUser().getPhoneNumber());
 
         return realEstateViewModel;
     }

@@ -333,7 +333,7 @@ var homeView = {
             templateHtml = templateHtml.replace('{realEstateItemTemplate.city}', realEstate.city);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.price}', realEstate.price);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.squareMeters}', realEstate.squareMeters);
-            templateHtml = templateHtml.replace('{realEstateItemTemplate.phone}', '070 882-031');
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.phone}', realEstate.phoneNumber);
             templateHtml = templateHtml.replace(
                 '{realEstateItemTemplate.messageRealEstateType}',
                 messages['realestatewebsite.fe.messages.general.realEstateType.' + realEstate.realEstateType]
