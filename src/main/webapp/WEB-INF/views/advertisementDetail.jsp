@@ -18,15 +18,22 @@
      src="realEstateImage/${viewBean.realEstateId}?type=${viewBean.realEstateImageType}"
      alt="image no found"/>
 
-<c:forEach items="${viewBean.advertisementProperties}" var="property">
 
-    <div>
-        <label>${property.key}</label>
-        <label>${property.value}</label>
-    </div>
-
-
-</c:forEach>
+<table>
+    <tbody>
+    <c:forEach items="${viewBean.advertisementProperties}" var="property">
+        <tr>
+            <td>${property.key}</td>
+            <td>${property.value}</td>
+        </tr>
+    </c:forEach>
+    <tr>
+        <td colspan="2">
+            <a href="home">Почетна</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>
