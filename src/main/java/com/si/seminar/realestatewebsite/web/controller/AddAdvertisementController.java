@@ -29,7 +29,7 @@ import java.util.Map;
 public class AddAdvertisementController {
 
     public static final String ADD_ADVERTISEMENT_VIEW_NAME = "addAdvertisement";
-    public static final String VIEW_BEAN = "viewBean";
+    public static final String VIEW_BEAN = "advertisementForm";
 
     @Autowired
     private RealEstateViewService realEstateViewService;
@@ -51,42 +51,36 @@ public class AddAdvertisementController {
     /**
      * Controller for add advertisement page.
      *
-     * @param locale the locale.
      * @return {@link ModelAndView}.
      */
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView addAdvertisement(Locale locale) {
-
-        ModelAndView modelAndView = new ModelAndView(ADD_ADVERTISEMENT_VIEW_NAME);
+    public String addAdvertisement(Model model) {
 
         AdvertisementViewModel initialAdvertisementViewModel =
-                realEstateViewService.getInitialAdvertisementViewModel(RealEstateType.HOUSE, locale);
+                realEstateViewService.getInitialAdvertisementViewModel(RealEstateType.HOUSE);
 
-        modelAndView.addObject(VIEW_BEAN, initialAdvertisementViewModel);
+        model.addAttribute(VIEW_BEAN, initialAdvertisementViewModel);
 
-        return modelAndView;
+        return ADD_ADVERTISEMENT_VIEW_NAME;
     }
 
     /**
      * Handles real estate change.
      *
      * @param selectedRealEstateType the selected real estate type.
-     * @param locale                 the locale.
      * @return {@link ModelAndView}.
      */
     @RequestMapping(method = RequestMethod.POST, params = {"realEstateChange"})
-    public ModelAndView changeRealEstateType(
+    public String changeRealEstateType(
             @RequestParam(name = "selectedRealEstateType") RealEstateType selectedRealEstateType,
-            Locale locale) {
-
-        ModelAndView modelAndView = new ModelAndView(ADD_ADVERTISEMENT_VIEW_NAME);
+            Model model) {
 
         AdvertisementViewModel initialAdvertisementViewModel =
-                realEstateViewService.getInitialAdvertisementViewModel(selectedRealEstateType, locale);
+                realEstateViewService.getInitialAdvertisementViewModel(selectedRealEstateType);
 
-        modelAndView.addObject(VIEW_BEAN, initialAdvertisementViewModel);
+        model.addAttribute(VIEW_BEAN, initialAdvertisementViewModel);
 
-        return modelAndView;
+        return ADD_ADVERTISEMENT_VIEW_NAME;
     }
 
     /**
@@ -95,33 +89,32 @@ public class AddAdvertisementController {
      * @param advertisementViewModel the {@link AdvertisementViewModel}.
      */
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView saveAdvertisement(
-            @ModelAttribute @Validated AdvertisementViewModel advertisementViewModel,
+    public String saveAdvertisement(
+            @ModelAttribute("advertisementForm") @Validated AdvertisementViewModel advertisementViewModel,
             BindingResult result,
-            final RedirectAttributes redirectAttributes,
-            Locale locale) {
+            Model model,
+            final RedirectAttributes redirectAttributes) {
 
         boolean noErrors = !result.hasErrors();
 
         if (noErrors) {
             realEstateViewService.saveAdvertisement(advertisementViewModel);
             redirectAttributes.addFlashAttribute("msg", "Successfully added advertisement");
-            return new ModelAndView("redirect:successScreen");
+            return "redirect:successScreen";
         }
 
-        advertisementViewModel.setRealEstateTypes(realEstateMapper.mapRealEstateTypes(locale));
-        Map<String, String> cities = realEstateMapper.mapCities(locale);
+        advertisementViewModel.setRealEstateTypes(realEstateMapper.mapRealEstateTypes());
+        Map<String, String> cities = realEstateMapper.mapCities();
         cities.remove("ALL");
         advertisementViewModel.setCities(cities);
-        advertisementViewModel.setAdvertisementTypes(realEstateMapper.mapAdvertisementTypes(locale));
+        advertisementViewModel.setAdvertisementTypes(realEstateMapper.mapAdvertisementTypes());
 
         List<String> validProperties =
                 realEstateMapper.mapValidPropertiesFromRealEstateType(advertisementViewModel.getSelectedRealEstateType());
         advertisementViewModel.setValidProperties(validProperties);
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject(VIEW_BEAN, advertisementViewModel);
+        model.addAttribute(VIEW_BEAN, advertisementViewModel);
 
-        return modelAndView;
+        return ADD_ADVERTISEMENT_VIEW_NAME;
     }
 }

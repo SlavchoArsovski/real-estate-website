@@ -9,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Locale;
-
 /**
  * Controller for home page.
  */
@@ -26,12 +24,11 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView home(
-            @RequestParam(name = "advertisementType", required = false, defaultValue = "SALE") AdvertisementType advertisementType,
-            Locale locale) {
+            @RequestParam(name = "advertisementType", required = false, defaultValue = "SALE") AdvertisementType advertisementType) {
 
         ModelAndView modelAndView = new ModelAndView(HOME_VIEW_NAME);
 
-        HomeViewModel initialViewModel = viewService.getInitialViewModel(advertisementType, locale);
+        HomeViewModel initialViewModel = viewService.getInitialViewModel(advertisementType);
         modelAndView.addObject(VIEW_BEAN, initialViewModel);
 
         return modelAndView;
@@ -49,10 +46,9 @@ public class HomeController {
             method = RequestMethod.GET,
             params = {"advertisementType"})
     public HomeViewModel initializeJSONModel(
-            @RequestParam(name = "advertisementType") AdvertisementType advertisementType,
-            Locale locale) {
+            @RequestParam(name = "advertisementType") AdvertisementType advertisementType) {
 
-        HomeViewModel initialViewModel = viewService.getInitialViewModel(advertisementType, locale);
+        HomeViewModel initialViewModel = viewService.getInitialViewModel(advertisementType);
         return initialViewModel;
     }
 
@@ -63,15 +59,13 @@ public class HomeController {
     @ResponseBody
     public HomeViewModel propertyChanged(
             @ModelAttribute HomePropertyChangeModel homePropertyChangeModel,
-            @RequestParam(name = "changedProperty") String changedProperty,
-            Locale locale) {
+            @RequestParam(name = "changedProperty") String changedProperty) {
 
         int pageNumber = 1;
         HomeViewModel viewModel =
                 viewService.getViewModelAfterPropertyChange(
                         homePropertyChangeModel,
-                        pageNumber,
-                        locale);
+                        pageNumber);
 
         return viewModel;
     }
@@ -83,14 +77,12 @@ public class HomeController {
     @ResponseBody
     public HomeViewModel pageNumberChange(
             @ModelAttribute HomePropertyChangeModel homePropertyChangeModel,
-            @RequestParam(name = "pageNumber") int pageNumber,
-            Locale locale) {
+            @RequestParam(name = "pageNumber") int pageNumber) {
 
         HomeViewModel viewModel =
                 viewService.getViewModelAfterPropertyChange(
                         homePropertyChangeModel,
-                        pageNumber,
-                        locale);
+                        pageNumber);
 
         return viewModel;
     }

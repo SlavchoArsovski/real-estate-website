@@ -3,8 +3,10 @@ package com.si.seminar.realestatewebsite.web.mapper;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.si.seminar.realestatewebsite.db.datamodel.*;
+import com.si.seminar.realestatewebsite.web.utils.MessageResolverService;
 import com.si.seminar.realestatewebsite.web.viewmodel.*;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
@@ -25,12 +27,13 @@ import static com.si.seminar.realestatewebsite.web.viewmodel.SearchParam.*;
  * Contains methods for mapping real estate to view models.
  */
 @Service
-public class RealEstateMapper implements ApplicationContextAware {
+public class RealEstateMapper {
 
     public static final String REAL_ESTATA_TYPE_MESSAGE_KEY_PREFIX = "realestatewebsite.fe.messages.general.realEstateType";
     public static final String CITIES_MESSAGE_KEY_PREFIX = "realestatewebsite.fe.messages.general.cities";
 
-    private ApplicationContext appContext;
+    @Autowired
+    private MessageResolverService messageResolverService;
 
     public void mapPropertyChangeModelToViewModel(
             HomeViewModel homeViewModel,
@@ -71,7 +74,7 @@ public class RealEstateMapper implements ApplicationContextAware {
         return realEstateViewModel;
     }
 
-    public Map<String, String> mapRealEstateTypes(Locale locale) {
+    public Map<String, String> mapRealEstateTypes() {
 
         Map<String, String> realEstateTypesDropdown = Maps.newTreeMap();
 
@@ -79,7 +82,7 @@ public class RealEstateMapper implements ApplicationContextAware {
                 .forEach(realEstateType -> {
                     String messageKey =
                             String.format("%s.%s", REAL_ESTATA_TYPE_MESSAGE_KEY_PREFIX, realEstateType.name());
-                    String message = getResourceMessage(messageKey, locale);
+                    String message = messageResolverService.getResourceMessage(messageKey);
 
                     realEstateTypesDropdown.put(realEstateType.name(), message);
                 });
@@ -87,13 +90,13 @@ public class RealEstateMapper implements ApplicationContextAware {
         return realEstateTypesDropdown;
     }
 
-    public Map<String, String> mapCities(Locale locale) {
+    public Map<String, String> mapCities() {
 
         Map<String, String> citiesDropdown = Maps.newTreeMap();
 
         String noCityKey =
                 String.format("%s.%s", CITIES_MESSAGE_KEY_PREFIX, "ALL");
-        String noCityMessage = getResourceMessage(noCityKey, locale);
+        String noCityMessage = messageResolverService.getResourceMessage(noCityKey);
 
         citiesDropdown.put("ALL", noCityMessage);
 
@@ -102,7 +105,7 @@ public class RealEstateMapper implements ApplicationContextAware {
 
                     String messageKey =
                             String.format("%s.%s", CITIES_MESSAGE_KEY_PREFIX, city.name());
-                    String message = getResourceMessage(messageKey, locale);
+                    String message = messageResolverService.getResourceMessage(messageKey);
 
                     citiesDropdown.put(city.name(), message);
                 });
@@ -110,18 +113,18 @@ public class RealEstateMapper implements ApplicationContextAware {
         return citiesDropdown;
     }
 
-    public Map<String, String> mapYesNoOptions(Locale locale, String property) {
+    public Map<String, String> mapYesNoOptions(String property) {
 
         Map<String, String> optionsDropdown = Maps.newLinkedHashMap();
 
         String key = String.format("realestatewebsite.fe.messages.home.property.%s.NO_SELECTION", property);
-        String value = getResourceMessage(key, locale);
+        String value = messageResolverService.getResourceMessage(key);
         optionsDropdown.put("NO_SELECTION", value);
 
-        value = getResourceMessage("realestatewebsite.fe.messages.general.YES", locale);
+        value = messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.YES");
         optionsDropdown.put("YES", value);
 
-        value = getResourceMessage("realestatewebsite.fe.messages.general.NO", locale);
+        value = messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.NO");
         optionsDropdown.put("NO", value);
 
         return optionsDropdown;
@@ -185,14 +188,14 @@ public class RealEstateMapper implements ApplicationContextAware {
         return properties;
     }
 
-    public Map<String, String> mapAdvertisementTypes(Locale locale) {
+    public Map<String, String> mapAdvertisementTypes() {
 
         Map<String, String> advertisementTypes = Maps.newLinkedHashMap();
 
-        String value = getResourceMessage("realestatewebsite.fe.messages.general.advertisementType.SALE", locale);
+        String value = messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.advertisementType.SALE");
         advertisementTypes.put("SALE", value);
 
-        value = getResourceMessage("realestatewebsite.fe.messages.general.advertisementType.RENT", locale);
+        value = messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.advertisementType.RENT");
         advertisementTypes.put("RENT", value);
 
         return advertisementTypes;
@@ -279,17 +282,5 @@ public class RealEstateMapper implements ApplicationContextAware {
         officeSpace.setYearOfConstruction(advertisementViewModel.getYearOfConstruction());
 
         return officeSpace;
-    }
-
-    private String getResourceMessage(String key, Locale locale) {
-        return appContext.getMessage(
-                key,
-                new Object[]{},
-                locale);
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.appContext = applicationContext;
     }
 }

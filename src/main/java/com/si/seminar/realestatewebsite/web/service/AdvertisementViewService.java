@@ -27,12 +27,11 @@ public class AdvertisementViewService {
 
     public AdvertisementDetailViewModel getAdvertisementDetailViewModel(
             Long realEstateId,
-            RealEstateType realEstateType,
-            Locale locale) {
+            RealEstateType realEstateType) {
 
         RealEstate realEstate =
                 realEstateService.getRealEstateByIdAndType(realEstateId, realEstateType);
 
-        return mapper.mapRealEstateToAdvertisementModel(realEstate, locale);
+        return mapper.mapRealEstateToAdvertisementModel(realEstate);
     }
 }

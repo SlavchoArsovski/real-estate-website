@@ -1,5 +1,6 @@
 package com.si.seminar.realestatewebsite.web.controller;
 
+import com.si.seminar.realestatewebsite.web.service.RegistrationViewService;
 import com.si.seminar.realestatewebsite.web.validator.UserValidator;
 import com.si.seminar.realestatewebsite.web.viewmodel.UserViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class RegistrationController {
     @Autowired
     private UserValidator userValidator;
 
+    @Autowired
+    private RegistrationViewService registrationViewService;
+
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
         binder.setValidator(userValidator);
@@ -49,6 +53,8 @@ public class RegistrationController {
             return REGISTRATION_VIEW_NAME;
         }
 
-        return "redirect:/home";
+        registrationViewService.saveUser(userViewModel);
+
+        return "redirect:/login";
     }
 }

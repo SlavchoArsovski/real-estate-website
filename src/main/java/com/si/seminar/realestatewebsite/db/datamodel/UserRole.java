@@ -8,10 +8,16 @@ import javax.persistence.*;
 @Entity
 @Table(name = "PORTAL_USER_ROLES")
 @Access(AccessType.FIELD)
-public class UserRoles {
+public class UserRole {
 
     @Id
     @Column(name = "USER_ROLE_ID")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "USER_ROLE_ID_SEQUENCE_GENERATOR")
+    @SequenceGenerator(
+            name = "USER_ROLE_ID_SEQUENCE_GENERATOR",
+            sequenceName = "USER_ROLE_ID_SEQUENCE",
+            allocationSize = 1,
+            initialValue = 1)
     private Long id;
 
     @Column(name = "USER_NAME")

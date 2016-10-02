@@ -4,8 +4,10 @@ import com.si.seminar.realestatewebsite.db.datamodel.AdvertisementType;
 import com.si.seminar.realestatewebsite.db.datamodel.House;
 import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
 import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
+import com.si.seminar.realestatewebsite.web.utils.MessageResolverService;
 import com.si.seminar.realestatewebsite.web.viewmodel.AdvertisementDetailViewModel;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
@@ -16,11 +18,12 @@ import java.util.Locale;
  * Advertisement detail mapper.
  */
 @Service
-public class AdvertisementDetailMapper implements ApplicationContextAware {
+public class AdvertisementDetailMapper {
 
-    private ApplicationContext appContext;
+    @Autowired
+    private MessageResolverService messageResolverService;
 
-    public AdvertisementDetailViewModel mapRealEstateToAdvertisementModel(RealEstate realEstate, Locale locale) {
+    public AdvertisementDetailViewModel mapRealEstateToAdvertisementModel(RealEstate realEstate) {
 
         RealEstateType realEstateType = realEstate.getRealEstateType();
         AdvertisementDetailViewModel viewModel = new AdvertisementDetailViewModel();
@@ -29,94 +32,88 @@ public class AdvertisementDetailMapper implements ApplicationContextAware {
         viewModel.setRealEstateImageType(realEstate.getImageType());
 
         String realEstateTypeTitle =
-                getResourceMessage("realestatewebsite.fe.messages.general.realEstateType", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.realEstateType");
 
         String realEstateTypeValue =
-                getResourceMessage(
+                messageResolverService.getResourceMessage(
                         String.format(
                                 "realestatewebsite.fe.messages.general.realEstateType.%s",
-                                realEstateType.name()),
-                        locale);
+                                realEstateType.name()));
         viewModel.addAdvertisementProperty(
                 realEstateTypeTitle,
                 realEstateTypeValue
         );
 
         String advertisementTypeTitle =
-                getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.advertisementType", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.advertisementType");
         AdvertisementType advertisementType = realEstate.getAdvertisementType();
-        String advertisementTypeValue = getResourceMessage(
-                String.format("realestatewebsite.fe.messages.general.advertisementType.%s", advertisementType.name()),
-                locale);
+        String advertisementTypeValue = messageResolverService.getResourceMessage(
+                String.format("realestatewebsite.fe.messages.general.advertisementType.%s", advertisementType.name()));
 
         viewModel.addAdvertisementProperty(advertisementTypeTitle, advertisementTypeValue);
 
-        String cityTitle = getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.city", locale);
+        String cityTitle = messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.city");
         String cityValue =
-                getResourceMessage(
-                        String.format("realestatewebsite.fe.messages.general.cities.%s", realEstate.getCity()),
-                        locale);
+                messageResolverService.getResourceMessage(
+                        String.format("realestatewebsite.fe.messages.general.cities.%s", realEstate.getCity()));
         viewModel.addAdvertisementProperty(
                 cityTitle,
                 cityValue
         );
 
         String priceTitle =
-                getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.price", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.price");
         String priceValue = BigDecimalFormatter.formatBigDecimal(realEstate.getPrice()) + " €";
         viewModel.addAdvertisementProperty(priceTitle, priceValue);
 
 
         String addressTitle =
-                getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.address", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.address");
         String address = realEstate.getAddress();
 
         viewModel.addAdvertisementProperty(addressTitle, address);
 
         String squareMetersTitle =
-                getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.squareMeters", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.squareMeters");
         String squareMeters = realEstate.getSquareMeters().toString() + " M2";
         viewModel.addAdvertisementProperty(squareMetersTitle, squareMeters);
 
         switch (realEstateType) {
             case HOUSE:
-                mapHouseToViewModel(realEstate, viewModel, locale);
+                mapHouseToViewModel(realEstate, viewModel);
                 break;
         }
 
         return viewModel;
     }
 
-    private void mapHouseToViewModel(
-            RealEstate realEstate,
-            AdvertisementDetailViewModel viewModel,
-            Locale locale) {
+    private void mapHouseToViewModel(RealEstate realEstate, AdvertisementDetailViewModel viewModel) {
 
         House house = (House) realEstate;
 
-        String generalYesMessage = getResourceMessage("realestatewebsite.fe.messages.general.YES", locale);
-        String generalNoMessage = getResourceMessage("realestatewebsite.fe.messages.general.NO", locale);
+        String generalYesMessage = messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.YES");
+        String generalNoMessage = messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.NO");
 
         String yearOfConstructionTitle =
-                getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.yearOfConstruction", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.yearOfConstruction");
         viewModel.addAdvertisementProperty(yearOfConstructionTitle, house.getYearOfConstruction().toString());
 
         String yardIncludedTitle =
-                getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.yard", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.yard");
         Boolean yardIncluded = house.isYardIncluded();
         String yardIncludedValueMessage =
                 Boolean.TRUE.equals(yardIncluded) ? generalYesMessage : generalNoMessage;
         viewModel.addAdvertisementProperty(yardIncludedTitle, yardIncludedValueMessage);
 
         String garageIncludedTitle =
-                getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.garage", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.garage");
         Boolean garageIncluded = house.isGarageIncluded();
         String garageIncludedValueMessage =
                 Boolean.TRUE.equals(garageIncluded) ? generalYesMessage : generalNoMessage;
         viewModel.addAdvertisementProperty(garageIncludedTitle, garageIncludedValueMessage);
 
         String centralHeatingTitle =
-                getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.centralHeating", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.centralHeating");
         Boolean centralHeatingIncluded = house.isCentralHeatingIncluded();
         String centralHeatingValueMessageKey;
         if (Boolean.TRUE.equals(centralHeatingIncluded)) {
@@ -124,10 +121,12 @@ public class AdvertisementDetailMapper implements ApplicationContextAware {
         } else {
             centralHeatingValueMessageKey = "realestatewebsite.fe.messages.general.NO";
         }
-        viewModel.addAdvertisementProperty(centralHeatingTitle, getResourceMessage(centralHeatingValueMessageKey, locale));
+        viewModel.addAdvertisementProperty(
+                centralHeatingTitle,
+                messageResolverService.getResourceMessage(centralHeatingValueMessageKey));
 
         String poolTitle =
-                getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.pool", locale);
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.pool");
         Boolean poolIncluded = house.isPoolIncluded();
         String poolValueMessageKey;
         if (Boolean.TRUE.equals(poolIncluded)) {
@@ -135,20 +134,10 @@ public class AdvertisementDetailMapper implements ApplicationContextAware {
         } else {
             poolValueMessageKey = "realestatewebsite.fe.messages.general.NO";
         }
-        viewModel.addAdvertisementProperty(poolTitle, getResourceMessage(poolValueMessageKey, locale));
+        viewModel.addAdvertisementProperty(
+                poolTitle,
+                messageResolverService.getResourceMessage(poolValueMessageKey));
 
 
-    }
-
-    private String getResourceMessage(String key, Locale locale) {
-        return appContext.getMessage(
-                key,
-                new Object[]{},
-                locale);
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.appContext = applicationContext;
     }
 }

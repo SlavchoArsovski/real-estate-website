@@ -72,7 +72,7 @@
                     Email
                 </td>
                 <td>
-                    <form:input type="text" name="email" path="email" value=""/>
+                    <form:input type="text" name="email" path="email" value="" placeholder="user@yahoo.com"/>
                 </td>
             </tr>
             <tr>
@@ -85,7 +85,7 @@
                     Phone Number
                 </td>
                 <td>
-                    <form:input type="text" name="phoneNumber" path="phoneNumber" value=""/>
+                    <form:input type="text" name="phoneNumber" path="phoneNumber" value="" placeholder="070123456"/>
                 </td>
             </tr>
             <tr>

@@ -27,22 +27,19 @@ public class AdvertisementDetailController {
 
     /**
      * @param realEstateId
-     * @param locale
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView advertisementDetail(
             @RequestParam(name = "realEstateId") Long realEstateId,
-            @RequestParam(name = "realEstateType") RealEstateType realEstateType,
-            Locale locale) {
+            @RequestParam(name = "realEstateType") RealEstateType realEstateType) {
 
         ModelAndView modelAndView = new ModelAndView(ADD_ADVERTISEMENT_VIEW_NAME);
 
         AdvertisementDetailViewModel advertisementDetailViewModel =
                 advertisementViewService.getAdvertisementDetailViewModel(
                         realEstateId,
-                        realEstateType,
-                        locale);
+                        realEstateType);
 
         modelAndView.addObject(VIEW_BEAN, advertisementDetailViewModel);
 

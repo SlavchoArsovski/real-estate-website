@@ -58,7 +58,7 @@
 
 <a href="addAdvertisement?language=en">EN</a> | <a href="addAdvertisement?language=mk">MK</a>
 
-<form:form id="advertisementForm" name="advertisementForm" method="post" modelAttribute="viewBean"
+<form:form name="advertisementForm" method="post" modelAttribute="advertisementForm"
            action="addAdvertisement?${_csrf.parameterName}=${_csrf.token}" cssClass="advertisementForm"
            enctype="multipart/form-data">
 
@@ -66,7 +66,7 @@
         <label class="property">
             <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.realEstateType"/>
         </label>
-        <form:select class="propertyValue" path="selectedRealEstateType" items="${viewBean.realEstateTypes}"
+        <form:select class="propertyValue" path="selectedRealEstateType" items="${advertisementForm.realEstateTypes}"
                      onchange="return submitAdvertisementFormAfterRealEstateTypeChange()"/>
     </div>
 
@@ -74,7 +74,8 @@
         <label class="property">
             <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.advertisementType"/>
         </label>
-        <form:select class="propertyValue" path="selectedAdvertisementType" items="${viewBean.advertisementTypes}"/>
+        <form:select class="propertyValue" path="selectedAdvertisementType"
+                     items="${advertisementForm.advertisementTypes}"/>
     </div>
 
     <div>
@@ -88,28 +89,40 @@
     </div>
 
     <div>
+        <form:errors path="description" element="div"/>
+    </div>
+
+    <div>
         <label class="property">
             <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.city"/>
         </label>
-        <form:select class="propertyValue" path="selectedCity" items="${viewBean.cities}"/>
+        <form:select class="propertyValue" path="selectedCity" items="${advertisementForm.cities}"/>
     </div>
 
-    <spring:bind path="address">
-        <div>
-            <label class="property">
-                <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.address"/>
-            </label>
-            <form:input class="propertyValue" path="address" type="text"/>
-            <form:errors path="address"/>
-        </div>
-    </spring:bind>
+    <div>
+        <form:errors path="selectedCity" element="div"/>
+    </div>
+
+    <div>
+        <label class="property">
+            <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.address"/>
+        </label>
+        <form:input class="propertyValue" path="address" type="text"/>
+    </div>
+
+    <div>
+        <form:errors path="address" element="div"/>
+    </div>
 
     <div>
         <label class="property">
             <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.price"/>
         </label>
         <form:input id="price" class="propertyValue" path="price" type="text" placeholder="€"/>
-        <form:errors path="price"/>
+    </div>
+
+    <div>
+        <form:errors path="price" element="div"/>
     </div>
 
     <div>
@@ -117,7 +130,10 @@
             <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.squareMeters"/>
         </label>
         <form:input id="squareMeters" class="propertyValue" path="squareMeters" type="text" placeholder="M2"/>
-        <form:errors path="squareMeters"/>
+    </div>
+
+    <div>
+        <form:errors path="squareMeters" element="div"/>
     </div>
 
     <div>
@@ -127,7 +143,7 @@
         <form:input id="realEstateImage" path="realEstateImage" class="propertyValue" type="file"/>
     </div>
 
-    <c:if test="${viewBean.validProperties.contains('YEAR_OF_CONSTRUCTION')}">
+    <c:if test="${advertisementForm.validProperties.contains('YEAR_OF_CONSTRUCTION')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.yearOfConstruction"/>
@@ -136,7 +152,7 @@
         </div>
     </c:if>
 
-    <c:if test="${viewBean.validProperties.contains('NUMBER_OF_ROOMS')}">
+    <c:if test="${advertisementForm.validProperties.contains('NUMBER_OF_ROOMS')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.numberOfRooms"/>
@@ -145,7 +161,7 @@
         </div>
     </c:if>
 
-    <c:if test="${viewBean.validProperties.contains('NUMBER_OF_BEDS')}">
+    <c:if test="${advertisementForm.validProperties.contains('NUMBER_OF_BEDS')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.numberOfBeds"/>
@@ -154,7 +170,7 @@
         </div>
     </c:if>
 
-    <c:if test="${viewBean.validProperties.contains('CENTRAL_HEATING_INCLUDED')}">
+    <c:if test="${advertisementForm.validProperties.contains('CENTRAL_HEATING_INCLUDED')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.centralHeating"/>
@@ -163,7 +179,7 @@
         </div>
     </c:if>
 
-    <c:if test="${viewBean.validProperties.contains('AIR_CONDITIONED')}">
+    <c:if test="${advertisementForm.validProperties.contains('AIR_CONDITIONED')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.airConditioned"/>
@@ -172,7 +188,7 @@
         </div>
     </c:if>
 
-    <c:if test="${viewBean.validProperties.contains('ELEVATOR_INCLUDED')}">
+    <c:if test="${advertisementForm.validProperties.contains('ELEVATOR_INCLUDED')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.elevator"/>
@@ -181,7 +197,7 @@
         </div>
     </c:if>
 
-    <c:if test="${viewBean.validProperties.contains('GARAGE_INCLUDED')}">
+    <c:if test="${advertisementForm.validProperties.contains('GARAGE_INCLUDED')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.garage"/>
@@ -190,7 +206,7 @@
         </div>
     </c:if>
 
-    <c:if test="${viewBean.validProperties.contains('PARKING_INCLUDED')}">
+    <c:if test="${advertisementForm.validProperties.contains('PARKING_INCLUDED')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.parking"/>
@@ -199,7 +215,7 @@
         </div>
     </c:if>
 
-    <c:if test="${viewBean.validProperties.contains('YARD_INCLUDED')}">
+    <c:if test="${advertisementForm.validProperties.contains('YARD_INCLUDED')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.yard"/>
@@ -208,7 +224,7 @@
         </div>
     </c:if>
 
-    <c:if test="${viewBean.validProperties.contains('POOL_INCLUDED')}">
+    <c:if test="${advertisementForm.validProperties.contains('POOL_INCLUDED')}">
         <div>
             <label class="property">
                 <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.pool"/>
@@ -221,6 +237,10 @@
         <spring:message code="realestatewebsite.fe.messages.addAdvertisement.label.submit" var="submitText"/>
         <input id="submitAdvertisement" name="submit" type="submit" value="${submitText}">
         </input>
+    </div>
+
+    <div>
+        <a href="home">Почетна</a>
     </div>
 
 

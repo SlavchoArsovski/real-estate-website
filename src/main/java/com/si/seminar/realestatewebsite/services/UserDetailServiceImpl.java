@@ -1,9 +1,9 @@
 package com.si.seminar.realestatewebsite.services;
 
 import com.si.seminar.realestatewebsite.db.datamodel.User;
-import com.si.seminar.realestatewebsite.db.datamodel.UserRoles;
+import com.si.seminar.realestatewebsite.db.datamodel.UserRole;
 import com.si.seminar.realestatewebsite.db.repository.UserRepository;
-import com.si.seminar.realestatewebsite.db.repository.UserRolesRepository;
+import com.si.seminar.realestatewebsite.db.repository.UserRoleRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,21 +28,18 @@ public class UserDetailServiceImpl implements UserDetailsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserDetailServiceImpl.class);
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private UserRolesRepository usersRoleRepository;
+    private UserService userService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("authenticating");
+
         try {
-            Optional<User> userOptional = userRepository.findByUserName(username);
+            Optional<User> userOptional = userService.findByUserName(username);
             if (userOptional.isPresent()) {
                 User user = userOptional.get();
                 LOGGER.debug(" user from username " + user.getUserName());
 
-                List<UserRoles> userRoles = usersRoleRepository.findByUserName(username);
+                List<UserRole> userRoles = userService.findUserRoles(username);
                 return new org.springframework.security.core.userdetails.User(
                         user.getUserName(),
                         user.getPassword(),
@@ -56,9 +53,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
         }
     }
 
-    private Set<GrantedAuthority> getAuthorities(List<UserRoles> userRoles) {
+    private Set<GrantedAuthority> getAuthorities(List<UserRole> userRoles) {
         Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
-        for (UserRoles role : userRoles) {
+        for (UserRole role : userRoles) {
             GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getRole());
             authorities.add(grantedAuthority);
         }

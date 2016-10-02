@@ -37,7 +37,7 @@ public class RealEstateViewService {
 
     private int pageSize = 5;
 
-    public HomeViewModel getInitialViewModel(AdvertisementType advertisementType, Locale locale) {
+    public HomeViewModel getInitialViewModel(AdvertisementType advertisementType) {
 
         SearchModel searchModel = new SearchModel
                 .Builder(RealEstateType.HOUSE)
@@ -66,25 +66,25 @@ public class RealEstateViewService {
         homeViewModel.setRealEstates(viewModels);
         homeViewModel.setRealEstateListPageNumber(pageNumber + 1);
         homeViewModel.setRealEstateListNumberOfPages(numberOfPages);
-        homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes(locale));
+        homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes());
         homeViewModel.setSelectedRealEstateType(RealEstateType.HOUSE.name());
-        homeViewModel.setCitiesDropdown(realEstateMapper.mapCities(locale));
+        homeViewModel.setCitiesDropdown(realEstateMapper.mapCities());
         homeViewModel.setSelectedCity("ALL");
-        homeViewModel.setCentralHeatingDropdown(realEstateMapper.mapYesNoOptions(locale, "centralHeating"));
+        homeViewModel.setCentralHeatingDropdown(realEstateMapper.mapYesNoOptions("centralHeating"));
         homeViewModel.setSelectedCentralHeating("NO_SELECTION");
-        homeViewModel.setAirConditionedDropdown(realEstateMapper.mapYesNoOptions(locale, "airConditioned"));
+        homeViewModel.setAirConditionedDropdown(realEstateMapper.mapYesNoOptions("airConditioned"));
         homeViewModel.setSelectedAirConditioned("NO_SELECTION");
-        homeViewModel.setYardIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "yard"));
+        homeViewModel.setYardIncludedDropdown(realEstateMapper.mapYesNoOptions("yard"));
         homeViewModel.setSelectedYardIncluded("NO_SELECTION");
-        homeViewModel.setGarageIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "garage"));
+        homeViewModel.setGarageIncludedDropdown(realEstateMapper.mapYesNoOptions("garage"));
         homeViewModel.setSelectedGarageIncluded("NO_SELECTION");
-        homeViewModel.setElevatorIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "elevator"));
+        homeViewModel.setElevatorIncludedDropdown(realEstateMapper.mapYesNoOptions("elevator"));
         homeViewModel.setSelectedElevatorIncluded("NO_SELECTION");
-        homeViewModel.setPoolIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "pool"));
+        homeViewModel.setPoolIncludedDropdown(realEstateMapper.mapYesNoOptions("pool"));
         homeViewModel.setSelectedPoolIncluded("NO_SELECTION");
-        homeViewModel.setParkingIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "parking"));
+        homeViewModel.setParkingIncludedDropdown(realEstateMapper.mapYesNoOptions("parking"));
         homeViewModel.setSelectedParkingIncluded("NO_SELECTION");
-        homeViewModel.setMessages(messageSource.getAllMessages(locale));
+        homeViewModel.setMessages(messageSource.getAllMessages());
         homeViewModel.setAdvertisementType(advertisementType.name());
 
         List<String> validProperties =
@@ -112,13 +112,11 @@ public class RealEstateViewService {
      * Get view model after property change.
      *
      * @param homePropertyChangeModel the home property change model.
-     * @param locale                  the locale.
      * @return home view model.
      */
     public HomeViewModel getViewModelAfterPropertyChange(
             HomePropertyChangeModel homePropertyChangeModel,
-            int pageNumber,
-            Locale locale) {
+            int pageNumber) {
 
         SearchModel searchModel =
                 buildSearchModelFromPropertyChangeModel(homePropertyChangeModel);
@@ -142,16 +140,16 @@ public class RealEstateViewService {
         homeViewModel.setRealEstates(realEstateViewModels);
         homeViewModel.setRealEstateListPageNumber(pageNumber);
         homeViewModel.setRealEstateListNumberOfPages(numberOfPages);
-        homeViewModel.setCitiesDropdown(realEstateMapper.mapCities(locale));
-        homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes(locale));
-        homeViewModel.setCentralHeatingDropdown(realEstateMapper.mapYesNoOptions(locale, "centralHeating"));
-        homeViewModel.setAirConditionedDropdown(realEstateMapper.mapYesNoOptions(locale, "airConditioned"));
-        homeViewModel.setYardIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "yard"));
-        homeViewModel.setGarageIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "garage"));
-        homeViewModel.setElevatorIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "elevator"));
-        homeViewModel.setPoolIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "pool"));
-        homeViewModel.setParkingIncludedDropdown(realEstateMapper.mapYesNoOptions(locale, "parking"));
-        homeViewModel.setMessages(messageSource.getAllMessages(locale));
+        homeViewModel.setCitiesDropdown(realEstateMapper.mapCities());
+        homeViewModel.setRealEstateTypesDropdown(realEstateMapper.mapRealEstateTypes());
+        homeViewModel.setCentralHeatingDropdown(realEstateMapper.mapYesNoOptions("centralHeating"));
+        homeViewModel.setAirConditionedDropdown(realEstateMapper.mapYesNoOptions("airConditioned"));
+        homeViewModel.setYardIncludedDropdown(realEstateMapper.mapYesNoOptions("yard"));
+        homeViewModel.setGarageIncludedDropdown(realEstateMapper.mapYesNoOptions("garage"));
+        homeViewModel.setElevatorIncludedDropdown(realEstateMapper.mapYesNoOptions("elevator"));
+        homeViewModel.setPoolIncludedDropdown(realEstateMapper.mapYesNoOptions("pool"));
+        homeViewModel.setParkingIncludedDropdown(realEstateMapper.mapYesNoOptions("parking"));
+        homeViewModel.setMessages(messageSource.getAllMessages());
 
         List<String> validProperties =
                 realEstateMapper.mapValidPropertiesFromRealEstateType(homePropertyChangeModel.getSelectedRealEstateType());
@@ -227,16 +225,16 @@ public class RealEstateViewService {
         return builder.build();
     }
 
-    public AdvertisementViewModel getInitialAdvertisementViewModel(RealEstateType realEstateType, Locale locale) {
+    public AdvertisementViewModel getInitialAdvertisementViewModel(RealEstateType realEstateType) {
 
         AdvertisementViewModel advertisementViewModel = new AdvertisementViewModel();
-        advertisementViewModel.setRealEstateTypes(realEstateMapper.mapRealEstateTypes(locale));
+        advertisementViewModel.setRealEstateTypes(realEstateMapper.mapRealEstateTypes());
         advertisementViewModel.setSelectedRealEstateType(realEstateType.name());
 
-        Map<String, String> cities = realEstateMapper.mapCities(locale);
+        Map<String, String> cities = realEstateMapper.mapCities();
         cities.remove("ALL");
         advertisementViewModel.setCities(cities);
-        advertisementViewModel.setAdvertisementTypes(realEstateMapper.mapAdvertisementTypes(locale));
+        advertisementViewModel.setAdvertisementTypes(realEstateMapper.mapAdvertisementTypes());
         advertisementViewModel.setSelectedCity(City.Skopje.name());
 
         List<String> validProperties =
