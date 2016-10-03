@@ -116,7 +116,6 @@ public abstract class RealEstateRepositoryImpl<T extends RealEstate> implements 
 
         List<Predicate> predicates = getPredicates(searchModel, builder, realEstateRoot);
         countQuery.where(predicates.toArray(new Predicate[0]));
-        countQuery.orderBy(builder.desc(realEstateRoot.get(RealEstate_.createdOn)));
 
         Long result =
                 entityManager

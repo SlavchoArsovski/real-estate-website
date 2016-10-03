@@ -27,7 +27,7 @@ public class AppRootConfig  implements ApplicationContextAware {
 
         PropertyPlaceholderConfigurer propertyPlaceholderConfigurer = new PropertyPlaceholderConfigurer();
 
-        Resource resource = applicationContext.getResource("classpath:config.properties");
+        Resource resource = applicationContext.getResource("classpath:config-h2-db.properties");
         propertyPlaceholderConfigurer.setLocations(resource);
 
         return propertyPlaceholderConfigurer;

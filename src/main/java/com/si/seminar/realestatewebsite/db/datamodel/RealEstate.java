@@ -24,7 +24,7 @@ public abstract class RealEstate {
     @Column(name = "ID", nullable = false, unique = true)
     private Long id;
 
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", length = 1000)
     private String description;
 
     @Column(name = "REAL_ESTATE_TYPE", nullable = false, insertable=false, updatable=false)
