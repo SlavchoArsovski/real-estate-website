@@ -30,7 +30,7 @@ CREATE TABLE REAL_ESTATE (
   ID number(19,0) not null,
 
   -- all real estate properties
-	DESCRIPTION varchar2(200),
+	DESCRIPTION varchar2(1000),
   REAL_ESTATE_TYPE varchar2(40) not null,
   SQUARE_METERS number(5,0),
   CITY varchar2(40) not null,

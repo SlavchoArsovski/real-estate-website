@@ -159,7 +159,7 @@
 
                     <div>
                         <label class="propertyText">
-                            <spring:message code="realestatewebsite.fe.messages.home.property.text.priceTo"/>
+                            <spring:message code="realestatewebsite.fe.messages.home.property.text.squareMetersTo"/>
                         </label>
                         <input id="square-meters_to" class="propertyValue" type="text"
                                value="${viewBean.squareMetersTo}" placeholder="M2"/>

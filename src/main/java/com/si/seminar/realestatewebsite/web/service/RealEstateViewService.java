@@ -216,10 +216,17 @@ public class RealEstateViewService {
         }
 
         String selectedPoolIncluded = homePropertyChangeModel.getSelectedPoolIncluded();
-        if (StringUtils.isNoneEmpty(selectedPoolIncluded) && !StringUtils.equals(selectedParkingIncluded, "NO_SELECTION")) {
+        if (StringUtils.isNoneEmpty(selectedPoolIncluded) && !StringUtils.equals(selectedPoolIncluded, "NO_SELECTION")) {
             boolean isPoolIncluded =
                     StringUtils.equals("YES", selectedPoolIncluded);
             builder.poolIncluded(isPoolIncluded);
+        }
+
+        String selectedElevator = homePropertyChangeModel.getSelectedElevatorIncluded();
+        if (StringUtils.isNoneEmpty(selectedElevator) && !StringUtils.equals(selectedElevator, "NO_SELECTION")) {
+            boolean isElevatorIncluded =
+                    StringUtils.equals("YES", selectedElevator);
+            builder.elevatorIncluded(isElevatorIncluded);
         }
 
         return builder.build();

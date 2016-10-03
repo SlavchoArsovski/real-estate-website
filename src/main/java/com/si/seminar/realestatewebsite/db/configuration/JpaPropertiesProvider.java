@@ -1,7 +1,7 @@
 package com.si.seminar.realestatewebsite.db.configuration;
 
 /**
- * Created by sarsovsk on 28.08.2016.
+ * Jpa properties provider.
  */
 
 import net.sf.ehcache.hibernate.EhCacheRegionFactory;

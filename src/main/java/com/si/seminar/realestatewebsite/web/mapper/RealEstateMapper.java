@@ -254,6 +254,7 @@ public class RealEstateMapper {
         house.setYardIncluded(advertisementViewModel.isYard());
         house.setAirConditioned(advertisementViewModel.isAirConditioned());
         house.setGarageIncluded(advertisementViewModel.isGarage());
+        house.setCentralHeatingIncluded(advertisementViewModel.isCentralHeating());
         house.setYearOfConstruction(advertisementViewModel.getYearOfConstruction());
         house.setNumberOfFloors(advertisementViewModel.getNumberOfFloors());
         house.setPoolIncluded(advertisementViewModel.isPool());
