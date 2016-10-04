@@ -330,7 +330,10 @@ var homeView = {
             templateHtml = templateHtml.replace('{realEstateItemTemplate.realEstateType}', realEstate.realEstateType);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.realEstateImageType}', realEstate.realEstateImageType);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.address}', realEstate.address);
-            templateHtml = templateHtml.replace('{realEstateItemTemplate.city}', realEstate.city);
+
+            var city = messages['realestatewebsite.fe.messages.general.cities.' + realEstate.city];
+            templateHtml = templateHtml.replace('{realEstateItemTemplate.city}', city);
+
             templateHtml = templateHtml.replace('{realEstateItemTemplate.price}', realEstate.price);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.squareMeters}', realEstate.squareMeters);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.phone}', realEstate.phoneNumber);
@@ -363,6 +366,11 @@ var homeView = {
                 '{realEstateItemTemplate.messagePhone}',
                 messages['realestatewebsite.fe.messages.home.realestatelist.phone']
             );
+            templateHtml = templateHtml.replace(
+                '{realEstateItemTemplate.moreLinkText}',
+                messages['realestatewebsite.fe.messages.home.realestatelist.moreLinkText']
+            );
+
 
             $(me.pageComponents.realEstateList).append(templateHtml);
         });

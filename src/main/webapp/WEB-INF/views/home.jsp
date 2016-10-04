@@ -334,7 +334,7 @@
                     <div class="more-link">
                         <a href="advertisementDetail?realEstateId={realEstateItemTemplate.realEstateId}&realEstateType={realEstateItemTemplate.realEstateType}"
                            target="_blank">
-                            Повеќе
+                            {realEstateItemTemplate.moreLinkText}
                         </a>
                     </div>
 
@@ -360,9 +360,9 @@
                                     code="realestatewebsite.fe.messages.general.realEstateType.${realEstate.realEstateType}"/>
                             <spring:message
                                     code="realestatewebsite.fe.messages.home.realestatelist.realEstateType.atPlace"/>
-                                ${realEstate.city}
-                        </div>
 
+                            <spring:message code="realestatewebsite.fe.messages.general.cities.${realEstate.city}"/>
+                        </div>
                         <div>
                             <spring:message
                                     code="realestatewebsite.fe.messages.home.realestatelist.area"/>: ${realEstate.squareMeters}
@@ -384,7 +384,7 @@
                         <div class="more-link">
                             <a href="advertisementDetail?realEstateId=${realEstate.realEstateId}&realEstateType=${realEstate.realEstateType}"
                                target="_blank">
-                                Повеќе
+                                <spring:message code="realestatewebsite.fe.messages.home.realestatelist.moreLinkText"/>
                             </a>
                         </div>
                     </div>
