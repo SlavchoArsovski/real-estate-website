@@ -19,12 +19,12 @@
      alt="image no found"/>
 
 
-<table>
+<table class="detail-table">
     <tbody>
     <c:forEach items="${viewBean.advertisementProperties}" var="property">
         <tr>
-            <td>${property.key}</td>
-            <td>${property.value}</td>
+            <td class="title">${property.key}</td>
+            <td class="value">${property.value}</td>
         </tr>
     </c:forEach>
     <tr>

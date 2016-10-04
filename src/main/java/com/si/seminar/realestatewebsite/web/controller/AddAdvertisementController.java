@@ -3,6 +3,7 @@ package com.si.seminar.realestatewebsite.web.controller;
 import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
 import com.si.seminar.realestatewebsite.web.mapper.RealEstateMapper;
 import com.si.seminar.realestatewebsite.web.service.RealEstateViewService;
+import com.si.seminar.realestatewebsite.web.utils.MessageResolverService;
 import com.si.seminar.realestatewebsite.web.validator.AdvertisementValidator;
 import com.si.seminar.realestatewebsite.web.viewmodel.AdvertisementViewModel;
 import com.si.seminar.realestatewebsite.web.viewmodel.City;
@@ -30,6 +31,8 @@ public class AddAdvertisementController {
 
     public static final String ADD_ADVERTISEMENT_VIEW_NAME = "addAdvertisement";
     public static final String VIEW_BEAN = "advertisementForm";
+    public static final String SUCCESSFULLY_ADDED_ADVERTISEMENT_MESSAGE_KEY =
+            "realestatewebsite.fe.messages.general.successfullyAddedAdvertisement";
 
     @Autowired
     private RealEstateViewService realEstateViewService;
@@ -39,6 +42,9 @@ public class AddAdvertisementController {
 
     @Autowired
     private AdvertisementValidator advertisementValidator;
+
+    @Autowired
+    private MessageResolverService messageResolverService;
 
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
@@ -98,8 +104,14 @@ public class AddAdvertisementController {
         boolean noErrors = !result.hasErrors();
 
         if (noErrors) {
+
             realEstateViewService.saveAdvertisement(advertisementViewModel);
-            redirectAttributes.addFlashAttribute("msg", "Successfully added advertisement");
+
+            String successMessage =
+                    messageResolverService
+                            .getResourceMessage(SUCCESSFULLY_ADDED_ADVERTISEMENT_MESSAGE_KEY);
+            redirectAttributes.addFlashAttribute("msg", successMessage);
+
             return "redirect:successScreen";
         }
 
@@ -109,8 +121,9 @@ public class AddAdvertisementController {
         advertisementViewModel.setCities(cities);
         advertisementViewModel.setAdvertisementTypes(realEstateMapper.mapAdvertisementTypes());
 
+        String selectedRealEstateType = advertisementViewModel.getSelectedRealEstateType();
         List<String> validProperties =
-                realEstateMapper.mapValidPropertiesFromRealEstateType(advertisementViewModel.getSelectedRealEstateType());
+                realEstateMapper.mapValidPropertiesFromRealEstateType(selectedRealEstateType);
         advertisementViewModel.setValidProperties(validProperties);
 
         model.addAttribute(VIEW_BEAN, advertisementViewModel);

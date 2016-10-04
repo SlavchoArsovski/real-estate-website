@@ -333,7 +333,6 @@ var homeView = {
 
             var city = messages['realestatewebsite.fe.messages.general.cities.' + realEstate.city];
             templateHtml = templateHtml.replace('{realEstateItemTemplate.city}', city);
-
             templateHtml = templateHtml.replace('{realEstateItemTemplate.price}', realEstate.price);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.squareMeters}', realEstate.squareMeters);
             templateHtml = templateHtml.replace('{realEstateItemTemplate.phone}', realEstate.phoneNumber);

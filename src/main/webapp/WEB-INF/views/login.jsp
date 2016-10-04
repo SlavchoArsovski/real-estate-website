@@ -75,8 +75,16 @@
                 </td>
             </tr>
             <tr>
-                <td><a href="home">Почетна</a></td>
-                <td><a href="registration">Регистрација</a></td>
+                <td>
+                    <a href="home">
+                        <spring:message code="realestatewebsite.fe.messages.general.homeLink"/>
+                    </a>
+                </td>
+                <td>
+                    <a href="registration">
+                        <spring:message code="realestatewebsite.fe.messages.general.registrationLink"/>
+                    </a>
+                </td>
             </tr>
 
         </table>

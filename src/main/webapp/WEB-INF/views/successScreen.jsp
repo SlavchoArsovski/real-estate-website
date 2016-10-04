@@ -14,7 +14,7 @@
 <div>${successMessage}</div>
 
 <a href="home">
-    <spring:message code="realestatewebsite.fe.messages.general.homeLink.text"/>
+    <spring:message code="realestatewebsite.fe.messages.general.homeLink"/>
 </a>
 </body>
 </html>

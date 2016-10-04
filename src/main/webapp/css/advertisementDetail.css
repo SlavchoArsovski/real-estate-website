@@ -2,3 +2,15 @@
     width: 500px;
     height: 300px;
 }
+
+.detail-table {
+    width: 700px;
+}
+
+.detail-table .value {
+    width: 70%;
+}
+
+.detail-table .title {
+    width: 30%;
+}

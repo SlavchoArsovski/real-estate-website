@@ -69,7 +69,7 @@
             </tr>
             <tr>
                 <td>
-                    Email
+                    <spring:message code="realestatewebsite.fe.messages.general.email"/>
                 </td>
                 <td>
                     <form:input type="text" name="email" path="email" value="" placeholder="user@yahoo.com"/>
@@ -82,7 +82,7 @@
             </tr>
             <tr>
                 <td>
-                    Phone Number
+                    <spring:message code="realestatewebsite.fe.messages.general.phoneNumber"/>
                 </td>
                 <td>
                     <form:input type="text" name="phoneNumber" path="phoneNumber" value="" placeholder="070123456"/>
@@ -108,7 +108,7 @@
             </tr>
             <tr>
                 <td>
-                    Password Confirm
+                    <spring:message code="realestatewebsite.fe.messages.general.passwordConfirm"/>
                 </td>
                 <td>
                     <form:input type="password" name="passwordConfirm" path="passwordConfirm" value=""/>
@@ -126,8 +126,16 @@
                 </td>
             </tr>
             <tr>
-                <td><a href="home">Почетна</a></td>
-                <td><a href="login">Најава</a></td>
+                <td>
+                    <a href="home">
+                        <spring:message code="realestatewebsite.fe.messages.general.homeLink"/>
+                    </a>
+                </td>
+                <td>
+                    <a href="login">
+                        <spring:message code="realestatewebsite.fe.messages.general.loginLink"/>
+                    </a>
+                </td>
             </tr>
 
         </table

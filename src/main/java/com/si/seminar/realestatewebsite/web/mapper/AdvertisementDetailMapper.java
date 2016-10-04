@@ -1,9 +1,6 @@
 package com.si.seminar.realestatewebsite.web.mapper;
 
-import com.si.seminar.realestatewebsite.db.datamodel.AdvertisementType;
-import com.si.seminar.realestatewebsite.db.datamodel.House;
-import com.si.seminar.realestatewebsite.db.datamodel.RealEstate;
-import com.si.seminar.realestatewebsite.db.datamodel.RealEstateType;
+import com.si.seminar.realestatewebsite.db.datamodel.*;
 import com.si.seminar.realestatewebsite.web.utils.MessageResolverService;
 import com.si.seminar.realestatewebsite.web.viewmodel.AdvertisementDetailViewModel;
 import org.springframework.beans.BeansException;
@@ -39,10 +36,12 @@ public class AdvertisementDetailMapper {
                         String.format(
                                 "realestatewebsite.fe.messages.general.realEstateType.%s",
                                 realEstateType.name()));
-        viewModel.addAdvertisementProperty(
-                realEstateTypeTitle,
-                realEstateTypeValue
-        );
+        viewModel.addAdvertisementProperty(realEstateTypeTitle, realEstateTypeValue);
+
+        String description = realEstate.getDescription();
+        String descriptionTitle =
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.description");
+        viewModel.addAdvertisementProperty(descriptionTitle, description);
 
         String advertisementTypeTitle =
                 messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.advertisementType");
@@ -66,7 +65,6 @@ public class AdvertisementDetailMapper {
         String priceValue = BigDecimalFormatter.formatBigDecimal(realEstate.getPrice()) + " €";
         viewModel.addAdvertisementProperty(priceTitle, priceValue);
 
-
         String addressTitle =
                 messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.address");
         String address = realEstate.getAddress();
@@ -82,6 +80,8 @@ public class AdvertisementDetailMapper {
             case HOUSE:
                 mapHouseToViewModel(realEstate, viewModel);
                 break;
+            case APARTMENT:
+                mapApartmentToViewModel(realEstate, viewModel);
         }
 
         return viewModel;
@@ -117,27 +117,92 @@ public class AdvertisementDetailMapper {
         Boolean centralHeatingIncluded = house.isCentralHeatingIncluded();
         String centralHeatingValueMessageKey;
         if (Boolean.TRUE.equals(centralHeatingIncluded)) {
-            centralHeatingValueMessageKey = "realestatewebsite.fe.messages.general.YES";
+            centralHeatingValueMessageKey = generalYesMessage;
         } else {
-            centralHeatingValueMessageKey = "realestatewebsite.fe.messages.general.NO";
+            centralHeatingValueMessageKey = generalNoMessage;
         }
-        viewModel.addAdvertisementProperty(
-                centralHeatingTitle,
-                messageResolverService.getResourceMessage(centralHeatingValueMessageKey));
+        viewModel.addAdvertisementProperty(centralHeatingTitle, centralHeatingValueMessageKey);
 
         String poolTitle =
                 messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.pool");
         Boolean poolIncluded = house.isPoolIncluded();
-        String poolValueMessageKey;
+        String poolValueMessage;
         if (Boolean.TRUE.equals(poolIncluded)) {
-            poolValueMessageKey = "realestatewebsite.fe.messages.general.YES";
+            poolValueMessage = generalYesMessage;
         } else {
-            poolValueMessageKey = "realestatewebsite.fe.messages.general.NO";
+            poolValueMessage = generalNoMessage;
         }
-        viewModel.addAdvertisementProperty(
-                poolTitle,
-                messageResolverService.getResourceMessage(poolValueMessageKey));
+        viewModel.addAdvertisementProperty(poolTitle, poolValueMessage);
+
+        String airConditionedTitle =
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.airConditioned");
+        Boolean airConditioned = house.isAirConditioned();
+        String airConditionedMessage;
+        if (Boolean.TRUE.equals(airConditioned)) {
+            airConditionedMessage = generalYesMessage;
+        } else {
+            airConditionedMessage = generalNoMessage;
+        }
+        viewModel.addAdvertisementProperty(airConditionedTitle, airConditionedMessage);
 
 
     }
+
+    private void mapApartmentToViewModel(RealEstate realEstate, AdvertisementDetailViewModel viewModel) {
+
+        Apartment apartment = (Apartment) realEstate;
+
+        String generalYesMessage = messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.YES");
+        String generalNoMessage = messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.NO");
+
+        String yearOfConstructionTitle =
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.yearOfConstruction");
+        viewModel.addAdvertisementProperty(yearOfConstructionTitle, apartment.getYearOfConstruction().toString());
+
+        String centralHeatingTitle =
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.centralHeating");
+        Boolean centralHeatingIncluded = apartment.isCentralHeatingIncluded();
+        String centralHeatingValueMessage;
+        if (Boolean.TRUE.equals(centralHeatingIncluded)) {
+            centralHeatingValueMessage = generalYesMessage;
+        } else {
+            centralHeatingValueMessage = generalNoMessage;
+        }
+
+        viewModel.addAdvertisementProperty(centralHeatingTitle, centralHeatingValueMessage);
+
+        String airConditionedTitle =
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.airConditioned");
+        Boolean airConditioned = apartment.isAirConditioned();
+        String airConditionedMessage;
+        if (Boolean.TRUE.equals(airConditioned)) {
+            airConditionedMessage = generalYesMessage;
+        } else {
+            airConditionedMessage = generalNoMessage;
+        }
+        viewModel.addAdvertisementProperty(airConditionedTitle, airConditionedMessage);
+
+        String elevatorTitle =
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.elevator");
+        Boolean elevatorIncluded = apartment.isElevatorIncluded();
+        String elevatorIncludedMessage;
+        if (Boolean.TRUE.equals(elevatorIncluded)) {
+            elevatorIncludedMessage = generalYesMessage;
+        } else {
+            elevatorIncludedMessage = generalNoMessage;
+        }
+        viewModel.addAdvertisementProperty(elevatorTitle, elevatorIncludedMessage);
+
+        String parkingTitle =
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.parking");
+        Boolean parkingIncluded = apartment.isParkingIncluded();
+        String parkingIncludedMessage;
+        if (Boolean.TRUE.equals(parkingIncluded)) {
+            parkingIncludedMessage = generalYesMessage;
+        } else {
+            parkingIncludedMessage = generalNoMessage;
+        }
+        viewModel.addAdvertisementProperty(parkingTitle, parkingIncludedMessage);
+    }
+
 }
