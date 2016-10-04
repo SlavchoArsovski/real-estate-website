@@ -3,13 +3,8 @@ package com.si.seminar.realestatewebsite.web.mapper;
 import com.si.seminar.realestatewebsite.db.datamodel.*;
 import com.si.seminar.realestatewebsite.web.utils.MessageResolverService;
 import com.si.seminar.realestatewebsite.web.viewmodel.AdvertisementDetailViewModel;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
-
-import java.util.Locale;
 
 /**
  * Advertisement detail mapper.
@@ -82,7 +77,15 @@ public class AdvertisementDetailMapper {
                 break;
             case APARTMENT:
                 mapApartmentToViewModel(realEstate, viewModel);
+                break;
+            case ROOM:
+                mapRoomToViewModel(realEstate, viewModel);
         }
+
+        String phoneNumberTitle =
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.general.phoneNumber");
+        String phoneNumber = realEstate.getUser().getPhoneNumber();
+        viewModel.addAdvertisementProperty(phoneNumberTitle, phoneNumber);
 
         return viewModel;
     }
@@ -205,4 +208,12 @@ public class AdvertisementDetailMapper {
         viewModel.addAdvertisementProperty(parkingTitle, parkingIncludedMessage);
     }
 
+    private void mapRoomToViewModel(RealEstate realEstate, AdvertisementDetailViewModel viewModel) {
+        Room room = (Room) realEstate;
+
+        Integer numberOfBeds = room.getNumberOfBeds();
+        String numberOfBedsTitle =
+                messageResolverService.getResourceMessage("realestatewebsite.fe.messages.advertisementDetail.label.numberOfBeds");
+        viewModel.addAdvertisementProperty(numberOfBedsTitle, numberOfBedsTitle.toString());
+    }
 }
